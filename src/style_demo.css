@@ -1,0 +1,195 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+MAIN COLOR: #087f5b
+GREY COLOR: #343a40
+BACKGROUND-COLOR: #63e6be
+ */
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  border-bottom: 8px solid #087f5b;
+
+  text-align: center;
+}
+
+.container {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+header,
+section {
+  margin-bottom: 48px;
+}
+
+.text--offices {
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 35px;
+  justify-items: center;
+  align-items: center; */
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 14px;
+  padding: 16px 32px;
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  display: inline-block;
+  border-radius: 100px;
+  justify-content: center;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #099268;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* HEADER */
+header {
+  display: grid;
+}
+
+.header-text-box {
+  align-self: center;
+}
+
+h1 {
+  margin-top: 24px;
+  margin-bottom: 48px;
+  font-size: 60px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-text {
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.video {
+  box-shadow: 0 20px 30px 20px rgb(0 0 0 / 10%);
+}
+
+.offices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 12px 24px;
+  column-gap: 36px;
+  justify-items: center;
+  align-items: center;
+}
+
+#candidate {
+  grid-column: 2 / 3;
+}
+footer {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  font-size: 14px;
+  color: #495057;
+}
+
+table {
+  font-size: 18px;
+  width: 1200px;
+  margin-top: 64px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  /* margin: 0 auto; */
+  border-radius: 0.7em;
+  overflow: hidden;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+  table-layout: fixed;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #087f5b;
+  color: #fff;
+}
+thead th {
+  width: 25%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+.office-input,
+.candidates-input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 18px;
+  /* border-color: #000; */
+}
+
+.btn-add-office {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #087f5b;
+  padding: 8px 8px;
+  border-radius: 0.7em;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.trash-icon {
+  stroke: #099268;
+  height: 32px;
+  width: 32px;
+  justify-items: center;
+  align-items: center;
+}
+
+.btn-remove-office,
+.btn-remove-candidates {
+  display: flex;
+  outline: none;
+  justify-content: center;
+}
+
+input:focus {
+  border: 3px solid #555;
+}

@@ -1,0 +1,41 @@
+import React from "react";
+import "../style.css";
+
+function DemoGrid() {
+  return (
+    <figure className="option">
+      <div className="option-box">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="option-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <p>
+          Want to try the algorithm for yourself? Want to make a fair
+          distribution? Create harmony by fair allocation.
+        </p>
+
+        <a href="/demo" className="btn btn--small">
+          Demo
+        </a>
+      </div>
+    </figure>
+  );
+}
+
+export default DemoGrid;
