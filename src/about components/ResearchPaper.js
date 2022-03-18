@@ -1,14 +1,14 @@
 import React from "react";
-import "../style_about.css";
+import style from "./style_about.module.css";
 
 function ResearchPaper() {
   return (
-    <div className="research-paper">
-      <p className="about-research-paper">
+    <div className={style.researchPaper}>
+      <p className={style.aboutResearchPaper}>
         Research paper on the algorithm written by Itai Lashover, Liav Weiss,
         Amichai Kafka and Shoshana Levin
       </p>
-      <a href="#" className="btn btn--research-paper">
+      <a href="#" className={style.btn}>
         Reasearch Paper
       </a>
     </div>

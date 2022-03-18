@@ -1,11 +1,12 @@
 import React from "react";
+import style from "./style_upload.module.css";
 
 export default function Icon() {
 
   return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="ques-icon"
+      className={style.quesIcon}
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

@@ -1,5 +1,5 @@
 import React from "react";
-import "../style_about.css";
+import style from "./style_about.module.css";
 import { Player } from "video-react";
 import logo from "../img/logo.jpeg";
 
@@ -7,7 +7,7 @@ function Video(){
     return (
       <div>
         <video
-          class="video"
+          className={style.video}
           controls
           poster={logo}
         >

@@ -14,47 +14,32 @@ FONT SIZE SYSTEM (px)
 /* 
 MAIN COLOR: #087f5b
 GREY COLOR: #343a40
-BACKGROUND-COLOR: #63e6be
  */
 /* ------------------------ */
 /* GENERAL STYLES */
 /* ------------------------ */
-body {
-  font-family: "Inter", sans-serif;
-  color: #343a40;
-  border-bottom: 8px solid #087f5b;
-
-  text-align: center;
-}
 
 .container {
   width: 1060px;
   margin: 0 auto;
+
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  border-bottom: 8px solid #087f5b;
+  text-align: center;
 }
 
-header,
-section {
+.header,
+.section {
   margin-bottom: 48px;
 }
 
-.text--video {
+.grid4Rows {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: repeat(4, 1fr);
   column-gap: 70px;
-  justify-items: center;
-  align-items: center;
-}
-
-video {
-  grid-column: 2 / 3;
-  grid-row: 1;
-  width: 500px; 
-  height: 300px
-}
-
-.header-text {
-  grid-column: 1 / 2;
-  grid-row: 1;
+  row-gap: 35px;
 }
 
 .btn:link,
@@ -66,8 +51,8 @@ video {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
-
   display: inline-block;
+  inline-size: 224px;
   border-radius: 100px;
   justify-content: center;
 }
@@ -78,51 +63,68 @@ video {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
 }
 
+.img {
+  border-radius: 12px;
+  width: 100%;
+}
 /* ------------------------ */
 /* COMPONENT STYLES */
 /* ------------------------ */
 
 /* HEADER */
-header {
+.header {
   display: grid;
 }
 
-.header-text-box {
+.headerTextBox {
   align-self: center;
 }
 
-h1 {
+.title {
   margin-top: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   font-size: 60px;
   line-height: 1.1;
   letter-spacing: -1px;
   text-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header-text {
-  font-size: 20px;
+.headerText {
+  margin-bottom: 24px;
+  font-size: 18px;
   line-height: 1.7;
-  text-align: left;
 }
 
-.video {
-  box-shadow: 0 20px 30px 20px rgb(0 0 0 / 10%);
+/* FEATURES */
+.quesIcon {
+  stroke: #868e96;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  /* margin-right: 10px; */
 }
 
-.research-paper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  background-color: #e9ecef;
-  padding: 12px 24px;
-  column-gap: 36px;
-  justify-items: center;
+.statIcon {
+  stroke: #868e96;
+  height: 160px;
+  width: 160px;
+  display: block;
+  margin-left: 24px;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.stats {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  grid-column: 2/3;
+  grid-row: 1/4;
 }
 
-footer {
-  margin-top: 48px;
-  margin-bottom: 4px;
-  font-size: 14px;
-  color: #495057;
+/* OPTION */
+.option {
+  /* border-radius: 12px; */
+  /* box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1); */
+  grid-column: 1/2;
 }

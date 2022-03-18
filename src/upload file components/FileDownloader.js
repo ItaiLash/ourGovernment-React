@@ -2,6 +2,7 @@ import React from "react";
 import useDownloader from "react-use-downloader";
 import csvFile from '../csv/template.xlsx';
 import Icon from "./Icon";
+import style from "./style_upload.module.css";
 
 export default function FileDownloader() {
   const { size, elapsed, percentage, download, cancel, error, isInProgress } =
@@ -10,11 +11,11 @@ export default function FileDownloader() {
   const filename = "template.xlsx";
 
   return (
-    <div class="download-tem-box">
+    <div className={style.downloadTemBox}>
         <Icon />
       {/* <p>Download is in {isInProgress ? "in progress" : "stopped"}</p> */}
       <a
-        className="btn btn--small"
+        className={style.btn}
         onClick={() => download(csvFile, filename)}
               href="#"
       >

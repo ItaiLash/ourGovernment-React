@@ -1,9 +1,9 @@
 import React from "react";
-import "../style_about.css";
+import style from "./style_about.module.css";
 
 function Paragraph() {
   return (
-    <p className="header-text">
+    <p className={style.headerText}>
       In the demo video, you can see how you can use the various functions in
       the application. <br />
       By uploading an Excel document in the format provided by us. <br />

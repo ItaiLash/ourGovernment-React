@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home'
-import Demo from "./Demo";
-import UploadFile from "./UploadFile";
-import About from "./About";
+import Home from './home components/Home'
+import Demo from "./demo components/Demo";
+import UploadFile from "./upload file components/UploadFile";
+import About from "./about components/About";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {

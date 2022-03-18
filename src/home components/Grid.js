@@ -1,13 +1,13 @@
 import React from "react";
-import "../style.css";
+import style from "./style.module.css";
 import UploadFileGrid from "./UploadFileGrid";
 import DemoGrid from "./DemoGrid";
 import AboutGrid from "./AboutGrid";
 
 function Grid() {
   return (
-    <section>
-      <div className="grid-3-cols">
+    <section className={style.section}>
+      <div className={style.grid3Cols}>
         <UploadFileGrid />
         <DemoGrid />
         <AboutGrid />

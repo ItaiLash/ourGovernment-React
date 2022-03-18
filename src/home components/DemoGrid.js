@@ -1,13 +1,13 @@
 import React from "react";
-import "../style.css";
+import style from "./style.module.css";
 
 function DemoGrid() {
   return (
-    <figure className="option">
-      <div className="option-box">
+    <figure className={style.option}>
+      <div className={style.optionBox}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="option-icon"
+          className={style.optionIcon}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -25,12 +25,12 @@ function DemoGrid() {
             d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <p>
+        <p className={style.cardDescription}>
           Want to try the algorithm for yourself? Want to make a fair
           distribution? Create harmony by fair allocation.
         </p>
 
-        <a href="/demo" className="btn btn--small">
+        <a href="/demo" className={style.btn}>
           Demo
         </a>
       </div>
