@@ -4,12 +4,14 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from json_convert import *
 from .models import Pav
+from .serializers import PavSerializer
 import json
 
 
 
 class PavViewSet(viewsets.ModelViewSet):
     queryset = Pav.objects.all()
+    serializer_class = PavSerializer
     @action(detail=True, methods=['GET'])
     def compute_pav(self, request, pk=None):
         try:
