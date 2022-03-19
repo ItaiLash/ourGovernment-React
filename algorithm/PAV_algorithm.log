@@ -1,0 +1,479 @@
+19-Mar-22 21:43:30 - Not Found: /
+19-Mar-22 22:25:28 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+19-Mar-22 22:25:32 - Not Found: /api/ratings/
+19-Mar-22 22:25:45 - Internal Server Error: /api/pav/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+19-Mar-22 22:26:39 - Not Found: /
+19-Mar-22 22:27:02 - Internal Server Error: /api/pav/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+19-Mar-22 22:27:34 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:27:41 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:27:54 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:28:30 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+19-Mar-22 22:28:58 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:29:08 - Bad Request: /api/pav/1/compute_pav/
+19-Mar-22 22:29:18 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 22:29:24 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:31:25 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\serializers.py changed, reloading.
+19-Mar-22 22:31:48 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:32:21 - Bad Request: /api/pav/1/compute_pav/
+19-Mar-22 22:33:41 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:34:11 - Not Found: /api/pav/compute_pav/
+19-Mar-22 22:34:27 - Not Found: /api/compute_pav
+19-Mar-22 22:34:43 - Not Found: /api/compute_pav
+19-Mar-22 22:44:58 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+19-Mar-22 22:45:02 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\serializers.py changed, reloading.
+19-Mar-22 22:46:41 - Not Found: /api/compute_pav
+19-Mar-22 22:48:05 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\urls.py changed, reloading.
+19-Mar-22 22:49:44 - Not Found: /api/compute_pav
+19-Mar-22 22:50:05 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:50:12 - Not Found: /api/compute_pav
+19-Mar-22 22:51:09 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\urls.py changed, reloading.
+19-Mar-22 22:54:12 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:54:25 - Not Found: /api/compute_pav
+19-Mar-22 22:55:27 - Not Found: /api/compute_pav
+19-Mar-22 22:56:45 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:56:56 - Not Found: /api/compute_pav
+19-Mar-22 22:57:44 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:57:52 - Not Found: /api/compute_pav
+19-Mar-22 22:58:16 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 22:58:25 - Not Found: /api/compute_pav
+19-Mar-22 23:05:12 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\urls.py changed, reloading.
+19-Mar-22 23:05:23 - Not Found: /compute_pav
+19-Mar-22 23:07:35 - Not Found: /compute_pav
+19-Mar-22 23:07:44 - Not Found: /0/compute_pav
+19-Mar-22 23:07:48 - Not Found: /api/compute_pav
+19-Mar-22 23:08:23 - Not Found: /api/compute_pav
+19-Mar-22 23:08:34 - Not Found: /api/pav/compute_pav/
+19-Mar-22 23:08:43 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 23:09:21 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 23:09:27 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 23:10:03 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+19-Mar-22 23:10:06 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 23:10:35 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 23:11:06 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+19-Mar-22 23:11:11 - Bad Request: /api/pav/0/compute_pav/
+19-Mar-22 23:11:43 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:11:43 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:11:43 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:11:43 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:11:43 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:11:43 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:11:43 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:11:43 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:11:43 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:11:43 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:11:43 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:11:43 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:11:43 - The candidates list after the the filter: []
+19-Mar-22 23:11:43 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:13:05 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 23:13:13 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:13:13 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:13:13 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:13:13 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:13:13 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:13:13 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:13:13 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:13:13 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:13:13 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:13:13 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:13:13 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:13:13 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:13:13 - The candidates list after the the filter: []
+19-Mar-22 23:13:13 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:14:38 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+19-Mar-22 23:19:29 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:20:20 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:20:59 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:21:39 - Bad Request: /
+19-Mar-22 23:26:51 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:28:00 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:43:59 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+19-Mar-22 23:44:05 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:44:05 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:44:05 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:44:05 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:05 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:44:05 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:44:05 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:05 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:44:05 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:44:05 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:05 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:44:05 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:44:05 - The candidates list after the the filter: []
+19-Mar-22 23:44:05 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:44:32 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:44:32 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:44:32 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:44:32 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:32 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:44:32 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:44:32 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:32 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:44:32 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:44:32 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:44:32 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:44:32 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:44:32 - The candidates list after the the filter: []
+19-Mar-22 23:44:32 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:49:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:49:21 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:49:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:49:21 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:21 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:49:21 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:49:21 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:21 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:49:21 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:49:21 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:21 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:49:21 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:49:21 - The candidates list after the the filter: []
+19-Mar-22 23:49:21 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:49:28 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:49:28 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:49:28 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:49:28 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:28 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:49:28 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:49:28 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:28 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:49:28 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:49:28 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:49:28 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:49:28 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:49:28 - The candidates list after the the filter: []
+19-Mar-22 23:49:28 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:50:29 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:50:29 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:50:29 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:50:29 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:29 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:50:29 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:50:29 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:29 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:50:29 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:50:29 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:29 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:50:29 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:50:29 - The candidates list after the the filter: []
+19-Mar-22 23:50:29 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:50:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:50:33 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:50:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:50:33 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:33 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:50:33 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:50:33 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:33 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:50:33 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:50:33 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:33 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:50:33 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:50:33 - The candidates list after the the filter: []
+19-Mar-22 23:50:33 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:50:57 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:50:57 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:50:57 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:50:57 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:57 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:50:57 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:50:57 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:57 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:50:57 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:50:57 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:50:57 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:50:57 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:50:57 - The candidates list after the the filter: []
+19-Mar-22 23:50:57 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:51:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:51:00 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:51:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:51:00 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:00 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:51:00 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:51:00 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:00 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:51:00 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:51:00 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:00 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:51:00 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:51:00 - The candidates list after the the filter: []
+19-Mar-22 23:51:00 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:51:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:51:30 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:51:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:51:30 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:30 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:51:30 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:51:30 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:30 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:51:30 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:51:30 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:30 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:51:30 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:51:30 - The candidates list after the the filter: []
+19-Mar-22 23:51:30 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:51:35 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:51:35 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:51:35 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:51:35 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:35 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:51:35 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:51:35 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:35 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:51:35 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:51:35 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:51:35 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:51:35 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:51:35 - The candidates list after the the filter: []
+19-Mar-22 23:51:35 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:52:01 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:52:01 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:52:01 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:52:01 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:01 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:52:01 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:52:01 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:01 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:52:01 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:52:01 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:01 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:52:01 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:52:01 - The candidates list after the the filter: []
+19-Mar-22 23:52:01 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:52:04 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:52:04 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:52:04 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:52:04 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:04 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:52:04 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:52:04 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:04 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:52:04 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:52:04 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:04 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:52:04 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:52:04 - The candidates list after the the filter: []
+19-Mar-22 23:52:04 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:52:44 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:52:44 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:52:44 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:52:44 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:44 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:52:44 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:52:44 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:44 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:52:44 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:52:44 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:44 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:52:44 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:52:44 - The candidates list after the the filter: []
+19-Mar-22 23:52:44 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:52:52 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:52:52 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:52:52 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:52:52 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:52 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:52:52 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:52:52 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:52 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:52:52 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:52:52 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:52:52 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:52:52 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:52:52 - The candidates list after the the filter: []
+19-Mar-22 23:52:52 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:53:46 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:53:46 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:53:46 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:53:46 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:46 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:53:46 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:53:46 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:46 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:53:46 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:53:46 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:46 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:53:46 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:53:46 - The candidates list after the the filter: []
+19-Mar-22 23:53:46 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:53:50 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:53:50 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:53:50 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:53:50 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:50 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:53:50 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:53:50 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:50 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:53:50 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:53:50 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:53:50 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:53:50 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:53:50 - The candidates list after the the filter: []
+19-Mar-22 23:53:50 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:54:17 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:54:17 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:54:17 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:54:17 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:17 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:54:17 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:54:17 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:17 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:54:17 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:54:17 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:17 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:54:17 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:54:17 - The candidates list after the the filter: []
+19-Mar-22 23:54:17 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:54:25 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:54:25 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:54:25 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:54:25 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:25 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:54:25 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:54:25 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:25 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:54:25 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:54:25 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:25 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:54:25 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:54:25 - The candidates list after the the filter: []
+19-Mar-22 23:54:25 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:54:37 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:54:37 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:54:37 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:54:37 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:37 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:54:37 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:54:37 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:37 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:54:37 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:54:37 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:37 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:54:37 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:54:37 - The candidates list after the the filter: []
+19-Mar-22 23:54:37 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:54:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:54:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:54:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:54:59 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:59 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:54:59 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:54:59 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:59 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:54:59 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:54:59 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:54:59 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:54:59 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:54:59 - The candidates list after the the filter: []
+19-Mar-22 23:54:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+19-Mar-22 23:56:36 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\urls.py changed, reloading.
+19-Mar-22 23:56:42 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+19-Mar-22 23:56:42 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+19-Mar-22 23:56:42 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+19-Mar-22 23:56:42 - The candidates list: [name:a office:1, name:b office:1, name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:56:42 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+19-Mar-22 23:56:42 - Removes all candidates of the office 1 that a was elected to
+19-Mar-22 23:56:42 - The candidates list after the the filter: [name:c office:2, name:d office:2, name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:56:42 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+19-Mar-22 23:56:42 - Removes all candidates of the office 2 that c was elected to
+19-Mar-22 23:56:42 - The candidates list after the the filter: [name:e office:3, name:f office:3, name:g office:3]
+19-Mar-22 23:56:42 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+19-Mar-22 23:56:42 - Removes all candidates of the office 3 that f was elected to
+19-Mar-22 23:56:42 - The candidates list after the the filter: []
+19-Mar-22 23:56:42 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
