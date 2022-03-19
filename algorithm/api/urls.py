@@ -6,8 +6,10 @@ from .views import PavViewSet
 
 router = routers.DefaultRouter()
 router.register('pav',PavViewSet)
+# router.register('compute_pav1',compute_pav)
 
 urlpatterns = [
     path('', include(router.urls)),
+    # path('', compute_pav),
 
 ]
