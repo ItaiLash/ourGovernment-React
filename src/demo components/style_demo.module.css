@@ -1,0 +1,268 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+MAIN COLOR: #087f5b
+GREY COLOR: #343a40
+BACKGROUND-COLOR: #63e6be
+ */
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+
+.container {
+  width: 1060px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  text-align: center;
+}
+
+.header,
+.section {
+  margin-bottom: 48px;
+}
+
+.textOffices {
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 35px;
+  justify-items: center;
+  align-items: center; */
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 14px;
+  padding: 16px 32px;
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+
+.btn:hover,
+.btn:active {
+  background-color: #099268;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* HEADER */
+header {
+  display: grid;
+}
+
+.header-text-box {
+  align-self: center;
+}
+
+.title {
+  margin-top: 24px;
+  margin-bottom: 48px;
+  font-size: 60px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.headerText {
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.video {
+  box-shadow: 0 20px 30px 20px rgb(0 0 0 / 10%);
+}
+
+.offices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 12px 24px;
+  column-gap: 36px;
+  justify-items: center;
+  align-items: center;
+}
+
+.candidate {
+  grid-column: 2 / 3;
+}
+
+table {
+  font-size: 18px;
+  width: 1200px;
+  margin-top: 64px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  /* margin: 0 auto; */
+  border-radius: 0.7em;
+  overflow: hidden;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+  table-layout: fixed;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #087f5b;
+  color: #fff;
+}
+thead th {
+  width: 25%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+.officeInput,
+.candidatesInput {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 18px;
+  /* border-color: #000; */
+}
+
+.btnAddOffice {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #087f5b;
+  padding: 8px 8px;
+  border-radius: 0.7em;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.trashIcon {
+  stroke: #099268;
+  height: 32px;
+  width: 32px;
+  justify-items: center;
+  align-items: center;
+}
+
+.btnRemoveOffice,
+.btnRemoveCandidates {
+  display: flex;
+  outline: none;
+  justify-content: center;
+}
+
+input:focus {
+  /* border: 3px solid #555; */
+}
+
+.inputGrid{
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 0px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  justify-content: center;
+  margin-top: 48px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inputBox{
+  /* display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #e9ecef;
+  padding: 12px 24px;
+  column-gap: 36px;
+  justify-items: center;
+  align-items: center;
+  margin: 24px auto; */
+  width: 200px;
+  margin: 24px auto;
+}
+
+.btnSubmit:link,
+.btnSubmit:visited {
+  font-size: 14px;
+  padding: 16px 32px;
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 10px;
+  justify-content: center;
+  grid-column: 2/3;
+  margin: auto;
+}
+
+
+.btnSubmit:hover,
+.btnSubmit:active {
+  background-color: #099268;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+.office{
+
+  width: fit-content;
+  margin-bottom: 24px;
+}
+
+.officeBox{
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  column-gap: 0px;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  justify-content: center;
+  margin-top: 48px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.allOffices {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 80px;
+}
