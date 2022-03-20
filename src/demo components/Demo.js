@@ -1,4 +1,8 @@
 import React ,{useEffect,useState}from "react";
+import style from './style_demo.module.css';
+import Paragraph from "./Paragraph";
+import Footer from '../shared components/Footer'
+import Input from './Input'
 
 function Demo() {
 
@@ -14,14 +18,29 @@ function Demo() {
     // .then(resp => console.log(resp.result))
     
 
-  },[])
+  }, [])
+  
+
+
+  
   return (
-  <div>
-    <div>Demo</div>
-    <div>
-      {pav.result}
+    <div className={style.container}>
+      <header>
+        <div className={style.headerTextBox}>
+          <h1 className={style.title}>Try Our Algorithm</h1>
+          <div className={style.textOffices}>
+            <Paragraph />
+          </div>
+        </div>
+      </header>
+      <body>
+        <Input />
+      </body>
+      <Footer />
     </div>
-  </div>
+    /* <div>
+       {pav.result}
+     </div>  */
   );
 }
 
