@@ -15,6 +15,7 @@ def highest_candidate(candidates_list: list[Candidate], voters: list[Voter]):
     :param voters: list of voters
     :return:candidate who got the highest score
     """
+
     res = {candidate.name: 0 for candidate in candidates_list}
     for candidate in candidates_list:
         for voter in voters:

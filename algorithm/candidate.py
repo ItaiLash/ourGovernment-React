@@ -9,5 +9,9 @@ class Candidate:
         """
         self.name=name
         self.office=office
+
+    def __eq__(self, o: object) -> bool:
+        return self.name==o.name and self.office==o.office
+
     def __repr__(self):
-        return f"name:{self.name} office:{self.office}"
+        return f"Candidate name:{self.name} office:{self.office}"

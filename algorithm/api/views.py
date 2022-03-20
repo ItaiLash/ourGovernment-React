@@ -13,14 +13,15 @@ import json
 class PavViewSet(viewsets.ModelViewSet):
     queryset = Pav.objects.all()
     serializer_class = PavSerializer
-    @action(detail=True, methods=['GET'])
+    @action(detail=True, methods=['GET','POST'])
     def compute_pav(self, request, pk=None):
         try:
             print(request)
             result = start_algo(request.data)
             response = {"massage": 'Success', 'result': json.dumps(result, default=lambda o: o.__dict__)}
             return Response(response, status=status.HTTP_200_OK)
-        except:
+        except Exception as e:
+            print(e)
             return Response("Error", status=status.HTTP_400_BAD_REQUEST)
 
 # def compute_pav(request, pk=None):

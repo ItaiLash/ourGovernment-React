@@ -1,0 +1,94 @@
+{
+    "candidates": {
+        "1": [
+            {
+                "name": "a",
+                "office": "1"
+            },
+            {
+                "name": "b",
+                "office": "1"
+            }
+        ],
+        "2": [
+            {
+                "name": "c",
+                "office": "2"
+            },
+            {
+                "name": "d",
+                "office": "2"
+            }
+        ],
+        "3": [
+            {
+                "name": "e",
+                "office": "3"
+            },
+            {
+                "name": "f",
+                "office": "3"
+            },
+            {
+                "name": "g",
+                "office": "3"
+            }
+        ]
+    },
+    "voters": [
+        {
+            "preferences": [
+                {
+                    "name": "a",
+                    "office": "1"
+                },
+                {
+                    "name": "c",
+                    "office": "2"
+                },
+                {
+                    "name": "e",
+                    "office": "3"
+                }
+            ],
+            "weight": 1,
+            "number_of_satisfaction": 0
+        },
+        {
+            "preferences": [
+                {
+                    "name": "a",
+                    "office": "1"
+                },
+                {
+                    "name": "c",
+                    "office": "2"
+                },
+                {
+                    "name": "f",
+                    "office": "3"
+                }
+            ],
+            "weight": 1,
+            "number_of_satisfaction": 0
+        },
+        {
+            "preferences": [
+                {
+                    "name": "a",
+                    "office": "1"
+                },
+                {
+                    "name": "d",
+                    "office": "2"
+                },
+                {
+                    "name": "f",
+                    "office": "3"
+                }
+            ],
+            "weight": 1,
+            "number_of_satisfaction": 0
+        }
+    ]
+}

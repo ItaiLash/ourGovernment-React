@@ -22,5 +22,6 @@ class Voter:
         self.number_of_satisfaction += 1
         self.weight = 1 / (self.number_of_satisfaction + 1)
 
+
     def __repr__(self):
-        return f"weight:{self.weight} number of good votes:{self.number_of_satisfaction} "
+        return f"Voter weight:{self.weight} number of good votes:{self.number_of_satisfaction} preferences: {self.preferences} "
