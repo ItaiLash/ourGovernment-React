@@ -3,53 +3,58 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
 
+////// add button to fill automatic offices and candidates names
 
 export default function OfficeCard(props) {
 
-  let currOffice = {
-    officeName: "",
-    candidatesNames: Array(0)
-  }
-
   /* Office textbox */
+  const officeNameRef = React.useRef();
   const [officeInput, setOfficeInput] = React.useState("");
   const [officeError, setOfficeError] = React.useState(true);
+  
+  /* Candidate textboxs */
+  const [inputValues, setInputValues] = React.useState({});
+  const handleChange = (inputId) => (e) =>
+    setInputValues({ ...inputValues, [inputId]: e.target.value });
 
   const handleOfficeInputChange = (event) => {
-    event.preventDefault();
-    setOfficeInput(event.target.value);
-    currOffice.officeName = officeInput;
-
     setOfficeError(false);
-    if (officeInput.length == 0) {
+    if (officeInput.length === 0) {
       setOfficeError(true);
     }
-
-    console.log(currOffice);
   };
 
-  /* Candidate textboxs */
-  const [candidateInput, setCandidateInput] = React.useState("");
-
-  const handleCandidateInputChange = (event) => {
-    setCandidateInput(event.target.value);
-    currOffice.candidatesNames.push(candidateInput);
+  const handleOnInput = (event) => {
+    setOfficeInput(event.target.value);
   };
 
-  const getTextboxs = (val) => {
+  const getTextboxs = () => {
     let content = [];
-    for (let i = 1; i <= val; i++) {
+    for (let i = 0; i < props.numOfCandidates; i++) {
       content.push(
         <TextField
           id={`candidate${i}`}
+          key={`candidate${i}`}
           label="Candidate Name"
           variant="standard"
-          onChange={handleCandidateInputChange}
-          // color="orange"
+          value={inputValues[i]}
+          onChange={handleChange(i)}
         />
       );
     }
     return content;
+  };
+
+
+  const done = () => {
+    if (props.nextClicked) {
+      props.officesArr.splice(props.index, 0, officeNameRef.current.value);
+      props.candidatesArr.splice(
+        props.index,
+        0,
+        Object.values(inputValues)
+      );
+    }
   };
 
   return (
@@ -71,9 +76,12 @@ export default function OfficeCard(props) {
             error={officeError}
             value={officeInput}
             onChange={handleOfficeInputChange}
+            onInput={handleOnInput}
+            inputRef={officeNameRef}
           />
-          {getTextboxs(props.data)}
+          {getTextboxs()}
         </Box>
+        {done()}
       </div>
     </figure>
   );

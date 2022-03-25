@@ -3,6 +3,8 @@ import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
 import OfficeCard from "./OfficeCard";
+import VoterBox from "./VoterBox";
+import OfficeBox from "./OfficeBox";
 import style from './style_demo.module.css'
 
 
@@ -15,31 +17,72 @@ class Input extends React.Component {
       Voters: 0,
     };
     this.state = {
-      clicked: false,
+      clickedSubmit: false,
+      clickedNext: false,
+      candidatesFilled : 0,
     };
+  
+
+    this.officesArr = [];
+    this.candidatesArr = [];
+
+    /*for Amichai*/
+    this.randomOfficesArr = ["off1", "off2", "off3"];
+    this.randomCandidatesArr = [["amichai", "itai"], ["aaa", "bbb"], ["ccc", "ddd"]];
+    this.randomVoters = [["amichai", "aaa", "ddd"], ["itai", "bbb", "ccc"], ["itai", "bbb", "ccc"]];
   }
+
+  setCandidatesFilled = () => {
+      this.setState(({ candidatesFilled : this.state.candidatesFilled+1 }));
+  }
+
 
   pull_data = (name, data) => {
     this.inputs[name] = data;
-    console.log(this.inputs);
   };
 
   handClick = (e) => {
     e.preventDefault();
-    if (this.inputs.Offices > 0 && this.inputs.Candidates > 0 && this.inputs.Voters > 0) {
-      this.setState(({ clicked }) => ({ clicked: true }));
+    if (
+      this.inputs.Offices > 0 &&
+      this.inputs.Candidates > 0 &&
+      this.inputs.Voters > 0
+    ) {
+      this.setState(({ clickedSubmit }) => ({ clickedSubmit: true }));
     }
   };
 
-  renderClick = () => {
-    const cp = [];
-    if (this.state) {
-      for (let i = 1; i <= this.inputs.Offices; i++) {
-        cp.push(<OfficeCard id={`office${i}`} data={this.inputs.Candidates} />);
-      }
-      return cp;
+
+  renderNextClick = () => {
+    if (this.state.clickedSubmit) {
+      return (
+        <a
+          href="#"
+          className={style.btnSubmit}
+          onClick={this.handClickNext}
+        >
+          Next
+        </a>
+      );
     }
   };
+
+  handClickNext = (e) => {
+    e.preventDefault();
+    // if (
+    //   //check all offices and candidates filled corectly
+    // ) {
+    this.setState(({ clickedNext }) => ({ clickedNext: true }));
+    //}
+  };
+
+  func = () => {
+    if (this.state.clickedNext) {
+      console.log(this.officesArr);
+      console.log(this.candidatesArr);
+    }
+  };
+  
 
   render() {
     return (
@@ -54,9 +97,22 @@ class Input extends React.Component {
             </a>
           </div>
         </section>
-        <div className={style.allOffices}>{this.renderClick()}</div>
+        {!this.state.clickedNext ? (
+        <OfficeBox
+          clickedSubmit={this.state.clickedSubmit}
+          numOfOffices={this.inputs.Offices}
+          numOfCandidates={this.inputs.Candidates}
+          clickedNext={this.state.clickedNext}
+          officesArr={this.officesArr}
+          candidatesArr={this.candidatesArr}
+        />
+        ) : (
+            <VoterBox data={this.inputs} />
+        )}
+        <div>{this.renderNextClick()}</div>
+        {this.func()}
       </div>
     );
-  }
+    };
 }
 export default Input;

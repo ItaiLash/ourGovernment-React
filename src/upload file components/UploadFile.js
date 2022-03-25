@@ -15,6 +15,7 @@ function UploadFile() {
       </header>
 
       <section>
+        <FileDownloader />
         <div className={style.grid4Rows}>
           <figure className={style.option}>
             <FileDownloader />

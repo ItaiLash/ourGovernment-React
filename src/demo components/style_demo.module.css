@@ -181,10 +181,6 @@ tbody tr:nth-child(even) {
   justify-content: center;
 }
 
-input:focus {
-  /* border: 3px solid #555; */
-}
-
 .inputGrid{
   width: 70%;
   display: grid;
@@ -265,4 +261,26 @@ input:focus {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 80px;
+}
+
+/*---------VOTERS--------*/
+.voterGrid{
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20%);
+    column-gap: 20px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    justify-content: center;
+    margin-top: 48px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    row-gap: 20px;
+}
+
+.notVis{
+  display: none
 }

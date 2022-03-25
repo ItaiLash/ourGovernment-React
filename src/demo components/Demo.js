@@ -33,9 +33,9 @@ function Demo() {
           </div>
         </div>
       </header>
-      <body>
+      <div>
         <Input />
-      </body>
+      </div>
       <Footer />
     </div>
     /* <div>
