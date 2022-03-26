@@ -91,7 +91,13 @@ class Input extends React.Component {
     //   //check all offices and candidates filled corectly
     // ) {
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
-    fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/",{
+    this.callToPav();
+  };
+/**
+ * this finction is sending http post requst to the Django server api
+ */
+  callToPav = async  () =>{
+   await fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/",{
       method:'POST',
       headers:{
         'Accept':'application/json',
@@ -106,9 +112,7 @@ class Input extends React.Component {
     //   pav.result = resp;                        
     //   return { pav };                             
     // }))
-    
-    //}
-  };
+  }
 
   func = () => {
     if (this.state.clickedNext) {
