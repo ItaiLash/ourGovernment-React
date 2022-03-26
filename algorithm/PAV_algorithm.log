@@ -1274,3 +1274,738 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 20-Mar-22 17:52:17 - The candidates list after the the filter: []
 20-Mar-22 17:52:17 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
 
+26-Mar-22 20:38:56 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+26-Mar-22 20:38:56 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+26-Mar-22 20:38:56 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+26-Mar-22 20:38:56 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:38:56 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+26-Mar-22 20:38:56 - Removes all candidates of the office 1 that a was elected to
+26-Mar-22 20:38:56 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:38:56 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+26-Mar-22 20:38:56 - Removes all candidates of the office 2 that c was elected to
+26-Mar-22 20:38:56 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:38:56 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+26-Mar-22 20:38:56 - Removes all candidates of the office 3 that f was elected to
+26-Mar-22 20:38:56 - The candidates list after the the filter: []
+26-Mar-22 20:38:56 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+26-Mar-22 20:41:20 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+26-Mar-22 20:41:20 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+26-Mar-22 20:41:20 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+26-Mar-22 20:41:20 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:41:20 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+26-Mar-22 20:41:20 - Removes all candidates of the office 1 that a was elected to
+26-Mar-22 20:41:20 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:41:20 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+26-Mar-22 20:41:20 - Removes all candidates of the office 2 that c was elected to
+26-Mar-22 20:41:20 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 20:41:20 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+26-Mar-22 20:41:20 - Removes all candidates of the office 3 that f was elected to
+26-Mar-22 20:41:20 - The candidates list after the the filter: []
+26-Mar-22 20:41:20 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+26-Mar-22 21:59:37 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:01:46 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 22:01:51 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:04:24 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:54:43 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:56:05 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:56:26 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:56:40 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:56:46 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 22:57:45 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:13:22 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:13:27 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:13:41 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:14:52 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:14:59 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:15:02 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:15:05 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:15:17 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:15:21 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:15:25 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:03 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:21 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:21 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:17:24 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:28 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:49 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:17:50 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:17:54 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:18:20 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:18:21 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:18:27 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:18:31 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:18:52 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:20:13 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:20:19 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:22:57 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:23:13 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:04 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:07 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:08 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:09 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:09 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:09 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:24:09 - Unsupported Media Type: /api/pav/0/compute_pav/
+26-Mar-22 23:29:28 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:30:27 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:31:37 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:31:48 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:52:41 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+26-Mar-22 23:54:54 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+26-Mar-22 23:55:55 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:55:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+26-Mar-22 23:55:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+26-Mar-22 23:55:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+26-Mar-22 23:55:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:55:59 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+26-Mar-22 23:55:59 - Removes all candidates of the office 1 that a was elected to
+26-Mar-22 23:55:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:55:59 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+26-Mar-22 23:55:59 - Removes all candidates of the office 2 that c was elected to
+26-Mar-22 23:55:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:55:59 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+26-Mar-22 23:55:59 - Removes all candidates of the office 3 that f was elected to
+26-Mar-22 23:55:59 - The candidates list after the the filter: []
+26-Mar-22 23:55:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+26-Mar-22 23:56:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+26-Mar-22 23:56:21 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+26-Mar-22 23:56:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+26-Mar-22 23:56:21 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:56:21 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+26-Mar-22 23:56:21 - Removes all candidates of the office 1 that a was elected to
+26-Mar-22 23:56:21 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:56:21 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+26-Mar-22 23:56:21 - Removes all candidates of the office 2 that c was elected to
+26-Mar-22 23:56:21 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:56:21 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+26-Mar-22 23:56:21 - Removes all candidates of the office 3 that f was elected to
+26-Mar-22 23:56:21 - The candidates list after the the filter: []
+26-Mar-22 23:56:21 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+26-Mar-22 23:58:00 - Bad Request: /api/pav/0/compute_pav/
+26-Mar-22 23:58:06 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+26-Mar-22 23:58:06 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+26-Mar-22 23:58:06 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+26-Mar-22 23:58:06 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:58:06 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+26-Mar-22 23:58:06 - Removes all candidates of the office 1 that a was elected to
+26-Mar-22 23:58:06 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:58:06 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+26-Mar-22 23:58:06 - Removes all candidates of the office 2 that c was elected to
+26-Mar-22 23:58:06 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+26-Mar-22 23:58:06 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+26-Mar-22 23:58:06 - Removes all candidates of the office 3 that f was elected to
+26-Mar-22 23:58:06 - The candidates list after the the filter: []
+26-Mar-22 23:58:06 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:00:57 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:15:43 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:15:46 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:46 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:46 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:46 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:46 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:15:46 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:46 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:46 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:15:46 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:46 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:46 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:15:46 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:46 - The candidates list after the the filter: []
+27-Mar-22 00:15:46 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:15:58 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:58 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:58 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:58 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:58 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+27-Mar-22 00:15:58 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:58 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:58 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+27-Mar-22 00:15:58 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:58 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:58 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+27-Mar-22 00:15:58 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:58 - The candidates list after the the filter: []
+27-Mar-22 00:15:58 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 1, candidate a was elected with vote's weight of 9 out of vote's weight of 27
+27-Mar-22 00:15:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 2, candidate c was elected with vote's weight of 3.0 out of vote's weight of 9.0
+27-Mar-22 00:15:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 3, candidate f was elected with vote's weight of 2.5 out of vote's weight of 3.5
+27-Mar-22 00:15:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: []
+27-Mar-22 00:15:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 1, candidate a was elected with vote's weight of 12 out of vote's weight of 36
+27-Mar-22 00:15:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 2, candidate c was elected with vote's weight of 4.0 out of vote's weight of 12.0
+27-Mar-22 00:15:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 3, candidate f was elected with vote's weight of 3.3333333333333335 out of vote's weight of 4.666666666666667
+27-Mar-22 00:15:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: []
+27-Mar-22 00:15:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 1, candidate a was elected with vote's weight of 15 out of vote's weight of 45
+27-Mar-22 00:15:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 2, candidate c was elected with vote's weight of 5.0 out of vote's weight of 15.0
+27-Mar-22 00:15:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 3, candidate f was elected with vote's weight of 4.166666666666667 out of vote's weight of 5.833333333333334
+27-Mar-22 00:15:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: []
+27-Mar-22 00:15:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:15:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:15:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:15:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 1, candidate a was elected with vote's weight of 18 out of vote's weight of 54
+27-Mar-22 00:15:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 2, candidate c was elected with vote's weight of 6.0 out of vote's weight of 18.0
+27-Mar-22 00:15:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:15:59 - For office 3, candidate f was elected with vote's weight of 5.0 out of vote's weight of 7.0
+27-Mar-22 00:15:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:15:59 - The candidates list after the the filter: []
+27-Mar-22 00:15:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:16:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:16:00 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:16:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:16:00 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 1, candidate a was elected with vote's weight of 21 out of vote's weight of 63
+27-Mar-22 00:16:00 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 2, candidate c was elected with vote's weight of 7.0 out of vote's weight of 21.0
+27-Mar-22 00:16:00 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 3, candidate f was elected with vote's weight of 5.833333333333333 out of vote's weight of 8.166666666666666
+27-Mar-22 00:16:00 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: []
+27-Mar-22 00:16:00 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:16:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:16:00 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:16:00 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:16:00 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 1, candidate a was elected with vote's weight of 24 out of vote's weight of 72
+27-Mar-22 00:16:00 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 2, candidate c was elected with vote's weight of 8.0 out of vote's weight of 24.0
+27-Mar-22 00:16:00 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:16:00 - For office 3, candidate f was elected with vote's weight of 6.666666666666666 out of vote's weight of 9.333333333333332
+27-Mar-22 00:16:00 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:16:00 - The candidates list after the the filter: []
+27-Mar-22 00:16:00 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:16:56 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+27-Mar-22 00:17:30 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:17:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:17:33 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:17:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:17:33 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:17:33 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:17:33 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:17:33 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:17:33 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:17:33 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:17:33 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:17:33 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:17:33 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:17:33 - The candidates list after the the filter: []
+27-Mar-22 00:17:33 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:19:56 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:19:57 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:19:57 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:19:57 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:19:57 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:19:57 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:19:57 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:19:57 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:19:57 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:19:57 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:19:57 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:19:57 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:19:57 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:19:57 - The candidates list after the the filter: []
+27-Mar-22 00:19:57 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:26:28 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:26:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:26:30 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:26:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:26:30 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:26:30 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:26:30 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:26:30 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:26:30 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:26:30 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:26:30 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:26:30 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:26:30 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:26:30 - The candidates list after the the filter: []
+27-Mar-22 00:26:30 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:33:32 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:33:34 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:33:34 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:33:34 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:33:34 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:34 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:33:34 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:33:34 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:34 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:33:34 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:33:34 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:34 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:33:34 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:33:34 - The candidates list after the the filter: []
+27-Mar-22 00:33:34 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:33:39 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:33:39 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:33:39 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:33:39 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:39 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+27-Mar-22 00:33:39 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:33:39 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:39 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+27-Mar-22 00:33:39 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:33:39 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:39 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+27-Mar-22 00:33:39 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:33:39 - The candidates list after the the filter: []
+27-Mar-22 00:33:39 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:33:42 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:33:42 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:33:42 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:33:42 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:42 - For office 1, candidate a was elected with vote's weight of 9 out of vote's weight of 27
+27-Mar-22 00:33:42 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:33:42 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:42 - For office 2, candidate c was elected with vote's weight of 3.0 out of vote's weight of 9.0
+27-Mar-22 00:33:42 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:33:42 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:33:42 - For office 3, candidate f was elected with vote's weight of 2.5 out of vote's weight of 3.5
+27-Mar-22 00:33:42 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:33:42 - The candidates list after the the filter: []
+27-Mar-22 00:33:42 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:35:24 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:35:29 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:35:29 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:35:29 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:35:29 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:35:29 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:35:29 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:35:29 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:35:29 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:35:29 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:35:29 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:35:29 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:35:29 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:35:29 - The candidates list after the the filter: []
+27-Mar-22 00:35:29 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:25 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:36:26 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:26 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:26 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:26 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:26 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:36:26 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:26 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:26 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:36:26 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:26 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:26 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:36:26 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:26 - The candidates list after the the filter: []
+27-Mar-22 00:36:26 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:27 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:27 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+27-Mar-22 00:36:27 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+27-Mar-22 00:36:27 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: []
+27-Mar-22 00:36:27 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:27 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:27 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 1, candidate a was elected with vote's weight of 9 out of vote's weight of 27
+27-Mar-22 00:36:27 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 2, candidate c was elected with vote's weight of 3.0 out of vote's weight of 9.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 3, candidate f was elected with vote's weight of 2.5 out of vote's weight of 3.5
+27-Mar-22 00:36:27 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: []
+27-Mar-22 00:36:27 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:27 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:27 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 1, candidate a was elected with vote's weight of 12 out of vote's weight of 36
+27-Mar-22 00:36:27 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 2, candidate c was elected with vote's weight of 4.0 out of vote's weight of 12.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 3, candidate f was elected with vote's weight of 3.3333333333333335 out of vote's weight of 4.666666666666667
+27-Mar-22 00:36:27 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: []
+27-Mar-22 00:36:27 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:27 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:27 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 1, candidate a was elected with vote's weight of 15 out of vote's weight of 45
+27-Mar-22 00:36:27 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 2, candidate c was elected with vote's weight of 5.0 out of vote's weight of 15.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 3, candidate f was elected with vote's weight of 4.166666666666667 out of vote's weight of 5.833333333333334
+27-Mar-22 00:36:27 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: []
+27-Mar-22 00:36:27 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:36:27 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:36:27 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:36:27 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 1, candidate a was elected with vote's weight of 18 out of vote's weight of 54
+27-Mar-22 00:36:27 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 2, candidate c was elected with vote's weight of 6.0 out of vote's weight of 18.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:36:27 - For office 3, candidate f was elected with vote's weight of 5.0 out of vote's weight of 7.0
+27-Mar-22 00:36:27 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:36:27 - The candidates list after the the filter: []
+27-Mar-22 00:36:27 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:37:36 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:37:39 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:37:39 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:37:39 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:37:39 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:c office:3]
+27-Mar-22 00:37:39 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:37:39 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:37:39 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:c office:3]
+27-Mar-22 00:37:39 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:37:39 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:37:39 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:c office:3]
+27-Mar-22 00:37:39 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:37:39 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:37:39 - The candidates list after the the filter: []
+27-Mar-22 00:37:39 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:39:15 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:39:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:39:21 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:39:21 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:39:21 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:39:21 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:39:21 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:39:21 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:39:21 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:39:21 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:39:21 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:39:21 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:39:21 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:39:21 - The candidates list after the the filter: []
+27-Mar-22 00:39:21 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:40:50 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:40:51 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:40:51 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:40:51 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:40:51 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:40:51 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:40:51 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:40:51 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:40:51 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:40:51 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:40:51 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:40:51 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:40:51 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:40:51 - The candidates list after the the filter: []
+27-Mar-22 00:40:51 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:42:14 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:42:19 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:42:19 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:42:19 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:42:19 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:42:19 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:42:19 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:42:19 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:42:19 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:42:19 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:42:19 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:42:19 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:42:19 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:42:19 - The candidates list after the the filter: []
+27-Mar-22 00:42:19 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:45:01 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:45:04 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:45:04 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:45:04 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:45:04 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:45:04 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:45:04 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:45:04 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:45:04 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:45:04 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:45:04 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:45:04 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:45:04 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:45:04 - The candidates list after the the filter: []
+27-Mar-22 00:45:04 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:46:58 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:46:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:46:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:46:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:46:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:46:59 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 00:46:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:46:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:46:59 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 00:46:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:46:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:46:59 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 00:46:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:46:59 - The candidates list after the the filter: []
+27-Mar-22 00:46:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:50:06 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:51:28 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:51:32 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:51:32 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:51:32 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:51:32 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:51:32 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+27-Mar-22 00:51:32 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:51:32 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:51:32 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+27-Mar-22 00:51:32 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:51:32 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:51:32 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+27-Mar-22 00:51:32 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:51:32 - The candidates list after the the filter: []
+27-Mar-22 00:51:32 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:53:17 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:53:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 00:53:33 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 00:53:33 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 00:53:33 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:53:33 - For office 1, candidate a was elected with vote's weight of 6 out of vote's weight of 18
+27-Mar-22 00:53:33 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 00:53:33 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:53:33 - For office 2, candidate c was elected with vote's weight of 2.0 out of vote's weight of 6.0
+27-Mar-22 00:53:33 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 00:53:33 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 00:53:33 - For office 3, candidate f was elected with vote's weight of 1.6666666666666665 out of vote's weight of 2.333333333333333
+27-Mar-22 00:53:33 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 00:53:33 - The candidates list after the the filter: []
+27-Mar-22 00:53:33 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 00:56:46 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 00:59:07 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:01:57 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:03:08 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:06:29 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:07:43 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:08:50 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:08:54 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:08:54 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:08:54 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:08:54 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:08:54 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 01:08:54 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:08:54 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:08:54 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 01:08:54 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:08:54 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:08:54 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 01:08:54 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:08:54 - The candidates list after the the filter: []
+27-Mar-22 01:08:54 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:14:29 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:14:31 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:14:31 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:14:31 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:14:31 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:31 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 01:14:31 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:14:31 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:31 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 01:14:31 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:14:31 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:31 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 01:14:31 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:14:31 - The candidates list after the the filter: []
+27-Mar-22 01:14:31 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:14:37 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:14:37 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:14:37 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:14:37 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:37 - For office 1, candidate a was elected with vote's weight of 9 out of vote's weight of 27
+27-Mar-22 01:14:37 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:14:37 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:37 - For office 2, candidate c was elected with vote's weight of 3.0 out of vote's weight of 9.0
+27-Mar-22 01:14:37 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:14:37 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:14:37 - For office 3, candidate f was elected with vote's weight of 2.5 out of vote's weight of 3.5
+27-Mar-22 01:14:37 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:14:37 - The candidates list after the the filter: []
+27-Mar-22 01:14:37 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:16:06 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:16:08 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:16:08 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:16:08 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:16:08 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:16:08 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 01:16:08 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:16:08 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:16:08 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 01:16:08 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:16:08 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:16:08 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 01:16:08 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:16:08 - The candidates list after the the filter: []
+27-Mar-22 01:16:08 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:18:05 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:18:06 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:18:06 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:18:06 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:18:06 - The candidates list: [Candidate name:a office:3, Candidate name:b office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:c office:2, Candidate name:d office:2]
+27-Mar-22 01:18:06 - For office 3, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 01:18:06 - Removes all candidates of the office 3 that a was elected to
+27-Mar-22 01:18:06 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2]
+27-Mar-22 01:18:06 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 1.5
+27-Mar-22 01:18:06 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:18:06 - The candidates list after the the filter: []
+27-Mar-22 01:18:06 - Selected list: {'3': 'a', '2': 'c'}
+
+27-Mar-22 01:18:52 - Bad Request: /api/pav/0/compute_pav/
+27-Mar-22 01:18:53 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:18:53 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:18:53 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:18:53 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:53 - For office 1, candidate a was elected with vote's weight of 3 out of vote's weight of 9
+27-Mar-22 01:18:53 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:18:53 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:53 - For office 2, candidate c was elected with vote's weight of 1.0 out of vote's weight of 3.0
+27-Mar-22 01:18:53 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:18:53 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:53 - For office 3, candidate f was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.1666666666666665
+27-Mar-22 01:18:53 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:18:53 - The candidates list after the the filter: []
+27-Mar-22 01:18:53 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:18:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 01:18:59 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 01:18:59 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 01:18:59 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:59 - For office 1, candidate a was elected with vote's weight of 9 out of vote's weight of 27
+27-Mar-22 01:18:59 - Removes all candidates of the office 1 that a was elected to
+27-Mar-22 01:18:59 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:59 - For office 2, candidate c was elected with vote's weight of 3.0 out of vote's weight of 9.0
+27-Mar-22 01:18:59 - Removes all candidates of the office 2 that c was elected to
+27-Mar-22 01:18:59 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+27-Mar-22 01:18:59 - For office 3, candidate f was elected with vote's weight of 2.5 out of vote's weight of 3.5
+27-Mar-22 01:18:59 - Removes all candidates of the office 3 that f was elected to
+27-Mar-22 01:18:59 - The candidates list after the the filter: []
+27-Mar-22 01:18:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
+
+27-Mar-22 01:20:48 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.

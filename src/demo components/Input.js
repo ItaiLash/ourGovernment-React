@@ -1,4 +1,5 @@
 import * as React from "react";
+import {useEffect,useState}from "react";
 import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
@@ -20,16 +21,17 @@ class Input extends React.Component {
       clickedSubmit: false,
       clickedNext: false,
       candidatesFilled : 0,
+      pav:{},
+      
     };
   
-
     this.officesArr = [];
     this.candidatesArr = [];
 
     /*for Amichai*/
     this.randomOfficesArr = ["off1", "off2", "off3"];
     this.randomCandidatesArr = [["amichai", "itai"], ["aaa", "bbb"], ["ccc", "ddd"]];
-    this.randomVoters = [["amichai", "aaa", "ddd"], ["itai", "bbb", "ccc"], ["itai", "bbb", "ccc"]];
+    this.randomVoters = [["a", "c", "e"], ["a", "c", "f"], ["a", "d", "f"]];
   }
 
   setCandidatesFilled = () => {
@@ -52,6 +54,22 @@ class Input extends React.Component {
     }
   };
 
+  renderResult(result) {
+    console.log(result);
+    if (result.massage==='one or more fields missing') {
+      return;
+    }
+      console.log("________________");
+      this.setState(prevState => {
+        let pav = Object.assign({}, prevState.pav); 
+        pav.result = result.result;
+        pav.massage=result.massage;                       
+        return { pav };                             
+      })
+  
+  };
+
+
 
   renderNextClick = () => {
     if (this.state.clickedSubmit) {
@@ -73,6 +91,22 @@ class Input extends React.Component {
     //   //check all offices and candidates filled corectly
     // ) {
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
+    fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/",{
+      method:'POST',
+      headers:{
+        'Accept':'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify( {offices:this.officesArr,candidates:this.candidatesArr,voters:this.randomVoters}),
+    })
+    .then(resp => resp.json())
+    .then(resp => this.renderResult(resp))
+    // .then(resp => this.setState(prevState => {
+    //   let pav = Object.assign({}, prevState.pav); 
+    //   pav.result = resp;                        
+    //   return { pav };                             
+    // }))
+    
     //}
   };
 
@@ -80,7 +114,10 @@ class Input extends React.Component {
     if (this.state.clickedNext) {
       console.log(this.officesArr);
       console.log(this.candidatesArr);
+      console.log(this.state.pav.result);
+
     }
+
   };
   
 
@@ -97,7 +134,7 @@ class Input extends React.Component {
             </a>
           </div>
         </section>
-        {!this.state.clickedNext ? (
+        {/* {!this.state.clickedNext ? ( */}
         <OfficeBox
           clickedSubmit={this.state.clickedSubmit}
           numOfOffices={this.inputs.Offices}
@@ -106,9 +143,10 @@ class Input extends React.Component {
           officesArr={this.officesArr}
           candidatesArr={this.candidatesArr}
         />
-        ) : (
+        {/* ) : (
             <VoterBox data={this.inputs} />
-        )}
+        )} */}
+        {JSON.stringify(this.state.pav.result)}
         <div>{this.renderNextClick()}</div>
         {this.func()}
       </div>

@@ -23,6 +23,24 @@ def from_json(json_res: str):
         voter_list.append(v)
 
     return offices_candidates, voter_list
+def convert_request(offices:list=[],candidates:list=[],voters:list=[]):
+    offices_candidates = {}
+    voter_list = []
+    num_to_office={i:offices[i] for i in range(len(offices))}
+    for office_num in range(len(candidates)):
+        for candidate in candidates[office_num]:
+            c=Candidate(candidate,num_to_office[office_num])
+            if c.office not in offices_candidates:
+                offices_candidates[c.office] = []
+            offices_candidates[c.office].append(c)
+    for voter in voters:
+        preferences=[]
+        for i in range(len(voter)):
+            preferences.append(Candidate(voter[i],num_to_office[i]))
+        v = Voter(preferences)
+        voter_list.append(v)
+    return offices_candidates, voter_list
+
 def demo():
     a = Candidate('a', '1')
     b = Candidate('b', '1')
@@ -62,7 +80,8 @@ def demo2():
 def start_algo(json_res: str=None):
     print(json_res)
     if json_res:
-        offices_candidates, voter_list = from_json(json_res)
+        # offices_candidates, voter_list = from_json(json_res)
+        offices_candidates, voter_list = convert_request(json_res['offices'] ,json_res['candidates'] ,json_res['voters'])
     else :
         offices_candidates, voter_list = demo()
     return greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
