@@ -1,23 +1,20 @@
 import * as React from "react";
-import {useEffect,useState}from "react";
 import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
-import VoterBox from "./VoterBox";
-import OfficeBox from "./OfficeBox";
+import FormBox from "./FormBox";
 import style from './style_demo.module.css'
 
 class Input extends React.Component {
   constructor() {
     super();
     this.inputs = {
-      Offices: 0,
-      Candidates: 0,
-      Voters: 0,
+      offices: 0,
+      candidates: 0,
+      voters: 0,
     };
     this.state = {
       clickedSubmit: false,
-      candidatesFilled : 0,
       pav:{},
       
     };
@@ -32,11 +29,6 @@ class Input extends React.Component {
     this.randomVoters = [["a", "c", "e"], ["a", "c", "f"], ["a", "d", "f"]];
   }
 
-  setCandidatesFilled = () => {
-      this.setState(({ candidatesFilled : this.state.candidatesFilled+1 }));
-  }
-
-
   pull_data = (name, data) => {
     this.inputs[name] = data;
   };
@@ -44,19 +36,13 @@ class Input extends React.Component {
   handClick = (e) => {
     e.preventDefault();
     if (
-      this.inputs.Offices > 0 &&
-      this.inputs.Candidates > 0 &&
-      this.inputs.Voters > 0
+      this.inputs.offices > 0 &&
+      this.inputs.candidates > 0 &&
+      this.inputs.voters > 0
     ) {
       this.setState(({ clickedSubmit }) => ({ clickedSubmit: true }));
     }
   };
-
-  renderOfficeBox() {
-    if (this.state.clickedSubmit) {
-      
-    }
-  }
 
   renderResult(result) {
     console.log(result);
@@ -110,17 +96,15 @@ class Input extends React.Component {
           </div>
         </section>
         {this.state.clickedSubmit ? (
-          <OfficeBox
+          <FormBox
             clickedSubmit={this.state.clickedSubmit}
-            numOfOffices={this.inputs.Offices}
-            numOfCandidates={this.inputs.Candidates}
             officesArr={this.officesArr}
             candidatesArr={this.candidatesArr}
+            votersArr={this.votersArr}
             callPav={this.callToPav}
             data={this.inputs}
           />
-        ) : 
-        null}
+        ) : null}
         {JSON.stringify(this.state.pav.result)}
       </div>
     );

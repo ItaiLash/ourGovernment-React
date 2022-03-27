@@ -1,7 +1,8 @@
 import * as React from "react";
+import OfficeCard from "./OfficeCard";
+import VoterCard from "./VoterCard";
 import style from "./style_demo.module.css";
-import VoterBox from "./VoterBox";
-import OfficeBox from "./OfficeBox";
+
 
 class FormBox extends React.Component {
   constructor() {
@@ -9,6 +10,8 @@ class FormBox extends React.Component {
 
     this.state = {
       clickedNext: false,
+      clickedDone: false,
+
       renderVoters: false,
     };
   }
@@ -16,12 +19,12 @@ class FormBox extends React.Component {
   renderOfficeCards = () => {
     const cp = [];
     if (this.props.clickedSubmit) {
-      for (let i = 0; i < this.props.numOfOffices; i++) {
+      for (let i = 0; i < this.props.data.offices; i++) {
         cp.push(
           <OfficeCard
             key={`office${i}`}
             id={`office${i}`}
-            numOfCandidates={this.props.numOfCandidates}
+            numOfCandidates={this.props.data.candidates}
             officesArr={this.props.officesArr}
             candidatesArr={this.props.candidatesArr}
             index={i}
@@ -31,6 +34,25 @@ class FormBox extends React.Component {
       }
       return cp;
     }
+  };
+
+  renderVotersCards = () => {
+    const cp = [];
+    for (let i = 0; i < this.props.data.voters; i++) {
+      cp.push(
+        <VoterCard
+          key={`voter${i}`}
+          id={`voter${i}`}
+          data={this.props.data}
+          officesArr={this.props.officesArr}
+          candidatesArr={this.props.candidatesArr}
+          votersArr={this.props.votersArr}
+          index={i}
+          doneClicked={this.state.clickedDone}
+        />
+      );
+    }
+    return cp;
   };
 
   renderNextClick = () => {
@@ -53,39 +75,49 @@ class FormBox extends React.Component {
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
     await this.delay(5000);
     this.setState(({ renderVoters }) => ({ renderVoters: true }));
-    this.props.callToPav();
+    // this.props.callToPav();
   };
 
   delay(number) {
     return new Promise((res) => setTimeout(res, number));
   }
 
-  func = () => {
-    if (this.state.clickedNext) {
-      console.log(this.props.officesArr);
-      console.log(this.props.candidatesArr);
-      // console.log(this.props.state.pav.result);
+  renderDoneClick = () => {
+    if (this.props.clickedSubmit && this.state.renderVoters) {
+      return (
+        <a href="#" className={style.btnSubmit} onClick={this.handClickDone}>
+          Done
+        </a>
+      );
     }
   };
+
+  handClickDone = async (e) => {
+    e.preventDefault();
+    // if (
+    //   //check all voters selections
+    // ) {
+    this.props.votersArr.length = 0;
+    this.setState(({ clickedDone }) => ({ clickedDone: true }));
+    await this.delay(5000);
+    console.log(this.props.votersArr);
+  };
+
 
   render() {
     return (
       <div>
         {!this.state.renderVoters ? (
-          <div className={style.allOffices}>{this.renderOfficeCards()}</div>
+          <div>
+            <div className={style.formBox}>{this.renderOfficeCards()}</div>
+            <div>{this.renderNextClick()}</div>
+          </div>
         ) : (
           <div>
-            {console.log("swap")}
-            <VoterBox
-              data={this.props.data}
-              officesArr={this.props.officesArr}
-              candidatesArr={this.props.candidatesArr}
-            />
-            {console.log(this.props.officesArr)}
+            <div className={style.formBox}>{this.renderVotersCards()}</div>
+            <div>{this.renderDoneClick()}</div>
           </div>
         )}
-        <div>{this.renderNextClick()}</div>
-        {this.func()}
       </div>
     );
   }

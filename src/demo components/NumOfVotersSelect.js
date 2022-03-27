@@ -14,7 +14,7 @@ export default function NumOfVotersSelect(props) {
     setnumOfVoters(event.target.value);
   };
 
-    props.func("Voters", numOfVoters);
+    props.func("voters", numOfVoters);
 
   return (
     <Box className={style.inputBox}>

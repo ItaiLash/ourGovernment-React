@@ -59,7 +59,7 @@ export default function OfficeCard(props) {
 
   return (
     <figure className={style.office}>
-      <div className={style.officeBox}>
+      <div className={style.formCard}>
         <Box
           component="form"
           sx={{
