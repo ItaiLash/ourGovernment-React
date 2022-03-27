@@ -3,11 +3,9 @@ import {useEffect,useState}from "react";
 import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
-import OfficeCard from "./OfficeCard";
 import VoterBox from "./VoterBox";
 import OfficeBox from "./OfficeBox";
 import style from './style_demo.module.css'
-
 
 class Input extends React.Component {
   constructor() {
@@ -19,7 +17,6 @@ class Input extends React.Component {
     };
     this.state = {
       clickedSubmit: false,
-      clickedNext: false,
       candidatesFilled : 0,
       pav:{},
       
@@ -27,6 +24,7 @@ class Input extends React.Component {
   
     this.officesArr = [];
     this.candidatesArr = [];
+    this.votersArr = [];
 
     /*for Amichai*/
     this.randomOfficesArr = ["off1", "off2", "off3"];
@@ -54,6 +52,12 @@ class Input extends React.Component {
     }
   };
 
+  renderOfficeBox() {
+    if (this.state.clickedSubmit) {
+      
+    }
+  }
+
   renderResult(result) {
     console.log(result);
     if (result.massage==='one or more fields missing') {
@@ -70,32 +74,9 @@ class Input extends React.Component {
   };
 
 
-
-  renderNextClick = () => {
-    if (this.state.clickedSubmit) {
-      return (
-        <a
-          href="#"
-          className={style.btnSubmit}
-          onClick={this.handClickNext}
-        >
-          Next
-        </a>
-      );
-    }
-  };
-
-  handClickNext = (e) => {
-    e.preventDefault();
-    // if (
-    //   //check all offices and candidates filled corectly
-    // ) {
-    this.setState(({ clickedNext }) => ({ clickedNext: true }));
-    this.callToPav();
-  };
-/**
- * this finction is sending http post requst to the Django server api
- */
+  /**
+   * this finction is sending http post requst to the Django server api
+   */
   callToPav = async  () =>{
    await fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/",{
       method:'POST',
@@ -114,17 +95,7 @@ class Input extends React.Component {
     // }))
   }
 
-  func = () => {
-    if (this.state.clickedNext) {
-      console.log(this.officesArr);
-      console.log(this.candidatesArr);
-      console.log(this.state.pav.result);
-
-    }
-
-  };
   
-
   render() {
     return (
       <div>
@@ -138,21 +109,19 @@ class Input extends React.Component {
             </a>
           </div>
         </section>
-        {/* {!this.state.clickedNext ? ( */}
-        <OfficeBox
-          clickedSubmit={this.state.clickedSubmit}
-          numOfOffices={this.inputs.Offices}
-          numOfCandidates={this.inputs.Candidates}
-          clickedNext={this.state.clickedNext}
-          officesArr={this.officesArr}
-          candidatesArr={this.candidatesArr}
-        />
-        {/* ) : (
-            <VoterBox data={this.inputs} />
-        )} */}
+        {this.state.clickedSubmit ? (
+          <OfficeBox
+            clickedSubmit={this.state.clickedSubmit}
+            numOfOffices={this.inputs.Offices}
+            numOfCandidates={this.inputs.Candidates}
+            officesArr={this.officesArr}
+            candidatesArr={this.candidatesArr}
+            callPav={this.callToPav}
+            data={this.inputs}
+          />
+        ) : 
+        null}
         {JSON.stringify(this.state.pav.result)}
-        <div>{this.renderNextClick()}</div>
-        {this.func()}
       </div>
     );
     };

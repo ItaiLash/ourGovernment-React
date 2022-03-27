@@ -1,8 +1,9 @@
 import * as React from "react";
-import OfficeCard from "./OfficeCard";
 import style from "./style_demo.module.css";
-import VoterBox from "./VoterBox"
-class OfficeBox extends React.Component {
+import VoterBox from "./VoterBox";
+import OfficeBox from "./OfficeBox";
+
+class FormBox extends React.Component {
   constructor() {
     super();
 
@@ -89,4 +90,4 @@ class OfficeBox extends React.Component {
     );
   }
 }
-export default OfficeBox;
+export default FormBox;

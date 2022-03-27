@@ -10,7 +10,13 @@ class VoterBox extends React.Component {
     renderVotes = () => {
     const cp = [];
       for (let i = 1; i <= this.props.data.Voters; i++) {
-        cp.push(<VoterCard data={this.props.data} />);
+        cp.push(
+          <VoterCard
+            data={this.props.data}
+            officesArr={this.props.officesArr}
+            candidatesArr={this.props.candidatesArr}
+          />
+        );
       }
         return cp;
   };

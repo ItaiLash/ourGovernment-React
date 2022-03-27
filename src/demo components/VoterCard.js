@@ -39,11 +39,11 @@ export default function VoterCard(props) {
 
     const getTextboxs = (val) => {
       let content = [];
-      for (let i = 1; i <= val; i++) {
+      for (let i = 0; i < val; i++) {
         content.push(
           <FormControl className={`style.voteForOffice${i}`} sx={{ m: 1, minWidth: 120, maxWidth: 300 }}>
             <InputLabel shrink htmlFor="select-multiple-native">
-              Office Name
+              {props.officesArr[i]}
             </InputLabel>
             <Select
               multiple
@@ -55,7 +55,7 @@ export default function VoterCard(props) {
                 id: "select-multiple-native",
               }}
             >
-              {candidates[(i-1)%2].map((name) => (
+              {props.candidatesArr[i].map((name) => (
                 <option key={name} value={name}>
                   {name}
                 </option>
