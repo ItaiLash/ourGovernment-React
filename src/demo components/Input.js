@@ -15,7 +15,6 @@ class Input extends React.Component {
     };
     this.state = {
       clickedSubmit: false,
-      pav:{},
       
     };
   
@@ -24,9 +23,9 @@ class Input extends React.Component {
     this.votersArr = [];
 
     /*for Amichai*/
-    this.randomOfficesArr = ["off1", "off2", "off3"];
-    this.randomCandidatesArr = [["amichai", "itai"], ["aaa", "bbb"], ["ccc", "ddd"]];
-    this.randomVoters = [["a", "c", "e"], ["a", "c", "f"], ["a", "d", "f"]];
+    // this.randomOfficesArr = ["off1", "off2", "off3"];
+    // this.randomCandidatesArr = [["amichai", "itai"], ["aaa", "bbb"], ["ccc", "ddd"]];
+    // this.randomVoters = [["a", "c", "e"], ["a", "c", "f"], ["a", "d", "f"]];
   }
 
   pull_data = (name, data) => {
@@ -43,44 +42,6 @@ class Input extends React.Component {
       this.setState(({ clickedSubmit }) => ({ clickedSubmit: true }));
     }
   };
-
-  renderResult(result) {
-    console.log(result);
-    if (result.massage==='one or more fields missing') {
-      return;
-    }
-      console.log("________________");
-      this.setState(prevState => {
-        let pav = Object.assign({}, prevState.pav); 
-        pav.result = result.result;
-        pav.massage=result.massage;                       
-        return { pav };                             
-      })
-  
-  };
-
-
-  /**
-   * this finction is sending http post requst to the Django server api
-   */
-  callToPav = async  () =>{
-   await fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/",{
-      method:'POST',
-      headers:{
-        'Accept':'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify( {offices:this.officesArr,candidates:this.candidatesArr,voters:this.randomVoters}),
-    })
-    .then(resp => resp.json())
-    .then(resp => this.renderResult(resp))
-    // .then(resp => this.setState(prevState => {
-    //   let pav = Object.assign({}, prevState.pav); 
-    //   pav.result = resp;                        
-    //   return { pav };                             
-    // }))
-  }
-
   
   render() {
     return (
@@ -102,10 +63,10 @@ class Input extends React.Component {
             candidatesArr={this.candidatesArr}
             votersArr={this.votersArr}
             callPav={this.callToPav}
+            pav={this.state.pav}
             data={this.inputs}
           />
         ) : null}
-        {JSON.stringify(this.state.pav.result)}
       </div>
     );
     };

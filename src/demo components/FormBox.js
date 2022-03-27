@@ -13,6 +13,8 @@ class FormBox extends React.Component {
       clickedDone: false,
 
       renderVoters: false,
+
+      pav: {},
     };
   }
 
@@ -75,7 +77,6 @@ class FormBox extends React.Component {
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
     await this.delay(5000);
     this.setState(({ renderVoters }) => ({ renderVoters: true }));
-    // this.props.callToPav();
   };
 
   delay(number) {
@@ -100,8 +101,49 @@ class FormBox extends React.Component {
     this.props.votersArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(5000);
-    console.log(this.props.votersArr);
+    this.callToPav();
   };
+
+  ////////////////////////////////////////////////////////////
+  renderResult(result) {
+    console.log(result);
+    if (result.massage === "one or more fields missing") {
+      return;
+    }
+    console.log("________________");
+    this.setState((prevState) => {
+      let pav = Object.assign({}, prevState.pav);
+      pav.result = result.result;
+      pav.massage = result.massage;
+      return { pav };
+    });
+  }
+
+  /**
+   * this finction is sending http post requst to the Django server api
+   */
+  callToPav = async () => {
+    await fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        offices: this.props.officesArr,
+        candidates: this.props.candidatesArr,
+        voters: this.props.votersArr,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((resp) => this.renderResult(resp));
+    // .then(resp => this.setState(prevState => {
+    //   let pav = Object.assign({}, prevState.pav);
+    //   pav.result = resp;
+    //   return { pav };
+    // }))
+  };
+  ////////////////////////////////////////////////////////////
 
 
   render() {
@@ -118,6 +160,9 @@ class FormBox extends React.Component {
             <div>{this.renderDoneClick()}</div>
           </div>
         )}
+        {this.state.pav && this.state.clickedDone
+          ? JSON.stringify(this.state.pav.result)
+          : null}
       </div>
     );
   }

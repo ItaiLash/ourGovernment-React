@@ -2009,3 +2009,16 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 27-Mar-22 01:18:59 - Selected list: {'1': 'a', '2': 'c', '3': 'f'}
 
 27-Mar-22 01:20:48 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+27-Mar-22 17:51:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+27-Mar-22 17:51:30 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+27-Mar-22 17:51:30 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+27-Mar-22 17:51:30 - The candidates list: [Candidate name:aaa office:off1, Candidate name:bbb office:off1, Candidate name:xxx office:off2, Candidate name:yyy office:off2]
+27-Mar-22 17:51:30 - For office off1, candidate aaa was elected with vote's weight of 2 out of vote's weight of 4
+27-Mar-22 17:51:30 - Removes all candidates of the office off1 that aaa was elected to
+27-Mar-22 17:51:30 - The candidates list after the the filter: [Candidate name:xxx office:off2, Candidate name:yyy office:off2]
+27-Mar-22 17:51:30 - For office off2, candidate xxx was elected with vote's weight of 0.5 out of vote's weight of 1.0
+27-Mar-22 17:51:30 - Removes all candidates of the office off2 that xxx was elected to
+27-Mar-22 17:51:30 - The candidates list after the the filter: []
+27-Mar-22 17:51:30 - Selected list: {'off1': 'aaa', 'off2': 'xxx'}
+
