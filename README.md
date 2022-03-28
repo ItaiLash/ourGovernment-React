@@ -1,71 +1,130 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<div align="center">
+  <a href="https://github.com/ItaiLash/ourGovernment-React.git">
+    <img src="https://github.com/ItaiLash/ourGovernment-React/blob/main/src/img/logo.png" alt="Logo" width="150" height="150">
+  </a>
 
-## Available Scripts
+  <h3 align="center">OurGovernment</h3>
+  <p align="center">
+    <br />
+    <a href="#">View Demo</a>
+    ·
+    <a href="#">Report Bug</a>
+    ·
+    <a href="#">Request Feature</a>
+  </p>
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#running-the-algorithm">Running the algorithm</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+     <li><a href="#external-docs">External docs</a></li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  </ol>
+</details>
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The executive branch, or government, is typically not elected directly by the people, but rather formed by another elected body or person such as the parliament or the president. 
+As a result, its members are not directly accountable to the people, individually or as a group.
+Indeed, in coalition systems, following coalition negotiations, each party in the coalition gets a group of ministries which, in turn, have to be populated by ministers.
+We consider a scenario in which the members of the government are elected directly by the people, and wish to achieve proportional representation while doing so.
+The project includes a system for electing ministers in the government, a research paper that analyzing the results of the algorithm and an application that will present the algorithm.
 
-### `npm run build`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- GETTING STARTED -->
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a local copy up and running follow these simple steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+For development, you will only need Node.js and npm installed on your environement. 
+* To download the latest version of npm (include Node.js), on the command line, run the following command:
+  ```sh
+  npm install -g npm
+  ```
+  or visit https://nodejs.org/en/
+* To see if you already have Node.js and npm installed and check the installed version, run the following commands:
+  ```sh
+  node -v
+  npm -v
+  ```
+  
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ItaiLash/ourGovernment-React.git
+   ```
+2. Open the repo in two different IDEs that support Python and JavaScript (one to open the server and another to run the website).
+2. Activating the server:
+   - Under the algorithm folder, open the 'manage.py' file and run it with "runserver" parameter (edit the configurations and add "runserver").
+   - Note that some packages need to be installed:
+     - pathlib: `pip install pathlib`
+     - Django REST framework: `pip install djangorestframework`
+     - django-cors-headers: `python -m pip install django-cors-headers`
+     - CORScanner: `pip install cors`
+3. Run the webpage via the other IDE by entering `npm-start` command in the terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the algorithm
+4. On the website itself, click on the Demo  button that will take you to another page.
+5. On the demo page, enter the following parameters in the appropriate textboxes: 
+   - Number of offices.
+   - The maximum number of candidates for any office.
+   - Number of voters. Click submit.
+7. A number of cards will open and in each tab the name of the office and the names of the candidates must be entered. Click next (note that there is a delay of 5 seconds until the next component is received).
+8. After a few seconds more cards will open where each voter's name and his choices (preferences) must be entered. Click done (here too there is a delay of 5 seconds).
+9. The results of the algorithm run will be displayed on the screen.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<!-- CONTACT -->
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Itai Lashover - [@ItaiLash](https://github.com/ItaiLash) - itai.lash@gmail.com\
+* Liav Weiss - [@liavweiss](https://github.com/liavweiss) - liavweiss@gmail.com\
+* Amichai Kafka Lashover - [@amichaikafka](https://github.com/amichaikafka) - amichaikp@gmail.com\
+* Shani Levin - [@shaniLevin1](https://github.com/shaniLevin1) - shani032@gmail.com
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Project Link: [https://github.com/ItaiLash/ourGovernment-React](https://github.com/ItaiLash/ourGovernment-React)
 
-### Making a Progressive Web App
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- EXTERNAL DOCSS -->
+## External docs
+* [Electing the Executive Branch](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Electing%20the%20Executive%20Branch.pdf)  wrote by Rutvik Page, Ehud Shapiro & Nimrod Talmon.
+* [Vision Statement](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Vision%20Statement%20OurGovernment.pdf)
+* [Software Design Document](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Software%20Design%20Document%20OurGovernment.pdf)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ourGovernment-React
+<p align="right">(<a href="#top">back to top</a>)</p>
