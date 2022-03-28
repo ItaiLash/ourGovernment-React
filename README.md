@@ -111,9 +111,9 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- CONTACT -->
 ## Contact
 
-* Itai Lashover - [@ItaiLash](https://github.com/ItaiLash) - itai.lash@gmail.com\
-* Liav Weiss - [@liavweiss](https://github.com/liavweiss) - liavweiss@gmail.com\
-* Amichai Kafka Lashover - [@amichaikafka](https://github.com/amichaikafka) - amichaikp@gmail.com\
+* Itai Lashover - [@ItaiLash](https://github.com/ItaiLash) - itai.lash@gmail.com
+* Liav Weiss - [@liavweiss](https://github.com/liavweiss) - liavweiss@gmail.com
+* Amichai Kafka Lashover - [@amichaikafka](https://github.com/amichaikafka) - amichaikp@gmail.com
 * Shani Levin - [@shaniLevin1](https://github.com/shaniLevin1) - shani032@gmail.com
 
 
