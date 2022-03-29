@@ -88,6 +88,7 @@ _Below is an example of how you can instruct your audience on installing and set
    - Under the algorithm folder, open the 'manage.py' file and run it with "runserver" parameter (edit the configurations and add "runserver").
    - Note that some packages need to be installed:
      - pathlib: `pip install pathlib`
+     - Django `pip install django`
      - Django REST framework: `pip install djangorestframework`
      - django-cors-headers: `python -m pip install django-cors-headers`
      - CORScanner: `pip install cors`
@@ -113,7 +114,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 * Itai Lashover - [@ItaiLash](https://github.com/ItaiLash) - itai.lash@gmail.com
 * Liav Weiss - [@liavweiss](https://github.com/liavweiss) - liavweiss@gmail.com
-* Amichai Kafka Lashover - [@amichaikafka](https://github.com/amichaikafka) - amichaikp@gmail.com
+* Amichai Kafka - [@amichaikafka](https://github.com/amichaikafka) - amichaikp@gmail.com
 * Shani Levin - [@shaniLevin1](https://github.com/shaniLevin1) - shani032@gmail.com
 
 
