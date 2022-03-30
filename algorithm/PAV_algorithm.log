@@ -2022,3 +2022,38 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 27-Mar-22 17:51:30 - The candidates list after the the filter: []
 27-Mar-22 17:51:30 - Selected list: {'off1': 'aaa', 'off2': 'xxx'}
 
+29-Mar-22 16:22:52 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+29-Mar-22 16:22:52 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+29-Mar-22 16:22:52 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+29-Mar-22 16:22:52 - The candidates list: [Candidate name:itai office:off1, Candidate name:shani office:off1, Candidate name:amichai office:off1, Candidate name:liav office:off2, Candidate name:shai office:off2, Candidate name:amit office:off2]
+29-Mar-22 16:22:52 - For office off1, candidate shani was elected with vote's weight of 3 out of vote's weight of 10
+29-Mar-22 16:22:52 - Removes all candidates of the office off1 that shani was elected to
+29-Mar-22 16:22:52 - The candidates list after the the filter: [Candidate name:liav office:off2, Candidate name:shai office:off2, Candidate name:amit office:off2]
+29-Mar-22 16:22:52 - For office off2, candidate liav was elected with vote's weight of 2.0 out of vote's weight of 3.5
+29-Mar-22 16:22:52 - Removes all candidates of the office off2 that liav was elected to
+29-Mar-22 16:22:52 - The candidates list after the the filter: []
+29-Mar-22 16:22:52 - Selected list: {'off1': 'shani', 'off2': 'liav'}
+
+29-Mar-22 16:43:34 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+29-Mar-22 16:43:34 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+29-Mar-22 16:43:34 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+29-Mar-22 16:43:34 - The candidates list: [Candidate name:aaa office:off1, Candidate name:bbb office:off1, Candidate name:ccc office:off2, Candidate name:ddd office:off2, Candidate name:eee office:off3, Candidate name:fff office:off3, Candidate name:ggg office:off4, Candidate name:hhh office:off4, Candidate name:iii office:off5, Candidate name:jjj office:off5]
+29-Mar-22 16:43:34 - For office off1, candidate aaa was elected with vote's weight of 0 out of vote's weight of 0
+29-Mar-22 16:43:34 - Removes all candidates of the office off1 that aaa was elected to
+29-Mar-22 16:43:34 - The candidates list after the the filter: [Candidate name:ccc office:off2, Candidate name:ddd office:off2, Candidate name:eee office:off3, Candidate name:fff office:off3, Candidate name:ggg office:off4, Candidate name:hhh office:off4, Candidate name:iii office:off5, Candidate name:jjj office:off5]
+29-Mar-22 16:43:34 - For office off2, candidate ccc was elected with vote's weight of 0 out of vote's weight of 0
+29-Mar-22 16:43:34 - Removes all candidates of the office off2 that ccc was elected to
+29-Mar-22 16:43:34 - The candidates list after the the filter: [Candidate name:eee office:off3, Candidate name:fff office:off3, Candidate name:ggg office:off4, Candidate name:hhh office:off4, Candidate name:iii office:off5, Candidate name:jjj office:off5]
+29-Mar-22 16:43:34 - For office off3, candidate eee was elected with vote's weight of 0 out of vote's weight of 0
+29-Mar-22 16:43:34 - Removes all candidates of the office off3 that eee was elected to
+29-Mar-22 16:43:34 - The candidates list after the the filter: [Candidate name:ggg office:off4, Candidate name:hhh office:off4, Candidate name:iii office:off5, Candidate name:jjj office:off5]
+29-Mar-22 16:43:34 - For office off4, candidate ggg was elected with vote's weight of 0 out of vote's weight of 0
+29-Mar-22 16:43:34 - Removes all candidates of the office off4 that ggg was elected to
+29-Mar-22 16:43:34 - The candidates list after the the filter: [Candidate name:iii office:off5, Candidate name:jjj office:off5]
+29-Mar-22 16:43:34 - For office off5, candidate iii was elected with vote's weight of 0 out of vote's weight of 0
+29-Mar-22 16:43:34 - Removes all candidates of the office off5 that iii was elected to
+29-Mar-22 16:43:34 - The candidates list after the the filter: []
+29-Mar-22 16:43:34 - Selected list: {'off1': 'aaa', 'off2': 'ccc', 'off3': 'eee', 'off4': 'ggg', 'off5': 'iii'}
+
