@@ -77,8 +77,6 @@ For development, you will only need Node.js and npm installed on your environeme
   
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Clone the repo
    ```sh
    git clone https://github.com/ItaiLash/ourGovernment-React.git
@@ -87,12 +85,11 @@ _Below is an example of how you can instruct your audience on installing and set
 2. Activating the server:
    - Under the algorithm folder, open the 'manage.py' file and run it with "runserver" parameter (edit the configurations and add "runserver").
    - Note that some packages need to be installed:
-     - pathlib: `pip install pathlib`
      - Django `pip install django`
      - Django REST framework: `pip install djangorestframework`
      - django-cors-headers: `python -m pip install django-cors-headers`
      - CORScanner: `pip install cors`
-3. Run the webpage via the other IDE by entering `npm-start` command in the terminal.
+3. Run the webpage via the other IDE by entering `npm start` command in the terminal.
 
 ### Running the algorithm
 4. On the website itself, click on the Demo  button that will take you to another page.
