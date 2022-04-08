@@ -1,75 +1,99 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
 
 
-let candidates = [
-  [
-    "Oliver Hansen",
-    "Van Henry",
-    "April Tucker",
-    "Ralph Hubbard",
-    "Omar Alexander",
-    "Carlos Abbott",
-    "Miriam Wagner",
-    "Bradley Wilkerson",
-    "Virginia Andrews",
-    "Kelly Snyder",
-  ],
-
-  ["Itai", "Shani", "Liav", "Amichai", "April Tucker",],
-];
-
 export default function VoterCard(props) {
+  /* voter name textbox */
+  const voterNameRef = React.useRef();
+  const [voterNameInput, setVoterNameInput] = React.useState("");
+  const [voterNameError, setVoterNameError] = React.useState(true);
 
-  const [candidateName, setCandidateName] = React.useState([]);
+  /* voter selection textboxs */
+  const [voterSelections, setVoterSelections] = React.useState({});
+  const handleChange = (inputId) => (e) =>
+    setVoterSelections({ ...voterSelections, [inputId]: e.target.value });
 
-  const pushCandidatesIntoTextbox = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
+  const handleVoterNameChange = (event) => {
+    setVoterNameError(false);
+    if (voterNameInput.length === 0) {
+      setVoterNameError(true);
     }
-    setCandidateName(value);
   };
 
-    const getTextboxs = (val) => {
-      let content = [];
-      for (let i = 1; i <= val; i++) {
-        content.push(
-          <FormControl className={`style.voteForOffice${i}`} sx={{ m: 1, minWidth: 120, maxWidth: 300 }}>
-            <InputLabel shrink htmlFor="select-multiple-native">
-              Office Name
+  const handleOnInput = (event) => {
+    setVoterNameInput(event.target.value);
+  };
+
+
+  const getTextboxs = () => {
+    let content = [];
+    for (let i = 0; i < props.data.offices; i++) {
+      content.push(
+        <Box className={style.inputBox}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              {props.officesArr[i]}
             </InputLabel>
             <Select
-              multiple
-              native
-              value={candidateName}
-              onChange={pushCandidatesIntoTextbox}
-              label="Native"
-              inputProps={{
-                id: "select-multiple-native",
-              }}
+              labelId="demo-simple-select-label"
+              id={`office${i}`}
+              key={`office${i}`}
+              value={handleChange[i]}
+              label={`office${i}`}
+              onChange={handleChange(i)}
             >
-              {candidates[(i-1)%2].map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
+              {props.candidatesArr[i].map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
-        );
-      }
-      return content;
-    };
+        </Box>
+      );
+    }
+    return content;
+  };
+
+  const done = () => {
+    if (props.doneClicked) {
+      props.votersArr.splice(props.index, 0, Object.values(voterSelections));
+    }
+  };
 
   return (
-    <div className={style.voterGrid}>
-      {getTextboxs(props.data.Offices)}
-    </div>
+    <figure className={style.office}>
+      <div className={style.formCard}>
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="voterName"
+            label="Voter Name"
+            variant="outlined"
+            required
+            error={voterNameError}
+            value={voterNameInput}
+            onChange={handleVoterNameChange}
+            onInput={handleOnInput}
+            inputRef={voterNameRef}
+          />
+          {getTextboxs()}
+        </Box>
+        {done()}
+      </div>
+    </figure>
   );
 }
+

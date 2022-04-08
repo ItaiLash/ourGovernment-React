@@ -14,7 +14,7 @@ export default function NumOfOfficesSelect(props) {
     setNumOfOffices(event.target.value);
   };
 
-  props.func('Offices', numOfOffices);
+  props.func('offices', numOfOffices);
 
   return (
     <Box className={style.inputBox}>

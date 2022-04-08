@@ -14,7 +14,7 @@ export default function NumOfCandidatesSelect(props) {
     setNumOfCandidates(event.target.value);
   };
 
-  props.func('Candidates', numOfCandidates);
+  props.func('candidates', numOfCandidates);
 
   return (
     <div>

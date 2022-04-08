@@ -239,7 +239,7 @@ tbody tr:nth-child(even) {
   margin-bottom: 24px;
 }
 
-.officeBox{
+.formCard{
   padding: 24px;
   display: grid;
   grid-template-columns: 1fr;
@@ -256,7 +256,7 @@ tbody tr:nth-child(even) {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
 }
 
-.allOffices {
+.formBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -279,8 +279,4 @@ tbody tr:nth-child(even) {
     padding: 20px;
     margin-bottom: 40px;
     row-gap: 20px;
-}
-
-.notVis{
-  display: none
 }
