@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style_upload.module.css";
 import FileDownloader from "./FileDownloader";
+import FileUploader from "./FileUploader";
 import Footer from "../shared components/Footer";
 import Icon from "./Icon";
 
@@ -23,10 +24,7 @@ function UploadFile() {
 
           <figure className={style.option}>
             <div className={style.uploadBox}>
-              <Icon />
-              <a href="#" className={style.btn}>
-                Upload File
-              </a>
+            <FileUploader />
             </div>
           </figure>
 

@@ -2057,3 +2057,602 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 29-Mar-22 16:43:34 - The candidates list after the the filter: []
 29-Mar-22 16:43:34 - Selected list: {'off1': 'aaa', 'off2': 'ccc', 'off3': 'eee', 'off4': 'ggg', 'off5': 'iii'}
 
+08-Apr-22 14:08:43 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+08-Apr-22 14:08:43 - |||||||||||||||||||New Running of the algorithm|||||||||||||||||||
+08-Apr-22 14:08:43 - ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+08-Apr-22 14:08:43 - The candidates list: [Candidate name:a office:1, Candidate name:b office:1, Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+08-Apr-22 14:08:43 - For office 1, candidate a was elected with vote's weight of 2 out of vote's weight of 9
+08-Apr-22 14:08:43 - Removes all candidates of the office 1 that a was elected to
+08-Apr-22 14:08:43 - The candidates list after the the filter: [Candidate name:c office:2, Candidate name:d office:2, Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+08-Apr-22 14:08:43 - For office 2, candidate d was elected with vote's weight of 1.5 out of vote's weight of 4.0
+08-Apr-22 14:08:43 - Removes all candidates of the office 2 that d was elected to
+08-Apr-22 14:08:43 - The candidates list after the the filter: [Candidate name:e office:3, Candidate name:f office:3, Candidate name:g office:3]
+08-Apr-22 14:08:43 - For office 3, candidate e was elected with vote's weight of 0.8333333333333333 out of vote's weight of 1.3333333333333333
+08-Apr-22 14:08:43 - Removes all candidates of the office 3 that e was elected to
+08-Apr-22 14:08:43 - The candidates list after the the filter: []
+08-Apr-22 14:08:43 - Selected list: {'1': 'a', '2': 'd', '3': 'e'}
+
+10-Apr-22 17:38:07 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+10-Apr-22 17:53:02 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+10-Apr-22 17:53:58 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+10-Apr-22 18:17:04 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 18:06:07 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+14-Apr-22 18:07:00 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+14-Apr-22 18:08:58 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 18:09:33 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 18:11:14 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\pav\settings.py changed, reloading.
+14-Apr-22 18:14:00 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\serializers.py changed, reloading.
+14-Apr-22 18:15:57 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 18:17:24 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 18:18:30 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 18:19:13 - Not Found: /api/pav/0/upload_file/
+14-Apr-22 18:21:21 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\urls.py changed, reloading.
+14-Apr-22 18:22:06 - Internal Server Error: /api/pavfile/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.object.create(file=file)
+AttributeError: type object 'PavFile' has no attribute 'object'
+14-Apr-22 18:22:58 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\urls.py changed, reloading.
+14-Apr-22 18:23:30 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.object.create(file=file)
+AttributeError: type object 'PavFile' has no attribute 'object'
+14-Apr-22 18:24:13 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 18:24:24 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.objects.create(file=file)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1620, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1547, in as_sql
+    value_rows = [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1548, in <listcomp>
+    [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1549, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1497, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 316, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 91, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 331, in generate_filename
+    filename = self.upload_to(instance, filename)
+TypeError: upload_file() takes 1 positional argument but 2 were given
+14-Apr-22 18:24:25 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.objects.create(file=file)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1620, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1547, in as_sql
+    value_rows = [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1548, in <listcomp>
+    [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1549, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1497, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 316, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 91, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 331, in generate_filename
+    filename = self.upload_to(instance, filename)
+TypeError: upload_file() takes 1 positional argument but 2 were given
+14-Apr-22 18:26:10 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 18:26:26 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.objects.create(file=file)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1620, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1547, in as_sql
+    value_rows = [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1548, in <listcomp>
+    [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1549, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1497, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 316, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 91, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 331, in generate_filename
+    filename = self.upload_to(instance, filename)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py", line 6, in upload_file
+    return '/'.join(['csv',file_name])
+TypeError: sequence item 1: expected str instance, PavFile found
+14-Apr-22 18:26:29 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.objects.create(file=file)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1620, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1547, in as_sql
+    value_rows = [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1548, in <listcomp>
+    [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1549, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1497, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 316, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 91, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 331, in generate_filename
+    filename = self.upload_to(instance, filename)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py", line 6, in upload_file
+    return '/'.join(['csv',file_name])
+TypeError: sequence item 1: expected str instance, PavFile found
+14-Apr-22 18:26:47 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 19:50:43 - Not Found: /
+14-Apr-22 19:50:43 - Not Found: /favicon.ico
+14-Apr-22 19:50:44 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 19:52:00 - Internal Server Error: /api/pav/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+14-Apr-22 19:53:05 - Internal Server Error: /api/pav/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\amichai\AppData\Local\Programs\Python\Python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+14-Apr-22 20:00:21 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 20:00:35 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 20:01:53 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 46, in upload_file
+    PavFile.objects.create(file=file)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1620, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1547, in as_sql
+    value_rows = [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1548, in <listcomp>
+    [
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1549, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1497, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 316, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 91, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\db\models\fields\files.py", line 331, in generate_filename
+    filename = self.upload_to(instance, filename)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py", line 6, in upload_file
+    return '/'.join(['csv'],file_name)
+TypeError: str.join() takes exactly one argument (2 given)
+14-Apr-22 20:02:26 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\models.py changed, reloading.
+14-Apr-22 20:06:46 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+14-Apr-22 20:13:46 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+14-Apr-22 20:15:31 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:16:15 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:18:33 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 48, in upload_file
+    from_csv(f"file\\csv\\{file[1]}")
+TypeError: 'InMemoryUploadedFile' object is not subscriptable
+14-Apr-22 20:20:28 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:20:44 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:20:56 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f"file\\csv\\{file[1]}")
+TypeError: 'InMemoryUploadedFile' object is not subscriptable
+14-Apr-22 20:21:37 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:21:53 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f"file\\csv\\{str(file)}")
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py", line 84, in from_csv
+    with open(file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'file\\csv\\PAVTEST.csv'
+14-Apr-22 20:22:26 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:22:56 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f"file\csv\{str(file)}")
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py", line 84, in from_csv
+    with open(file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'file\\csv\\PAVTEST.csv'
+14-Apr-22 20:23:29 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f"file\csv\{str(file)}")
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py", line 84, in from_csv
+    with open(file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'file\\csv\\PAVTEST.csv'
+14-Apr-22 20:24:19 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:24:58 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f".file\csv\{str(file)}")
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py", line 84, in from_csv
+    with open(file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: '.file\\csv\\PAVTEST.csv'
+14-Apr-22 20:25:24 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:25:51 - Internal Server Error: /api/pav/0/upload_file/
+Traceback (most recent call last):
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amichai\Desktop\שנה ג\פרויקט גמר\OurGovernment\algorithm\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py", line 49, in upload_file
+    from_csv(f"file/csv/{str(file)}")
+  File "C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py", line 84, in from_csv
+    with open(file) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'file/csv/PAVTEST.csv'
+14-Apr-22 20:26:14 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:27:17 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\api\views.py changed, reloading.
+14-Apr-22 20:28:20 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.
+14-Apr-22 20:30:07 - C:\Users\amichai\Desktop\שנה ג\final project\ourGovernment-React\algorithm\json_convert.py changed, reloading.

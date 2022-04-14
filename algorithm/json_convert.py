@@ -1,6 +1,7 @@
 from greedy_pav import *
 import json
-
+import csv
+import os
 
 def from_json(json_res: str):
     res_dict = json.loads(json_res)
@@ -76,7 +77,16 @@ def demo2():
     s=json.dumps({'candidates':candidates,'voters':voters},default=lambda o:o.__dict__,indent=4)
     return s
 
+def from_csv(file):
 
+    row=[]
+
+    with open(file) as f:
+        csv_reader=csv.reader(f)
+        h=next(csv_reader)
+    print(h)
+    # if os.path.exists(file):
+    #     os.remove(file)
 def start_algo(json_res: str=None):
     print(json_res)
     if json_res:
@@ -85,6 +95,7 @@ def start_algo(json_res: str=None):
     else :
         offices_candidates, voter_list = demo()
     return greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+
 if __name__ == '__main__':
     s=demo2()
     print(start_algo(s))

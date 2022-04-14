@@ -3,10 +3,11 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from json_convert import *
-from .models import Pav
-from .serializers import PavSerializer
+from .models import Pav,PavFile
+from .serializers import PavSerializer , PavFileSerializer
 from django.http import HttpResponse
 import json
+
 
 
 
@@ -34,6 +35,18 @@ class PavViewSet(viewsets.ModelViewSet):
             response = {"massage": 'one or more fields missing'}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
+class PavFileViewSet(viewsets.ModelViewSet):
+    queryset = PavFile.objects.all()
+    serializer_class = PavFileSerializer
+    @action(detail=True, methods=['POST'])
+    def upload_file(self, request, pk=None):
+        print(request)
+        print(request.data)
+        file=request.data['pav_file']
+        PavFile.objects.create(file=file)
+        from_csv(f"files/csv/{str(file)}")
+        response = {"massage": 'Success', 'result': "Valhalla"}
+        return Response(response, status=status.HTTP_200_OK)
 # def compute_pav(request, pk=None):
 #     try:
 #         print(request)
