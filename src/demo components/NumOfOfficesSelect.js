@@ -7,13 +7,13 @@ import Select from "@mui/material/Select";
 import style from './style_demo.module.css'
 
 
-export default function NumOfOfficesSelect(props) {
+function NumOfOfficesSelect(props) {
   const [numOfOffices, setNumOfOffices] = React.useState("");
 
   const handleChange = (event) => {
     setNumOfOffices(event.target.value);
   };
-
+  
   props.func('offices', numOfOffices);
 
   return (
@@ -42,3 +42,6 @@ export default function NumOfOfficesSelect(props) {
     </Box>
   );
 }
+
+
+export default NumOfOfficesSelect;

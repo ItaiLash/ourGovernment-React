@@ -8,24 +8,20 @@ import style from './style_demo.module.css'
 class Input extends React.Component {
   constructor() {
     super();
+
     this.inputs = {
       offices: 0,
       candidates: 0,
       voters: 0,
     };
+
     this.state = {
       clickedSubmit: false,
-      
     };
   
     this.officesArr = [];
     this.candidatesArr = [];
     this.votersArr = [];
-
-    /*for Amichai*/
-    // this.randomOfficesArr = ["off1", "off2", "off3"];
-    // this.randomCandidatesArr = [["amichai", "itai"], ["aaa", "bbb"], ["ccc", "ddd"]];
-    // this.randomVoters = [["a", "c", "e"], ["a", "c", "f"], ["a", "d", "f"]];
   }
 
   pull_data = (name, data) => {
