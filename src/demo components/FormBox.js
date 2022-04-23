@@ -11,8 +11,10 @@ class FormBox extends React.Component {
     this.state = {
       clickedNext: false,
       clickedDone: false,
+      renderResult: false,
 
       renderVoters: false,
+      
 
       pav: {},
     };
@@ -55,6 +57,17 @@ class FormBox extends React.Component {
       );
     }
     return cp;
+  };
+
+  renderResultToScreen = () => {
+    if (this.state.pav && this.state.clickedDone){
+      return(
+        <div>
+          {JSON.stringify(this.state.pav.result)}
+        </div>
+      )
+    }
+    return null;
   };
 
   renderNextClick = () => {
@@ -101,6 +114,7 @@ class FormBox extends React.Component {
     this.props.votersArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(5000);
+    this.setState(({ renderResult }) => ({ renderResult: true }));
     this.callToPav();
   };
 
@@ -149,16 +163,21 @@ class FormBox extends React.Component {
   render() {
     return (
       <div>
-        {!this.state.renderVoters ? (
+        {!this.state.renderVoters && !this.state.renderResult ? (
           <div>
             <div className={style.formBox}>{this.renderOfficeCards()}</div>
             <div>{this.renderNextClick()}</div>
           </div>
-        ) : (
+        ) : !this.state.renderResult ? (
           <div>
             <div className={style.formBox}>{this.renderVotersCards()}</div>
             <div>{this.renderDoneClick()}</div>
           </div>
+        ) : (
+          <div>
+          <div className={style.formBox}>{this.renderResultToScreen()}</div>
+          <div>{this.renderDoneClick()}</div>
+        </div>
         )}
         {this.state.pav && this.state.clickedDone
           ? JSON.stringify(this.state.pav.result)

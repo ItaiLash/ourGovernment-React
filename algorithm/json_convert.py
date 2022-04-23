@@ -87,6 +87,14 @@ def from_csv(file):
     print(h)
     # if os.path.exists(file):
     #     os.remove(file)
+
+def define_result(dic_res:dict={})-> str:
+    res=''
+    for office,winner in dic_res.items():
+        res+=f"The candidate who selected for the Ministry of {office} is {winner}.\n"
+    return res
+
+
 def start_algo(json_res: str=None):
     print(json_res)
     if json_res:
@@ -94,10 +102,10 @@ def start_algo(json_res: str=None):
         offices_candidates, voter_list = convert_request(json_res['offices'] ,json_res['candidates'] ,json_res['voters'])
     else :
         offices_candidates, voter_list = demo()
-    return greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+    return define_result(greedy_PAV(voters=voter_list, offices_candidates=offices_candidates))
 
 if __name__ == '__main__':
-    s=demo2()
-    print(start_algo(s))
-    # print(start_algo())
+    # s=demo2()
+    # print(start_algo(s))
+    print(start_algo())
 
