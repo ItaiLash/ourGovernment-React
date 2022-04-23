@@ -58,13 +58,31 @@ class FormBox extends React.Component {
     }
     return cp;
   };
-
+  resultHandler = () =>{
+    let result = '';
+    const temp=String(this.state.pav.result)
+    // temp=temp.slice(1).slice(0, temp.length - 1)
+    for (var i = 0; i < temp.length; i++) {
+      if (temp.charAt(i)!='"') {
+        if(temp.charAt(i)=='\\'&&temp.charAt(i+1)=='n'||temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
+          result+='\n';
+          continue;
+        }
+        result +=temp.charAt(i);
+      }
+      
+    }
+    return result;
+  }
   renderResultToScreen = () => {
     if (this.state.pav && this.state.clickedDone){
       return(
-        <div>
-          {JSON.stringify(this.state.pav.result)}
-        </div>
+        <section className={style.section}>
+        <div className={style.resultGrid}>
+       {this.resultHandler()}
+      </div>
+      </section>
+      
       )
     }
     return null;
@@ -176,7 +194,6 @@ class FormBox extends React.Component {
         ) : (
           <div>
           <div className={style.formBox}>{this.renderResultToScreen()}</div>
-          <div>{this.renderDoneClick()}</div>
         </div>
         )}
         {this.state.pav && this.state.clickedDone
