@@ -56,7 +56,6 @@ BACKGROUND-COLOR: #63e6be
   justify-content: center;
 }
 
-
 .btn:hover,
 .btn:active {
   background-color: #099268;
@@ -181,7 +180,7 @@ tbody tr:nth-child(even) {
   justify-content: center;
 }
 
-.inputGrid{
+.inputGrid {
   width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -196,7 +195,22 @@ tbody tr:nth-child(even) {
   margin-left: auto;
 }
 
-.inputBox{
+.resultGrid {
+  width: 70%;
+  display: grid;
+  grid-gap: 20px;
+  position: relative;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  justify-content: center;
+  margin-top: 48px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inputBox {
   /* display: grid;
   grid-template-columns: 2fr 1fr;
   background-color: #e9ecef;
@@ -226,20 +240,18 @@ tbody tr:nth-child(even) {
   margin: auto;
 }
 
-
 .btnSubmit:hover,
 .btnSubmit:active {
   background-color: #099268;
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
 }
 
-.office{
-
+.office {
   width: fit-content;
   margin-bottom: 24px;
 }
 
-.formCard{
+.formCard {
   padding: 24px;
   display: grid;
   grid-template-columns: 1fr;
@@ -264,19 +276,19 @@ tbody tr:nth-child(even) {
 }
 
 /*---------VOTERS--------*/
-.voterGrid{
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 20%);
-    column-gap: 20px;
-    background-color: #e9ecef;
-    border-radius: 20px;
-    justify-content: center;
-    margin-top: 48px;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px;
-    margin-bottom: 40px;
-    row-gap: 20px;
+.voterGrid {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20%);
+  column-gap: 20px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  justify-content: center;
+  margin-top: 48px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  margin-bottom: 40px;
+  row-gap: 20px;
 }

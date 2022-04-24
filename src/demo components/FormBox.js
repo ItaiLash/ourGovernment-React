@@ -2,6 +2,7 @@ import * as React from "react";
 import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
 import style from "./style_demo.module.css";
+import Box from "@mui/material/Box";
 
 
 class FormBox extends React.Component {
@@ -59,28 +60,36 @@ class FormBox extends React.Component {
     return cp;
   };
   resultHandler = () =>{
+    const cp = [];
     let result = '';
     const temp=String(this.state.pav.result)
     // temp=temp.slice(1).slice(0, temp.length - 1)
     for (var i = 0; i < temp.length; i++) {
       if (temp.charAt(i)!='"') {
         if(temp.charAt(i)=='\\'&&temp.charAt(i+1)=='n'||temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
-          result+='\n';
+          if(temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
+            cp.push(
+              <Box component="span" sx={{ display: 'block' }}>{result.slice()}</Box>
+            );
+            result='';
+          }
           continue;
         }
         result +=temp.charAt(i);
       }
       
     }
-    return result;
+    return cp;
   }
   renderResultToScreen = () => {
     if (this.state.pav && this.state.clickedDone){
       return(
         <section className={style.section}>
         <div className={style.resultGrid}>
-       {this.resultHandler()}
+       <div>{this.resultHandler()}</div>
+       <div>{this.renderTryAgainClick()}</div>
       </div>
+
       </section>
       
       )
@@ -123,6 +132,15 @@ class FormBox extends React.Component {
       );
     }
   };
+  renderTryAgainClick = () => {
+    if (this.props.clickedSubmit && this.state.renderVoters) {
+      return (
+        <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
+          Try Again
+        </a>
+      );
+    }
+  };
 
   handClickDone = async (e) => {
     e.preventDefault();
@@ -134,6 +152,11 @@ class FormBox extends React.Component {
     await this.delay(5000);
     this.setState(({ renderResult }) => ({ renderResult: true }));
     this.callToPav();
+  };
+
+  handlClickTryAgain = async (e) => {
+    e.preventDefault();
+    window.location.reload();
   };
 
   ////////////////////////////////////////////////////////////
@@ -193,12 +216,10 @@ class FormBox extends React.Component {
           </div>
         ) : (
           <div>
-          <div className={style.formBox}>{this.renderResultToScreen()}</div>
+          <div>{this.renderResultToScreen()}</div>
+          {/* <div>{this.renderTryAgainClick()}</div> */}
         </div>
         )}
-        {this.state.pav && this.state.clickedDone
-          ? JSON.stringify(this.state.pav.result)
-          : null}
       </div>
     );
   }
