@@ -69,7 +69,21 @@ class FormBox extends React.Component {
         if(temp.charAt(i)=='\\'&&temp.charAt(i+1)=='n'||temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
           if(temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
             cp.push(
-              <Box component="span" sx={{ display: 'block' }}>{result.slice()}</Box>
+              <Box  component="span"
+              sx={{
+                display: 'block',
+                p: 1,
+                m: 1,
+                bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
+                color: (theme) =>
+                  theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
+                border: '1px solid',
+                borderColor: (theme) =>
+                  theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
+                borderRadius: 2,
+                fontSize: '0.875rem',
+                fontWeight: '700',
+              }}>{result.slice()}</Box>
             );
             result='';
           }
