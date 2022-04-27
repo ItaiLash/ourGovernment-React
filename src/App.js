@@ -5,10 +5,12 @@ import Demo from "./demo components/Demo";
 import UploadFile from "./upload file components/UploadFile";
 import About from "./about components/About";
 import { Routes, Route, Link } from "react-router-dom";
+import Navbar from "./Navigation/Navbar.js";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/demo" element={<Demo />} />

@@ -16,6 +16,7 @@ function Home() {
       </header>
       <Grid />
       <Footer />
+
     </div>
   );
 }
