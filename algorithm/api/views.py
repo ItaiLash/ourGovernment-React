@@ -7,6 +7,10 @@ from .models import Pav,PavFile
 from .serializers import PavSerializer , PavFileSerializer
 from django.http import HttpResponse
 import json
+from django.core.files import File
+from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from pav.settings import BASE_DIR, MEDIA_ROOT
 
 
 
@@ -47,11 +51,25 @@ class PavFileViewSet(viewsets.ModelViewSet):
         from_csv(f"files/csv/{str(file)}")
         response = {"massage": 'Success', 'result': "Valhalla"}
         return Response(response, status=status.HTTP_200_OK)
-# def compute_pav(request, pk=None):
-#     try:
-#         print(request)
-#         result = start_algo(request.data)
-#         response = {"massage": 'Success', 'result': json.dumps(result, default=lambda o: o.__dict__)}
-#         return HttpResponse(response, status=status.HTTP_200_OK)
-#     except:
-#         return HttpResponse("Error", status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['GET'])
+    def download_results(self,request=None, pk=None):
+        print("ssssssssss")
+        path_to_file = MEDIA_ROOT + '/explanation.txt'
+        with open(path_to_file, 'rb') as f:
+            explanation_file = File(f)
+            response = HttpResponse(explanation_file.read())
+        response['Content-Disposition'] = 'attachment'
+        # response_ = {"massage": 'Success', 'data': response}
+        return response
+
+# @api_view(['GET'])
+# def download_results(self):
+#     print("ssssssssss")
+#     path_to_file = MEDIA_ROOT + '/explanation.txt'
+#     with open(path_to_file, 'rb') as f:
+#         explanation_file= File(f)
+#     response = HttpResponse(explanation_file.read())
+#     response['Content-Disposition'] = 'attachment'
+#     return response
+

@@ -34,21 +34,23 @@ def Global_Justified_Representation(X_result:dict, voters: list[Voter],offices_c
     A:∪Aj all the candidates
     X is said to satisfy Global Justified Representation
     For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:
-    Define c_V': set of all the candidates that all the voters in V' agree on
-    if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅
+    Define c_V': set of all the candidates that all the voters in V' agree on.
+    if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅.
     
     All the subgroup that we discuss for this results:\n 
     '''
     V=list(powerset(voters))
     for v in V:
+        s+="__________________________________________________________________\n"
         s+=f"{v} |V'|={len(v)}, n/k={len(voters)/len(offices_candidates.keys())}\n"
         if len(v)>=(len(voters)/len(offices_candidates.keys())):
             v_agree = voter_agree(v)
             for office,A_j in offices_candidates.items():
                 if len(set(v_agree).intersection(A_j))>0:
-                    s+=f"subgroup of voters{v} agree on {set(v_agree).intersection(A_j)} for office {office} then\n"
-                    if len(set(v_agree).intersection(X)) > 0:
-                        s+=f"{set(v_agree).intersection(X)} was chosen which they also agree on\n"
+                    s+=f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =>\n"
+                    t=list(set(v_agree).intersection(X))
+                    if len(t) > 0:
+                        s+=f"{t[0].name} was chosen which they also agree on for office {t[0].office}.\n"
                     else:
                         print("bad")
         else:
@@ -160,9 +162,9 @@ def start_algo(json_res: str=None):
     res=define_result(a)
     s=Global_Justified_Representation(a, voter_list, offices_candidates )
     print(s)
-    with open("explanation.txt",'w',encoding="utf-8") as f:
+    with open("files/explanation.txt",'w',encoding="utf-8") as f:
         f.write(s)
-    return a,res
+    return res
 
 if __name__ == '__main__':
     # s=demo2()
