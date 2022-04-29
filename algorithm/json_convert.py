@@ -1,7 +1,61 @@
 from greedy_pav import *
 import json
 import csv
+from itertools import combinations ,chain
 import os
+
+def powerset(iterable):
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+
+def voter_agree(voters: list[Voter])->list:
+    res=[]
+    count=0
+    v=voters[0]
+    for c in v.preferences:
+        for voter_preferences in voters:
+            if c in voter_preferences.preferences:
+                count+=1
+        if count == len(voters):
+            res.append(c)
+        count=0
+    return res
+
+
+def Global_Justified_Representation(X_result:dict, voters: list[Voter],offices_candidates: dict ):
+    X=[Candidate(j,i) for i,j in X_result.items()]
+    # print(X)
+    s=f'''Global_Justified_Representation:\n
+    V:set of all voters
+    n:number of voters
+    k:number of offices
+    X:office allocation
+    Aj:all the candidates that run to office j
+    A:∪Aj all the candidates
+    X is said to satisfy Global Justified Representation
+    For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:
+    Define c_V': set of all the candidates that all the voters in V' agree on
+    if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅
+    
+    All the subgroup that we discuss for this results:\n 
+    '''
+    V=list(powerset(voters))
+    for v in V:
+        s+=f"{v} |V'|={len(v)}, n/k={len(voters)/len(offices_candidates.keys())}\n"
+        if len(v)>=(len(voters)/len(offices_candidates.keys())):
+            v_agree = voter_agree(v)
+            for office,A_j in offices_candidates.items():
+                if len(set(v_agree).intersection(A_j))>0:
+                    s+=f"subgroup of voters{v} agree on {set(v_agree).intersection(A_j)} for office {office} then\n"
+                    if len(set(v_agree).intersection(X)) > 0:
+                        s+=f"{set(v_agree).intersection(X)} was chosen which they also agree on\n"
+                    else:
+                        print("bad")
+        else:
+            s+=F"|V'|={len(v)} < n/k={len(voters)/len(offices_candidates.keys())}, so V' is to small.\n"
+    return s
+
+
 
 def from_json(json_res: str):
     res_dict = json.loads(json_res)
@@ -51,9 +105,9 @@ def demo():
     f = Candidate('f', '3')
     g = Candidate('g', '3')
     dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
-    v_1 = Voter([a, c, e])
-    v_2 = Voter([a, c, f])
-    v_3 = Voter([a, d, f])
+    v_1 = Voter([a, c, e],"Moshe")
+    v_2 = Voter([a, c, f],"Dani")
+    v_3 = Voter([a, d, f],"Roee")
     voters = [v_1, v_2, v_3]
     candidates=dict
     with open("j.json","w") as f:
@@ -102,10 +156,18 @@ def start_algo(json_res: str=None):
         offices_candidates, voter_list = convert_request(json_res['offices'] ,json_res['candidates'] ,json_res['voters'])
     else :
         offices_candidates, voter_list = demo()
-    return define_result(greedy_PAV(voters=voter_list, offices_candidates=offices_candidates))
+    a=greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+    res=define_result(a)
+    s=Global_Justified_Representation(a, voter_list, offices_candidates )
+    print(s)
+    with open("explanation.txt",'w',encoding="utf-8") as f:
+        f.write(s)
+    return a,res
 
 if __name__ == '__main__':
     # s=demo2()
     # print(start_algo(s))
-    print(start_algo())
+    a=start_algo()
+    print(a)
+
 

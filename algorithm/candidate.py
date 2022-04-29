@@ -15,3 +15,6 @@ class Candidate:
 
     def __repr__(self):
         return f"Candidate name:{self.name} office:{self.office}"
+
+    def __hash__(self) -> int:
+        return (self.name+self.office).__hash__()
