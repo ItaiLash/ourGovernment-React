@@ -21,7 +21,7 @@ function AboutGrid() {
         </svg>
         <p className={style.cardDescription}>
           Demo video for using the website and a comprehensive research paper on
-          the GreedyPAV algorithm.
+          the GreedyPAV algorithm. <br></br><br></br>
         </p>
 
         <a href="/about" className={style.btn}>

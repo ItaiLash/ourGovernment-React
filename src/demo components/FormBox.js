@@ -4,7 +4,6 @@ import VoterCard from "./VoterCard";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 
-
 class FormBox extends React.Component {
   constructor() {
     super();
@@ -15,7 +14,6 @@ class FormBox extends React.Component {
       renderResult: false,
 
       renderVoters: false,
-      
 
       pav: {},
     };
@@ -59,54 +57,59 @@ class FormBox extends React.Component {
     }
     return cp;
   };
-  resultHandler = () =>{
+  resultHandler = () => {
     const cp = [];
-    let result = '';
-    const temp=String(this.state.pav.result)
+    let result = "";
+    const temp = String(this.state.pav.result);
     // temp=temp.slice(1).slice(0, temp.length - 1)
     for (var i = 0; i < temp.length; i++) {
-      if (temp.charAt(i)!='"') {
-        if(temp.charAt(i)=='\\'&&temp.charAt(i+1)=='n'||temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
-          if(temp.charAt(i-1)=='\\'&&temp.charAt(i)=='n'){
+      if (temp.charAt(i) != '"') {
+        if (
+          (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
+          (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
+        ) {
+          if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
             cp.push(
-              <Box  component="span"
-              sx={{
-                display: 'block',
-                p: 1,
-                m: 1,
-                bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
-                color: (theme) =>
-                  theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
-                border: '1px solid',
-                borderColor: (theme) =>
-                  theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
-                borderRadius: 2,
-                fontSize: '0.875rem',
-                fontWeight: '700',
-              }}>{result.slice()}</Box>
+              <Box
+                component="span"
+                sx={{
+                  display: "block",
+                  p: 1,
+                  m: 1,
+                  bgcolor: (theme) =>
+                    theme.palette.mode === "dark" ? "#101010" : "#fff",
+                  color: (theme) =>
+                    theme.palette.mode === "dark" ? "grey.300" : "grey.800",
+                  border: "1px solid",
+                  borderColor: (theme) =>
+                    theme.palette.mode === "dark" ? "grey.800" : "grey.300",
+                  borderRadius: 2,
+                  fontSize: "0.875rem",
+                  fontWeight: "700",
+                }}
+              >
+                {result.slice()}
+              </Box>
             );
-            result='';
+            result = "";
           }
           continue;
         }
-        result +=temp.charAt(i);
+        result += temp.charAt(i);
       }
-      
     }
     return cp;
-  }
+  };
   renderResultToScreen = () => {
-    if (this.state.pav && this.state.clickedDone){
-      return(
+    if (this.state.pav && this.state.clickedDone) {
+      return (
         <section className={style.section}>
-        <div className={style.resultGrid}>
-       <div>{this.resultHandler()}</div>
-       <div>{this.renderTryAgainClick()}</div>
-      </div>
-
-      </section>
-      
-      )
+          <div className={style.resultGrid}>
+            <div>{this.resultHandler()}</div>
+            <div>{this.renderTryAgainClick()}</div>
+          </div>
+        </section>
+      );
     }
     return null;
   };
@@ -149,7 +152,11 @@ class FormBox extends React.Component {
   renderTryAgainClick = () => {
     if (this.props.clickedSubmit && this.state.renderVoters) {
       return (
-        <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
+        <a
+          href="#"
+          className={style.btnSubmit}
+          onClick={this.handlClickTryAgain}
+        >
           Try Again
         </a>
       );
@@ -214,7 +221,6 @@ class FormBox extends React.Component {
   };
   ////////////////////////////////////////////////////////////
 
-
   render() {
     return (
       <div>
@@ -230,9 +236,9 @@ class FormBox extends React.Component {
           </div>
         ) : (
           <div>
-          <div>{this.renderResultToScreen()}</div>
-          {/* <div>{this.renderTryAgainClick()}</div> */}
-        </div>
+            <div>{this.renderResultToScreen()}</div>
+            {/* <div>{this.renderTryAgainClick()}</div> */}
+          </div>
         )}
       </div>
     );
