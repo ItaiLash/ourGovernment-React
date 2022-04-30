@@ -48,7 +48,7 @@ class PavFileViewSet(viewsets.ModelViewSet):
         print(request.data)
         file=request.data['pav_file']
         PavFile.objects.create(file=file)
-        from_csv(f"files/csv/{str(file)}")
+        print(start_algo_uploud(f"files/csv/{str(file)}"))
         response = {"massage": 'Success', 'result': "Valhalla"}
         return Response(response, status=status.HTTP_200_OK)
 
