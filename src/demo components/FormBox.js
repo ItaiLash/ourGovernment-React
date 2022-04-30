@@ -3,6 +3,8 @@ import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
+import Axios from 'axios';
+import FileDownload from "js-file-download";
 
 
 class FormBox extends React.Component {
@@ -149,9 +151,14 @@ class FormBox extends React.Component {
   renderTryAgainClick = () => {
     if (this.props.clickedSubmit && this.state.renderVoters) {
       return (
+        <div>
         <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
           Try Again
         </a>
+        <a href="#" className={style.btnSubmit} onClick={this.handlePDFDownload}>
+          Learn more
+        </a>
+        </div>
       );
     }
   };
@@ -211,6 +218,18 @@ class FormBox extends React.Component {
     //   pav.result = resp;
     //   return { pav };
     // }))
+  };
+
+  handlePDFDownload = (e) => {
+    e.preventDefault()
+    Axios({
+      url:"http://127.0.0.1:8000/api/pav/0/download_results/",
+      method:"GET",
+      responseType:"blob"
+    }).then((res) => {
+      FileDownload(res.data,"explantion.txt")
+    })
+ 
   };
   ////////////////////////////////////////////////////////////
 
