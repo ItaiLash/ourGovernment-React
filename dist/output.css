@@ -686,6 +686,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.bg-our-government {
+  --tw-bg-opacity: 1;
+  /* background-color: rgb(19, 38, 92 / var(--tw-bg-opacity)); */
+  background-color: red;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
