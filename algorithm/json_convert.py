@@ -1,31 +1,36 @@
 from greedy_pav import *
 import json
 import csv
-from itertools import combinations ,chain
+from itertools import combinations, chain
 import os
+import pandas as pd
+import openpyxl
+from pathlib import Path
+
 
 def powerset(iterable):
     s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+    return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
-def voter_agree(voters: list[Voter])->list:
-    res=[]
-    count=0
-    v=voters[0]
+
+def voter_agree(voters: list[Voter]) -> list:
+    res = []
+    count = 0
+    v = voters[0]
     for c in v.preferences:
         for voter_preferences in voters:
             if c in voter_preferences.preferences:
-                count+=1
+                count += 1
         if count == len(voters):
             res.append(c)
-        count=0
+        count = 0
     return res
 
 
-def Global_Justified_Representation(X_result:dict, voters: list[Voter],offices_candidates: dict ):
-    X=[Candidate(j,i) for i,j in X_result.items()]
+def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices_candidates: dict):
+    X = [Candidate(j, i) for i, j in X_result.items()]
     # print(X)
-    s=f'''Global_Justified_Representation:\n
+    s = f'''Global_Justified_Representation:\n
     V:set of all voters
     n:number of voters
     k:number of offices
@@ -39,24 +44,23 @@ def Global_Justified_Representation(X_result:dict, voters: list[Voter],offices_c
     
     All the subgroup that we discuss for this results:\n 
     '''
-    V=list(powerset(voters))
+    V = list(powerset(voters))
     for v in V:
-        s+="__________________________________________________________________\n"
-        s+=f"{v} |V'|={len(v)}, n/k={len(voters)/len(offices_candidates.keys())}\n"
-        if len(v)>=(len(voters)/len(offices_candidates.keys())):
+        s += "__________________________________________________________________\n"
+        s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}\n"
+        if len(v) >= (len(voters) / len(offices_candidates.keys())):
             v_agree = voter_agree(v)
-            for office,A_j in offices_candidates.items():
-                if len(set(v_agree).intersection(A_j))>0:
-                    s+=f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =>\n"
-                    t=list(set(v_agree).intersection(X))
+            for office, A_j in offices_candidates.items():
+                if len(set(v_agree).intersection(A_j)) > 0:
+                    s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =>\n"
+                    t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
-                        s+=f"{t[0].name} was chosen which they also agree on for office {t[0].office}.\n"
+                        s += f"{t[0].name} was chosen which they also agree on for office {t[0].office}.\n"
                     else:
                         print("bad")
         else:
-            s+=F"|V'|={len(v)} < n/k={len(voters)/len(offices_candidates.keys())}, so V' is to small.\n"
+            s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.\n"
     return s
-
 
 
 def from_json(json_res: str):
@@ -72,7 +76,7 @@ def from_json(json_res: str):
             offices_candidates[c.office].append(c)
     voter_list = []
     for voter in voters:
-        preferences=[]
+        preferences = []
         for pref in voter["preferences"]:
             preferences.append(Candidate(**pref))
         v = Voter(preferences)
@@ -80,23 +84,26 @@ def from_json(json_res: str):
         voter_list.append(v)
 
     return offices_candidates, voter_list
-def convert_request(offices:list=[],candidates:list=[],voters:list=[]):
+
+
+def convert_request(offices: list = [], candidates: list = [], voters: list = []):
     offices_candidates = {}
     voter_list = []
-    num_to_office={i:offices[i] for i in range(len(offices))}
+    num_to_office = {i: offices[i] for i in range(len(offices))}
     for office_num in range(len(candidates)):
         for candidate in candidates[office_num]:
-            c=Candidate(candidate,num_to_office[office_num])
+            c = Candidate(candidate, num_to_office[office_num])
             if c.office not in offices_candidates:
                 offices_candidates[c.office] = []
             offices_candidates[c.office].append(c)
     for voter in voters:
-        preferences=[]
+        preferences = []
         for i in range(len(voter)):
-            preferences.append(Candidate(voter[i],num_to_office[i]))
+            preferences.append(Candidate(voter[i], num_to_office[i]))
         v = Voter(preferences)
         voter_list.append(v)
     return offices_candidates, voter_list
+
 
 def demo():
     a = Candidate('a', '1')
@@ -107,14 +114,16 @@ def demo():
     f = Candidate('f', '3')
     g = Candidate('g', '3')
     dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
-    v_1 = Voter([a, c, e],"Moshe")
-    v_2 = Voter([a, c, f],"Dani")
-    v_3 = Voter([a, d, f],"Roee")
+    v_1 = Voter([a, c, e], "Moshe")
+    v_2 = Voter([a, c, f], "Dani")
+    v_3 = Voter([a, d, f], "Roee")
     voters = [v_1, v_2, v_3]
-    candidates=dict
-    with open("j.json","w") as f:
-        json.dump({'candidates':candidates,'voters':voters},fp=f,default=lambda o:o.__dict__,indent=4)
-    return dict,voters
+    candidates = dict
+    with open("j.json", "w") as f:
+        json.dump({'candidates': candidates, 'voters': voters}, fp=f, default=lambda o: o.__dict__, indent=4)
+    return dict, voters
+
+
 def demo2():
     a = Candidate('a', '1')
     b = Candidate('b', '1')
@@ -128,48 +137,103 @@ def demo2():
     v_2 = Voter([a, c, f])
     v_3 = Voter([a, d, f])
     voters = [v_1, v_2, v_3]
-    candidates=dict
+    candidates = dict
 
-    s=json.dumps({'candidates':candidates,'voters':voters},default=lambda o:o.__dict__,indent=4)
+    s = json.dumps({'candidates': candidates, 'voters': voters}, default=lambda o: o.__dict__, indent=4)
     return s
 
-def from_csv(file):
 
-    row=[]
+def from_csv(file):
+    row = []
 
     with open(file) as f:
-        csv_reader=csv.reader(f)
-        h=next(csv_reader)
+        csv_reader = csv.reader(f)
+        h = next(csv_reader)
     print(h)
     # if os.path.exists(file):
     #     os.remove(file)
 
-def define_result(dic_res:dict={})-> str:
-    res=''
-    for office,winner in dic_res.items():
-        res+=f"The candidate who selected for the Ministry of {office} is {winner}.\n"
+
+def define_result(dic_res: dict = {}) -> str:
+    res = ''
+    for office, winner in dic_res.items():
+        res += f"The candidate who selected for the Ministry of {office} is {winner}.\n"
     return res
 
 
-def start_algo(json_res: str=None):
+def from_xslx(file):
+    offices_candidates = {}
+    voter_list = []
+    print(file)
+    xlsx_file = Path(file)
+    wb_obj = openpyxl.load_workbook(xlsx_file)
+    sheet = wb_obj.get_sheet_by_name('Offices & Candidates')
+    print(sheet)
+    col_names = []
+    # for row in sheet.iter_rows(max_row=sheet.max_row):
+    #     for cell in row:
+    #         # print(cell.value, end=" ")
+    #     # print()
+    for column in sheet.iter_cols(min_col=3,max_col=sheet.max_column):
+        for i in range(5,sheet.max_row):
+            if column[i].value:
+                col_names.append(column[i].value)
+                c=Candidate(name=column[i].value,office=column[4].value)
+                if c.office not in offices_candidates:
+                    offices_candidates[c.office] = []
+                offices_candidates[c.office].append(c)
+    # print(col_names)
+    # print(offices_candidates)
+    sheet = wb_obj.get_sheet_by_name('Votes')
+    # print(sheet)
+    num_to_office=[]
+    for column in sheet.iter_cols(min_row=5,min_col=4,max_col=sheet.max_column):
+            if column[0].value :
+                num_to_office.append(column[0].value)
+    # print(num_to_office)
+    for row in sheet.iter_rows(min_row=6,min_col=4,max_row=sheet.max_row):
+        count=0
+        preferences = []
+        for cell in row:
+            if cell.value:
+                preferences.append(Candidate(cell.value, num_to_office[count]))
+            count+=1
+            # print(cell.value, end=" ")
+        v = Voter(preferences)
+        voter_list.append(v)
+        # print()
+    # print(voter_list)
+    return offices_candidates, voter_list
+
+def start_algo(json_res: str = None):
     print(json_res)
     if json_res:
         # offices_candidates, voter_list = from_json(json_res)
-        offices_candidates, voter_list = convert_request(json_res['offices'] ,json_res['candidates'] ,json_res['voters'])
-    else :
+        offices_candidates, voter_list = convert_request(json_res['offices'], json_res['candidates'],
+                                                         json_res['voters'])
+    else:
         offices_candidates, voter_list = demo()
-    a=greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
-    res=define_result(a)
-    s=Global_Justified_Representation(a, voter_list, offices_candidates )
+    a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+    res = define_result(a)
+    s = Global_Justified_Representation(a, voter_list, offices_candidates)
     print(s)
-    with open("files/explanation.txt",'w',encoding="utf-8") as f:
+    with open("files/explanation.txt", 'w', encoding="utf-8") as f:
         f.write(s)
     return res
+
+def start_algo_uploud(file):
+    offices_candidates, voter_list = from_xslx(file)
+    a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+    res = define_result(a)
+    return res
+
+
 
 if __name__ == '__main__':
     # s=demo2()
     # print(start_algo(s))
-    a=start_algo()
-    print(a)
-
-
+    # a=start_algo()
+    # print(a)
+    print(start_algo_uploud('template.xlsx'))
+    print("______0000000000000_____")
+    # from_xslx('empty template.xlsx')
