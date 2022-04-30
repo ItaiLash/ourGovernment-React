@@ -1,6 +1,7 @@
 import * as React from "react";
 import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
+import Popup from "./Popup";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 
@@ -15,6 +16,7 @@ class FormBox extends React.Component {
       renderResult: false,
 
       renderVoters: false,
+      error: false,
       
 
       pav: {},
@@ -126,11 +128,20 @@ class FormBox extends React.Component {
     // if (
     //   //check all offices and candidates filled corectly
     // ) {
-    this.props.officesArr.length = 0;
-    this.props.candidatesArr.length = 0;
-    this.setState(({ clickedNext }) => ({ clickedNext: true }));
-    await this.delay(5000);
-    this.setState(({ renderVoters }) => ({ renderVoters: true }));
+    if(this.props.officesArr.length === this.props.data.offices){
+      this.setState(({ error }) => ({ error: false }));      
+      this.props.officesArr.length = 0;
+      this.props.candidatesArr.length = 0;
+      this.setState(({ clickedNext }) => ({ clickedNext: true }));
+      await this.delay(5000);
+      this.setState(({ renderVoters }) => ({ renderVoters: true }));
+    }
+    else{
+      // <Footer />
+      this.setState(({ error }) => ({ error: false }));
+      <Popup />
+      console.log("shani")
+    }
   };
 
   delay(number) {
