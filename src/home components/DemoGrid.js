@@ -26,8 +26,10 @@ function DemoGrid() {
           />
         </svg>
         <p className={style.cardDescription}>
-          Want to try the algorithm for yourself? Want to make a fair
-          distribution? Create harmony by fair allocation.
+          Want to try the algorithm for yourself?<br></br>Want to make a fair
+          distribution?<br></br>
+          Create harmony by fair allocation.<br></br>
+          <br></br>
         </p>
 
         <a href="/demo" className={style.btn}>

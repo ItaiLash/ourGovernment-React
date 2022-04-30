@@ -52,12 +52,20 @@ GREY COLOR: #343a40
   display: inline-block;
   border-radius: 100px;
   justify-content: center;
+    --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .btn:hover,
 .btn:active {
   background-color: #099268;
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .img {
@@ -94,11 +102,13 @@ GREY COLOR: #343a40
 
 /* FEATURES */
 .optionIcon {
-  stroke: #087f5b;
+  stroke: rgb(31 41 55);
   height: 48px;
   width: 48px;
   margin-bottom: 16px;
   margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* OPTION */
