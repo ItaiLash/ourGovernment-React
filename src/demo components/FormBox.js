@@ -154,11 +154,8 @@ class FormBox extends React.Component {
   renderTryAgainClick = () => {
     if (this.props.clickedSubmit && this.state.renderVoters) {
       return (
-        <a
-          href="#"
-          className={style.btnSubmit}
-          onClick={this.handlClickTryAgain}
-        >
+        <div>
+        <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
           Try Again
         </a>
         <a href="#" className={style.btnSubmit} onClick={this.handlePDFDownload}>
