@@ -48,14 +48,28 @@ class PavFileViewSet(viewsets.ModelViewSet):
         print(request.data)
         file=request.data['pav_file']
         PavFile.objects.create(file=file)
-        print(start_algo_uploud(f"files/csv/{str(file)}"))
-        response = {"massage": 'Success', 'result': "Valhalla"}
-        return Response(response, status=status.HTTP_200_OK)
+        try:
+            print(start_algo_uploud(f"files/csv/{str(file)}"))
+            response = {"massage": 'Success', 'result': "Valhalla"}
+            return Response(response, status=status.HTTP_200_OK)
+        except:
+            response = {"massage": 'failed', 'result': "Valhalla"}
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True, methods=['GET'])
     def download_results(self,request=None, pk=None):
         print("ssssssssss")
         path_to_file = MEDIA_ROOT + '/explanation.txt'
+        with open(path_to_file, 'rb') as f:
+            explanation_file = File(f)
+            response = HttpResponse(explanation_file.read())
+        response['Content-Disposition'] = 'attachment'
+        # response_ = {"massage": 'Success', 'data': response}
+        return response
+    @action(detail=True, methods=['GET'])
+    def download_results_csv(self,request=None, pk=None):
+        print("ssssssssss")
+        path_to_file = MEDIA_ROOT + '/result.csv'
         with open(path_to_file, 'rb') as f:
             explanation_file = File(f)
             response = HttpResponse(explanation_file.read())

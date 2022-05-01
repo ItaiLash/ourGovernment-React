@@ -129,16 +129,60 @@ GREY COLOR: #343a40
 }
 
 .downloadTemBox {
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
+   width: 70%;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* column-gap: 10px; */
   background-color: #e9ecef;
   border-radius: 20px;
-  justify-content: center;
-  margin-top: 48px;
-  align-items: center;
+  /* justify-content: center; */
+  margin-top: 10px;
+  /* align-items: center; */
   margin-right: auto;
   margin-left: auto;
   padding: 20px 20px;
+  /* gap: 4px; */
+  /* grid-auto-flow: column;  */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  gap: 30px;
+  grid-auto-flow: column;
+}
+
+.uploadGgrid{
+  width: 70%;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* column-gap: 10px; */
+  background-color: #e9ecef;
+  border-radius: 20px;
+  /* justify-content: center; */
+  margin-top: 10px;
+  /* align-items: center; */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 20px;
+  /* gap: 4px; */
+  /* grid-auto-flow: column;  */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  gap: 30px;
+  grid-auto-flow: column;
+}
+.uploadBtn{
+  font-size: 14px;
+  padding: 16px 32px;
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  inline-size: 224px;
+  border-radius: 100px;
+  justify-content: center;
 }

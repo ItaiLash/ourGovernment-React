@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Icon from "./Icon";
 import style from "./style_upload.module.css";
+import Axios from 'axios';
+import FileDownload from "js-file-download";
 
 export default function  FileUploadPage() {
   const [selectedFile, setSelectedFile] = useState();
@@ -19,19 +21,41 @@ export default function  FileUploadPage() {
       method : 'POST',
       body: uploadData
     })
-    .then(res => console.log(res))
+    .then((resp) => resp.json())
+    .then(res => downloadReuslt(res))
+  };
+
+  const downloadReuslt = (result) => {
+    console.log(result);
+    if (result.massage === "failed") {
+      return;
+    }
+    handleCsvDownload();
+  
+  }
+
+  const handleCsvDownload = () => {
+    // e.preventDefault()
+    Axios({
+      url:"http://127.0.0.1:8000/api/pav/0/download_results_csv/",
+      method:"GET",
+      responseType:"blob"
+    }).then((res) => {
+      FileDownload(res.data,"result.csv")
+    })
+ 
   };
 
   return (
     <div>
-      <div>
-      <Icon />
-      <input type="file" className={style.btn} onChange={changeHandler} />
+      <div className={style.uploadGgrid}>
+      {/* <Icon /> */}
       <a href="#" className={style.btn} onClick={handleSubmission}>
                 Upload File
-              </a>
-
-      
+      </a>
+      {/* <div> */}
+      <input type="file"  onChange={changeHandler}/>
+      {/* </div> */}
       </div>
     </div>
   );

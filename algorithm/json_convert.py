@@ -3,7 +3,7 @@ import json
 import csv
 from itertools import combinations, chain
 import os
-import pandas as pd
+
 import openpyxl
 from pathlib import Path
 
@@ -55,7 +55,7 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
                     s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =>\n"
                     t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
-                        s += f"{t[0].name} was chosen which they also agree on for office {t[0].office}.\n"
+                        s += f"{t} were elected which they also agree on.\n"
                     else:
                         print("bad")
         else:
@@ -203,6 +203,8 @@ def from_xslx(file):
         voter_list.append(v)
         # print()
     # print(voter_list)
+    if os.path.exists(file):
+        os.remove(file)
     return offices_candidates, voter_list
 
 def start_algo(json_res: str = None):
@@ -220,12 +222,19 @@ def start_algo(json_res: str = None):
     with open("files/explanation.txt", 'w', encoding="utf-8") as f:
         f.write(s)
     return res
+def save_result_to_csv(res:dict={}):
+    head=['Office','Candidate']
+    rows=[[o,c] for o,c in res.items()]
+    with open("files/result.csv", 'w') as f:
+        csv_writer=csv.writer(f)
+        csv_writer.writerow(head)
+        csv_writer.writerows(rows)
 
 def start_algo_uploud(file):
     offices_candidates, voter_list = from_xslx(file)
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
-    res = define_result(a)
-    return res
+    save_result_to_csv(a)
+    return a
 
 
 
