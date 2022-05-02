@@ -1,6 +1,7 @@
 import React from "react";
 import useDownloader from "react-use-downloader";
 import csvFile from '../csv/template.xlsx';
+import emptyCsvFile from '../csv/empty template.xlsx';
 import Icon from "./Icon";
 import style from "./style_upload.module.css";
 
@@ -24,7 +25,7 @@ export default function FileDownloader() {
       </a>
       <a
         className={style.btn}
-        onClick={() => download(csvFile, empty_file)}
+        onClick={() => download(emptyCsvFile, empty_file)}
               href="#"
       >
         Empty template

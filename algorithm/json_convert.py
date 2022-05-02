@@ -172,8 +172,8 @@ def from_xslx(file):
     col_names = []
     # for row in sheet.iter_rows(max_row=sheet.max_row):
     #     for cell in row:
-    #         # print(cell.value, end=" ")
-    #     # print()
+    #         print(cell.value, end=" ")
+    #     print()
     for column in sheet.iter_cols(min_col=3,max_col=sheet.max_column):
         for i in range(5,sheet.max_row):
             if column[i].value:
@@ -185,22 +185,29 @@ def from_xslx(file):
     # print(col_names)
     # print(offices_candidates)
     sheet = wb_obj.get_sheet_by_name('Votes')
+    # for row in sheet.iter_rows(max_row=sheet.max_row):
+    #     for cell in row:
+    #         print(cell.value, end=" ")
+    #     print()
     # print(sheet)
     num_to_office=[]
     for column in sheet.iter_cols(min_row=5,min_col=4,max_col=sheet.max_column):
-            if column[0].value :
-                num_to_office.append(column[0].value)
-    # print(num_to_office)
+            # if column[0].value :
+            num_to_office.append(column[0].value)
     for row in sheet.iter_rows(min_row=6,min_col=4,max_row=sheet.max_row):
         count=0
         preferences = []
+        flag=False
         for cell in row:
             if cell.value:
+                flag=True
+                # print(count,num_to_office)
                 preferences.append(Candidate(cell.value, num_to_office[count]))
             count+=1
             # print(cell.value, end=" ")
-        v = Voter(preferences)
-        voter_list.append(v)
+        if flag:
+            v = Voter(preferences)
+            voter_list.append(v)
         # print()
     # print(voter_list)
     if os.path.exists(file):
