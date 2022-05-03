@@ -62,7 +62,9 @@ class Input extends React.Component {
   };
 
   handleNumOfCandidatesChange = (event) => {
-    this.setState(({ numOfVoters }) => ({ numOfVoters: event.target.value }));
+    this.setState(({ numOfCandidates }) => ({
+      numOfCandidates: event.target.value,
+    }));
   };
 
   handleNumOfVotersChange = (event) => {
