@@ -17,7 +17,6 @@ export default function NumOfCandidatesSelect(props) {
   props.func('candidates', numOfCandidates);
 
   return (
-    <div>
       <Box className={style.inputBox}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
@@ -43,6 +42,5 @@ export default function NumOfCandidatesSelect(props) {
           </Select>
         </FormControl>
       </Box>
-    </div>
   );
 }

@@ -3,7 +3,8 @@ import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
 import FormBox from "./FormBox";
-import style from './style_demo.module.css'
+import style from './style_demo.module.css';
+import { random } from "../constant/Random";
 
 class Input extends React.Component {
   constructor() {
@@ -17,8 +18,9 @@ class Input extends React.Component {
 
     this.state = {
       clickedSubmit: false,
+      clickedRandom: false,
     };
-  
+
     this.officesArr = [];
     this.candidatesArr = [];
     this.votersArr = [];
@@ -28,7 +30,7 @@ class Input extends React.Component {
     this.inputs[name] = data;
   };
 
-  handClick = (e) => {
+  handSubmitClick = (e) => {
     e.preventDefault();
     if (
       this.inputs.offices > 0 &&
@@ -38,23 +40,41 @@ class Input extends React.Component {
       this.setState(({ clickedSubmit }) => ({ clickedSubmit: true }));
     }
   };
-  
+
+  handRandomClick = (e) => {
+    e.preventDefault();
+    this.setState(({ clickedRandom }) => ({ clickedRandom: true }));
+  };
+
   render() {
     return (
-      <div>
+      <div className={style.input}>
         <section className={style.section}>
           <div className={style.inputGrid}>
-            <NumOfOfficesSelect func={this.pull_data} />
+            <NumOfOfficesSelect
+              func={this.pull_data}
+              rand={this.state.clickedRandom}
+            />
             <NumOfCandidatesSelect func={this.pull_data} />
             <NumOfVotersSelect func={this.pull_data} />
-            <a href="#" className={style.btnSubmit} onClick={this.handClick}>
+            <a
+              href="#"
+              className={style.btnSubmit}
+              onClick={this.handSubmitClick}
+            >
               Submit
+            </a>
+            <a
+              href="#"
+              className={style.btnRandom}
+              onClick={this.handRandomClick}
+            >
+              Random
             </a>
           </div>
         </section>
         {this.state.clickedSubmit ? (
           <FormBox
-            clickedSubmit={this.state.clickedSubmit}
             officesArr={this.officesArr}
             candidatesArr={this.candidatesArr}
             votersArr={this.votersArr}
@@ -65,6 +85,6 @@ class Input extends React.Component {
         ) : null}
       </div>
     );
-    };
+  }
 }
 export default Input;

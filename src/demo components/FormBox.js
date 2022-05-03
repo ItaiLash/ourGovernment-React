@@ -21,7 +21,6 @@ class FormBox extends React.Component {
 
   renderOfficeCards = () => {
     const cp = [];
-    if (this.props.clickedSubmit) {
       for (let i = 0; i < this.props.data.offices; i++) {
         cp.push(
           <OfficeCard
@@ -36,7 +35,6 @@ class FormBox extends React.Component {
         );
       }
       return cp;
-    }
   };
 
   renderVotersCards = () => {
@@ -115,13 +113,11 @@ class FormBox extends React.Component {
   };
 
   renderNextClick = () => {
-    if (this.props.clickedSubmit) {
       return (
         <a href="#" className={style.btnSubmit} onClick={this.handClickNext}>
           Next
         </a>
       );
-    }
   };
 
   handClickNext = async (e) => {
@@ -141,7 +137,7 @@ class FormBox extends React.Component {
   }
 
   renderDoneClick = () => {
-    if (this.props.clickedSubmit && this.state.renderVoters) {
+    if (this.state.renderVoters) {
       return (
         <a href="#" className={style.btnSubmit} onClick={this.handClickDone}>
           Done
@@ -150,7 +146,7 @@ class FormBox extends React.Component {
     }
   };
   renderTryAgainClick = () => {
-    if (this.props.clickedSubmit && this.state.renderVoters) {
+    if (this.state.renderVoters) {
       return (
         <a
           href="#"
