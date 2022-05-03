@@ -18,7 +18,9 @@ class Input extends React.Component {
 
     this.state = {
       clickedSubmit: false,
-      clickedRandom: false,
+      numOfOffices: "",
+      numOfCandidates: "",
+      numOfVoters: "",
     };
 
     this.officesArr = [];
@@ -26,12 +28,17 @@ class Input extends React.Component {
     this.votersArr = [];
   }
 
-  pull_data = (name, data) => {
+  push_data = (name, data) => {
     this.inputs[name] = data;
   };
 
   handSubmitClick = (e) => {
     e.preventDefault();
+    this.push_data("offices", this.state.numOfOffices);
+    this.push_data("candidates", this.state.numOfCandidates);
+    this.push_data("voters", this.state.numOfVoters);
+
+    console.log(this.inputs);
     if (
       this.inputs.offices > 0 &&
       this.inputs.candidates > 0 &&
@@ -43,7 +50,23 @@ class Input extends React.Component {
 
   handRandomClick = (e) => {
     e.preventDefault();
-    this.setState(({ clickedRandom }) => ({ clickedRandom: true }));
+    this.setState(({ numOfOffices }) => ({ numOfOffices: random(1, 10) }));
+    this.setState(({ numOfCandidates }) => ({
+      numOfCandidates: random(1, 10),
+    }));
+    this.setState(({ numOfVoters }) => ({ numOfVoters: random(1, 20) }));
+  };
+
+  handleNumOfOfficesChange = (event) => {
+    this.setState(({ numOfOffices }) => ({ numOfOffices: event.target.value }));
+  };
+
+  handleNumOfCandidatesChange = (event) => {
+    this.setState(({ numOfVoters }) => ({ numOfVoters: event.target.value }));
+  };
+
+  handleNumOfVotersChange = (event) => {
+    this.setState(({ numOfVoters }) => ({ numOfVoters: event.target.value }));
   };
 
   render() {
@@ -52,11 +75,17 @@ class Input extends React.Component {
         <section className={style.section}>
           <div className={style.inputGrid}>
             <NumOfOfficesSelect
-              func={this.pull_data}
-              rand={this.state.clickedRandom}
+              handleChange={this.handleNumOfOfficesChange}
+              numOfOffices={this.state.numOfOffices}
             />
-            <NumOfCandidatesSelect func={this.pull_data} />
-            <NumOfVotersSelect func={this.pull_data} />
+            <NumOfCandidatesSelect
+              handleChange={this.handleNumOfCandidatesChange}
+              numOfCandidates={this.state.numOfCandidates}
+            />
+            <NumOfVotersSelect
+              handleChange={this.handleNumOfVotersChange}
+              numOfVoters={this.state.numOfVoters}
+            />
             <a
               href="#"
               className={style.btnSubmit}

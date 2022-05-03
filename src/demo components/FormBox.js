@@ -23,7 +23,7 @@ class FormBox extends React.Component {
 
   renderOfficeCards = () => {
     const cp = [];
-      for (let i = 0; i < this.props.data.offices; i++) {
+    for (let i = 0; i < this.props.data.offices; i++) {
         cp.push(
           <OfficeCard
             key={`office${i}`}
