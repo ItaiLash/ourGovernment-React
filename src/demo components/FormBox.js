@@ -1,7 +1,6 @@
 import * as React from "react";
 import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
-import Popup from "./Popup";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 
@@ -9,6 +8,8 @@ import Box from "@mui/material/Box";
 class FormBox extends React.Component {
   constructor() {
     super();
+    this.officeArrNew = [];
+    this.uniqueOfficeArr = [];
 
     this.state = {
       clickedNext: false,
@@ -16,7 +17,10 @@ class FormBox extends React.Component {
       renderResult: false,
 
       renderVoters: false,
-      error: false,
+      officeNumError: false,
+      officeDiffNamesError: false,
+
+      voterNumError: false,
       
 
       pav: {},
@@ -109,8 +113,8 @@ class FormBox extends React.Component {
       return (
         <section className={style.section}>
           <div className={style.resultGrid}>
-            <div>{this.resultHandler()}</div>
-            <div>{this.renderTryAgainClick()}</div>
+              <div>{this.resultHandler()}</div>
+              {/* <div>{this.renderTryAgainClick()}</div> */}
           </div>
         </section>
       );
@@ -132,27 +136,90 @@ class FormBox extends React.Component {
     e.preventDefault();
     // if (
     //   //check all offices and candidates filled corectly
-    // ) {
-    if(this.props.officesArr.length === this.props.data.offices){
-      this.setState(({ error }) => ({ error: false }));      
+    // ) {     
       this.props.officesArr.length = 0;
       this.props.candidatesArr.length = 0;
       this.setState(({ clickedNext }) => ({ clickedNext: true }));
       await this.delay(5000);
-      this.setState(({ renderVoters }) => ({ renderVoters: true }));
-    }
-    else{
-      // <Footer />
-      this.setState(({ error }) => ({ error: false }));
-      <Popup />
-      console.log("shani")
-    }
+      this.validateErrorOffice();
+      // this.errorsFuncOffice();
+      if(!this.state.officeNumError && !this.state.officeDiffNamesError){
+        this.setState(({ renderVoters }) => ({ renderVoters: true }));
+      }
   };
 
   delay(number) {
     return new Promise((res) => setTimeout(res, number));
   }
 
+  validateErrorOffice(){
+    //(1)->check if all the office names filled
+    this.officeArrNew = this.props.officesArr.filter(function(string) {
+      return string != "";
+    });
+    this.setState(({ officeNumError }) => this.officeArrNew.length == this.props.data.offices ? ({ officeNumError: false }) : ({ officeNumError: true }));
+    
+    //(2)->check if there are different office names 
+    this.uniqueOfficeArr=[...new Set(this.officeArrNew)];
+      this.setState(({ officeDiffNamesError }) => this.uniqueOfficeArr.length == this.props.data.offices ? ({ officeDiffNamesError: false }) : ({ officeDiffNamesError: true }));
+  }
+
+  validateErrorVoter(){
+    //(1)->check if all the voters vote to all the offices
+    // var counter = 0;
+    // for(var i; i < this.props.data.voters; i++){
+    //   console.log("arr " + "[" + i + "]");
+    //   if(i.length == this.props.data.offices){
+    //     counter++;
+    //     console.log("in1")
+    //   }
+    // }
+    // console.log("counter : " + counter + " offices : " + this.props.data.offices);
+   
+    // this.setState(({ voterNumError }) => counter == this.props.data.voters ? ({ voterNumError: false }) : ({ voterNumError: true }));
+  }
+
+  errorsFuncOffice(){
+    if(this.state.officeNumError){
+      return(
+          <div className={style.errorMessage}>
+            Fill in all the names of the offices
+          </div>
+      )
+    }
+    else if(this.state.officeDiffNamesError){
+      return(
+          <div className={style.errorMessage}>
+            Choose different names for each office
+          </div>
+      )
+    }
+  }
+
+  errorsFuncVoter(){
+    if(this.state.voterNumError){
+      return(
+          <div className={style.errorMessage}>
+            each voter should choose candidate for each office
+          </div>
+      )
+    }
+    // else if(this.state.voterDiffNamesError){
+    //   console.log("in");
+    //   return(
+    //     <section className={style.section}>
+    //     <figure className={style.option} >
+    //       <div className={style.optionBox}>
+    //         <p className={style.cardDescription}>
+    //         Choose different names for each voter
+    //         </p> 
+    //       </div>
+    //     </figure>
+    //   </section>
+    //   )
+    // }
+  }
+ 
   renderDoneClick = () => {
     if (this.props.clickedSubmit && this.state.renderVoters) {
       return (
@@ -162,36 +229,36 @@ class FormBox extends React.Component {
       );
     }
   };
-  renderTryAgainClick = () => {
-    if (this.props.clickedSubmit && this.state.renderVoters) {
-      return (
-        <a
-          href="#"
-          className={style.btnSubmit}
-          onClick={this.handlClickTryAgain}
-        >
-          Try Again
-        </a>
-      );
-    }
-  };
+  // renderTryAgainClick = () => {
+  //   if (this.props.clickedSubmit && this.state.renderVoters) {
+  //     return (
+  //       <a
+  //         href="#"
+  //         className={style.btnSubmit}
+  //         onClick={this.handlClickTryAgain}
+  //       >
+  //         Try Again
+  //       </a>
+  //     );
+  //   }
+  // };
 
   handClickDone = async (e) => {
     e.preventDefault();
-    // if (
-    //   //check all voters selections
-    // ) {
     this.props.votersArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(5000);
-    this.setState(({ renderResult }) => ({ renderResult: true }));
+    // this.validateErrorVoter();
+    if(!this.state.voterNumError){
+      this.setState(({ renderResult }) => ({ renderResult: true }));
+    }
     this.callToPav();
   };
 
-  handlClickTryAgain = async (e) => {
-    e.preventDefault();
-    window.location.reload();
-  };
+  // handlClickTryAgain = async (e) => {
+  //   e.preventDefault();
+  //   window.location.reload();
+  // };
 
   ////////////////////////////////////////////////////////////
   renderResult(result) {
@@ -240,11 +307,13 @@ class FormBox extends React.Component {
         {!this.state.renderVoters && !this.state.renderResult ? (
           <div>
             <div className={style.formBox}>{this.renderOfficeCards()}</div>
+            <div>{this.errorsFuncOffice()}</div>
             <div>{this.renderNextClick()}</div>
           </div>
         ) : !this.state.renderResult ? (
           <div>
             <div className={style.formBox}>{this.renderVotersCards()}</div>
+            <div>{this.errorsFuncVoter()}</div>
             <div>{this.renderDoneClick()}</div>
           </div>
         ) : (

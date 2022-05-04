@@ -17,6 +17,7 @@ class Input extends React.Component {
 
     this.state = {
       clickedSubmit: false,
+      error: false,
     };
   
     this.officesArr = [];
@@ -35,9 +36,27 @@ class Input extends React.Component {
       this.inputs.candidates > 0 &&
       this.inputs.voters > 0
     ) {
+      this.setState(({ error }) => ({ error: false }));
       this.setState(({ clickedSubmit }) => ({ clickedSubmit: true }));
     }
+    else{
+      this.setState(({ error }) => ({ error: true }));
+      this.setState(({ clickedSubmit }) => ({ clickedSubmit: false }));
+    }
   };
+
+  errorsFunc(){
+    if(this.state.error){
+      return(
+          <div className={style.errorMessage}>
+            Please fill in all the options
+          </div>
+      )
+    }
+    else{
+      return null;
+    }
+  }
   
   render() {
     return (
@@ -52,6 +71,7 @@ class Input extends React.Component {
             </a>
           </div>
         </section>
+        <div>{this.errorsFunc()}</div>
         {this.state.clickedSubmit ? (
           <FormBox
             clickedSubmit={this.state.clickedSubmit}
@@ -66,5 +86,5 @@ class Input extends React.Component {
       </div>
     );
     };
-}
+  }
 export default Input;

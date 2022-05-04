@@ -277,7 +277,6 @@ tbody tr:nth-child(even) {
 
 /*---------VOTERS--------*/
 .voterGrid {
-  width: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, 20%);
   column-gap: 20px;
@@ -292,3 +291,16 @@ tbody tr:nth-child(even) {
   margin-bottom: 40px;
   row-gap: 20px;
 }
+
+/*---------error message--------*/
+
+.errorMessage {
+  font-size: 14px;
+  width: fit-content;
+  padding: 0px 0px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 12px auto;
+  background-color: #FFBABA;
+}
+
