@@ -60,7 +60,6 @@ GREY COLOR: #343a40
 
 .btn:hover,
 .btn:active {
-  background-color: #099268;
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
     --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));

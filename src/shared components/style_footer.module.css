@@ -1,9 +1,9 @@
 .footer {
-  /* margin-bottom: 48px; */
+  margin-top: 48px;
   font-size: 14px;
   color: #495057;
 }
 
 body {
-    border-bottom: 8px solid #087f5b;
+    border-bottom: 8px solid rgb(31 41 55);
 }

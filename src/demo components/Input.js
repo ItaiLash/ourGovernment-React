@@ -3,7 +3,8 @@ import NumOfCandidatesSelect from "./NumOfCandidatesSelect";
 import NumOfOfficesSelect from "./NumOfOfficesSelect";
 import NumOfVotersSelect from "./NumOfVotersSelect";
 import FormBox from "./FormBox";
-import style from './style_demo.module.css'
+import style from './style_demo.module.css';
+import { random } from "../constant/Random";
 
 class Input extends React.Component {
   constructor() {
@@ -18,19 +19,27 @@ class Input extends React.Component {
     this.state = {
       clickedSubmit: false,
       error: false,
+      numOfOffices: "",
+      numOfCandidates: "",
+      numOfVoters: "",
     };
-  
+
     this.officesArr = [];
     this.candidatesArr = [];
     this.votersArr = [];
   }
 
-  pull_data = (name, data) => {
+  push_data = (name, data) => {
     this.inputs[name] = data;
   };
 
-  handClick = (e) => {
+  handSubmitClick = (e) => {
     e.preventDefault();
+    this.push_data("offices", this.state.numOfOffices);
+    this.push_data("candidates", this.state.numOfCandidates);
+    this.push_data("voters", this.state.numOfVoters);
+
+    console.log(this.inputs);
     if (
       this.inputs.offices > 0 &&
       this.inputs.candidates > 0 &&
@@ -58,23 +67,65 @@ class Input extends React.Component {
     }
   }
   
+  handRandomClick = (e) => {
+    e.preventDefault();
+    this.setState(({ numOfOffices }) => ({ numOfOffices: random(1, 10) }));
+    this.setState(({ numOfCandidates }) => ({
+      numOfCandidates: random(1, 10),
+    }));
+    this.setState(({ numOfVoters }) => ({ numOfVoters: random(1, 20) }));
+  };
+
+  handleNumOfOfficesChange = (event) => {
+    this.setState(({ numOfOffices }) => ({ numOfOffices: event.target.value }));
+  };
+
+  handleNumOfCandidatesChange = (event) => {
+    this.setState(({ numOfCandidates }) => ({
+      numOfCandidates: event.target.value,
+    }));
+  };
+
+  handleNumOfVotersChange = (event) => {
+    this.setState(({ numOfVoters }) => ({ numOfVoters: event.target.value }));
+  };
+
   render() {
     return (
-      <div>
+      <div className={style.input}>
         <section className={style.section}>
           <div className={style.inputGrid}>
-            <NumOfOfficesSelect func={this.pull_data} />
-            <NumOfCandidatesSelect func={this.pull_data} />
-            <NumOfVotersSelect func={this.pull_data} />
-            <a href="#" className={style.btnSubmit} onClick={this.handClick}>
+            <NumOfOfficesSelect
+              handleChange={this.handleNumOfOfficesChange}
+              numOfOffices={this.state.numOfOffices}
+            />
+            <NumOfCandidatesSelect
+              handleChange={this.handleNumOfCandidatesChange}
+              numOfCandidates={this.state.numOfCandidates}
+            />
+            <NumOfVotersSelect
+              handleChange={this.handleNumOfVotersChange}
+              numOfVoters={this.state.numOfVoters}
+            />
+            <a
+              href="#"
+              className={style.btnSubmit}
+              onClick={this.handSubmitClick}
+            >
               Submit
+            </a>
+            <a
+              href="#"
+              className={style.btnRandom}
+              onClick={this.handRandomClick}
+            >
+              Random
             </a>
           </div>
         </section>
         <div>{this.errorsFunc()}</div>
         {this.state.clickedSubmit ? (
           <FormBox
-            clickedSubmit={this.state.clickedSubmit}
             officesArr={this.officesArr}
             candidatesArr={this.candidatesArr}
             votersArr={this.votersArr}
@@ -85,6 +136,6 @@ class Input extends React.Component {
         ) : null}
       </div>
     );
-    };
   }
+}
 export default Input;

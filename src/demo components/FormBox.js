@@ -3,6 +3,8 @@ import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
+import Axios from 'axios';
+import FileDownload from "js-file-download";
 
 
 class FormBox extends React.Component {
@@ -29,8 +31,7 @@ class FormBox extends React.Component {
 
   renderOfficeCards = () => {
     const cp = [];
-    if (this.props.clickedSubmit) {
-      for (let i = 0; i < this.props.data.offices; i++) {
+    for (let i = 0; i < this.props.data.offices; i++) {
         cp.push(
           <OfficeCard
             key={`office${i}`}
@@ -44,7 +45,6 @@ class FormBox extends React.Component {
         );
       }
       return cp;
-    }
   };
 
   renderVotersCards = () => {
@@ -123,13 +123,11 @@ class FormBox extends React.Component {
   };
 
   renderNextClick = () => {
-    if (this.props.clickedSubmit) {
       return (
         <a href="#" className={style.btnSubmit} onClick={this.handClickNext}>
           Next
         </a>
       );
-    }
   };
 
   handClickNext = async (e) => {
@@ -221,7 +219,7 @@ class FormBox extends React.Component {
   }
  
   renderDoneClick = () => {
-    if (this.props.clickedSubmit && this.state.renderVoters) {
+    if (this.state.renderVoters) {
       return (
         <a href="#" className={style.btnSubmit} onClick={this.handClickDone}>
           Done
@@ -229,19 +227,20 @@ class FormBox extends React.Component {
       );
     }
   };
-  // renderTryAgainClick = () => {
-  //   if (this.props.clickedSubmit && this.state.renderVoters) {
-  //     return (
-  //       <a
-  //         href="#"
-  //         className={style.btnSubmit}
-  //         onClick={this.handlClickTryAgain}
-  //       >
-  //         Try Again
-  //       </a>
-  //     );
-  //   }
-  // };
+  renderTryAgainClick = () => {
+    if (this.state.renderVoters) {
+      return (
+        <div>
+        <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
+          Try Again
+        </a>
+        <a href="#" className={style.btnSubmit} onClick={this.handlePDFDownload}>
+          Learn more
+        </a>
+        </div>
+      );
+    }
+  };
 
   handClickDone = async (e) => {
     e.preventDefault();
@@ -298,6 +297,18 @@ class FormBox extends React.Component {
     //   pav.result = resp;
     //   return { pav };
     // }))
+  };
+
+  handlePDFDownload = (e) => {
+    e.preventDefault()
+    Axios({
+      url:"http://127.0.0.1:8000/api/pav/0/download_results/",
+      method:"GET",
+      responseType:"blob"
+    }).then((res) => {
+      FileDownload(res.data,"explantion.txt")
+    })
+ 
   };
   ////////////////////////////////////////////////////////////
 

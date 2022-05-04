@@ -17,10 +17,10 @@ function UploadFile() {
 
       <section>
         <FileDownloader />
-        <div className={style.grid4Rows}>
-          <figure className={style.option}>
+        {/* <div className={style.grid4Rows}> */}
+          {/* <figure className={style.option}>
             <FileDownloader />
-          </figure>
+          </figure> */}
 
           <figure className={style.option}>
             <div className={style.uploadBox}>
@@ -28,7 +28,7 @@ function UploadFile() {
             </div>
           </figure>
 
-          <figure className={style.option}>
+          {/* <figure className={style.option}>
             <div className={style.runBox}>
               <Icon />
               <a href="#" className={style.btn}>
@@ -72,8 +72,8 @@ function UploadFile() {
                 Download Full Statistics
               </a>
             </div>
-          </figure>
-        </div>
+          </figure> */}
+        {/* </div> */}
       </section>
 
       <Footer />

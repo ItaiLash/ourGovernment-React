@@ -5,17 +5,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import style from './style_demo.module.css'
-
+import { random } from '../constant/Random'
 
 function NumOfOfficesSelect(props) {
-  const [numOfOffices, setNumOfOffices] = React.useState("");
-
-  const handleChange = (event) => {
-    setNumOfOffices(event.target.value);
-  };
-  
-  props.func('offices', numOfOffices);
-
   return (
     <Box className={style.inputBox}>
       <FormControl fullWidth>
@@ -23,9 +15,9 @@ function NumOfOfficesSelect(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={numOfOffices}
+          value={props.numOfOffices}
           label="numOfOffices"
-          onChange={handleChange}
+          onChange={props.handleChange}
         >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>

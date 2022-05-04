@@ -8,16 +8,7 @@ import style from './style_demo.module.css'
 
 
 export default function NumOfCandidatesSelect(props) {
-  const [numOfCandidates, setNumOfCandidates] = React.useState("");
-
-  const handleChange = (event) => {
-    setNumOfCandidates(event.target.value);
-  };
-
-  props.func('candidates', numOfCandidates);
-
   return (
-    <div>
       <Box className={style.inputBox}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
@@ -26,9 +17,9 @@ export default function NumOfCandidatesSelect(props) {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={numOfCandidates}
+            value={props.numOfCandidates}
             label="numOfCandidates"
-            onChange={handleChange}
+            onChange={props.handleChange}
           >
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
@@ -43,6 +34,5 @@ export default function NumOfCandidatesSelect(props) {
           </Select>
         </FormControl>
       </Box>
-    </div>
   );
 }

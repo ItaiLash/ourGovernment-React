@@ -33,6 +33,10 @@ BACKGROUND-COLOR: #63e6be
   margin-bottom: 48px;
 }
 
+.input {
+  margin-bottom: 48px;
+}
+
 .textOffices {
   /* display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -45,8 +49,8 @@ BACKGROUND-COLOR: #63e6be
 .btn:visited {
   font-size: 14px;
   padding: 16px 32px;
-  background-color: #087f5b;
-  color: #fff;
+  /* background-color: #087f5b;
+  color: #fff; */
   text-decoration: none;
   text-transform: uppercase;
   width: fit-content;
@@ -54,12 +58,19 @@ BACKGROUND-COLOR: #63e6be
   display: inline-block;
   border-radius: 10px;
   justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #099268;
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 /* ------------------------ */
@@ -156,8 +167,10 @@ tbody tr:nth-child(even) {
 .btnAddOffice {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
-  background-color: #087f5b;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
   padding: 8px 8px;
   border-radius: 0.7em;
   font-size: 18px;
@@ -166,7 +179,7 @@ tbody tr:nth-child(even) {
 }
 
 .trashIcon {
-  stroke: #099268;
+  stroke: rgb(31 41 55);
   height: 32px;
   width: 32px;
   justify-items: center;
@@ -183,7 +196,7 @@ tbody tr:nth-child(even) {
 .inputGrid {
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(2, 1fr);
   column-gap: 0px;
   background-color: #e9ecef;
@@ -223,12 +236,26 @@ tbody tr:nth-child(even) {
   margin: 24px auto;
 }
 
+.inputBox:nth-child(1) {
+  grid-column: 1 / span 4;
+}
+
+.inputBox:nth-child(2) {
+  grid-column: 5 / span 4;
+}
+
+.inputBox:nth-child(3) {
+  grid-column: 9 / span 4;
+}
+
 .btnSubmit:link,
 .btnSubmit:visited {
   font-size: 14px;
   padding: 16px 32px;
-  background-color: #087f5b;
-  color: #fff;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
   text-decoration: none;
   text-transform: uppercase;
   width: fit-content;
@@ -236,13 +263,45 @@ tbody tr:nth-child(even) {
   display: inline-block;
   border-radius: 10px;
   justify-content: center;
-  grid-column: 2/3;
+  grid-column: 3/7;
   margin: auto;
 }
 
 .btnSubmit:hover,
 .btnSubmit:active {
-  background-color: #099268;
+    --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));  
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+.btnRandom:link,
+.btnRandom:visited {
+  font-size: 14px;
+  padding: 16px 32px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 10px;
+  justify-content: center;
+  grid-column: 7/11;
+  margin: auto;
+}
+
+.btnRandom:hover,
+.btnRandom:active {
+    --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));  
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
 }
 
