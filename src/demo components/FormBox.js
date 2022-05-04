@@ -114,7 +114,7 @@ class FormBox extends React.Component {
         <section className={style.section}>
           <div className={style.resultGrid}>
               <div>{this.resultHandler()}</div>
-              {/* <div>{this.renderTryAgainClick()}</div> */}
+              <div>{this.renderTryAgainClick()}</div>
           </div>
         </section>
       );
