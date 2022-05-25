@@ -254,10 +254,10 @@ class FormBox extends React.Component {
     this.callToPav();
   };
 
-  // handlClickTryAgain = async (e) => {
-  //   e.preventDefault();
-  //   window.location.reload();
-  // };
+  handlClickTryAgain = async (e) => {
+    e.preventDefault();
+    window.location.reload();
+  };
 
   ////////////////////////////////////////////////////////////
   renderResult(result) {
@@ -306,7 +306,7 @@ class FormBox extends React.Component {
       method:"GET",
       responseType:"blob"
     }).then((res) => {
-      FileDownload(res.data,"explantion.txt")
+      FileDownload(res.data,"explantion.html")
     })
  
   };

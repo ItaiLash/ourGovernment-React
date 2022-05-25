@@ -24,7 +24,7 @@ class PavViewSet(viewsets.ModelViewSet):
             if request.data['offices'] and request.data['candidates'] and request.data['voters']:
                 try:
                     print(request)
-                    print(request.data)
+                    print(request.data,"lllllll")
                     result = start_algo(request.data)
                     response = {"massage": 'Success', 'result': json.dumps(result, default=lambda o: o.__dict__)}
                     print(response)
@@ -64,7 +64,7 @@ class PavFileViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['GET'])
     def download_results(self,request=None, pk=None):
         print("ssssssssss")
-        path_to_file = MEDIA_ROOT + '/explanation.txt'
+        path_to_file = MEDIA_ROOT + '/explanation.html'
         with open(path_to_file, 'rb') as f:
             explanation_file = File(f)
             response = HttpResponse(explanation_file.read())
