@@ -48,15 +48,34 @@ export default function  FileUploadPage() {
 
   return (
     <div>
-      <div className={style.uploadGgrid}>
-      {/* <Icon /> */}
-      <a href="#" className={style.btn} onClick={handleSubmission}>
-                Upload File
-      </a>
-      {/* <div> */}
-      <input type="file"  onChange={changeHandler}/>
-      {/* </div> */}
-      </div>
+      <section className={style.downloadTemBox}>
+        <p className={style.step}>STEP #2</p>
+        <div className={style.stepParaWraper2}>
+          <p className={style.stepPara}>
+            Fill the template with offices, candidates and voters as your wish
+          </p>
+        </div>
+      </section>
+      <section className={style.downloadTemBox}>
+        <p className={style.step}>STEP #3</p>
+        <div className={style.stepParaWraper}>
+          <p className={style.stepPara}>
+            Upload the updated template file to our server
+          </p>
+        </div>
+        <input className={style.fileUp} type="file" onChange={changeHandler} />
+      </section>
+      <section className={style.downloadTemBox}>
+        <p className={style.step}>STEP #4</p>
+        <div className={style.stepParaWraper}>
+          <p className={style.stepPara}>
+            Run the algorithm and get your results
+          </p>
+        </div>
+        <a href="#" className={style.btnGetRes} onClick={handleSubmission}>
+          Get Result
+        </a>
+      </section>
     </div>
   );
 }

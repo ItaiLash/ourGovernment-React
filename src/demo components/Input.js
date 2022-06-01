@@ -27,6 +27,7 @@ class Input extends React.Component {
     this.officesArr = [];
     this.candidatesArr = [];
     this.votersArr = [];
+    this.votersNamesArr = [];
   }
 
   push_data = (name, data) => {
@@ -129,6 +130,7 @@ class Input extends React.Component {
             officesArr={this.officesArr}
             candidatesArr={this.candidatesArr}
             votersArr={this.votersArr}
+            votersNamesArr={this.votersNamesArr}
             callPav={this.callToPav}
             pav={this.state.pav}
             data={this.inputs}

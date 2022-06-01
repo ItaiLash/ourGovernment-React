@@ -14,28 +14,24 @@ export default function FileDownloader() {
 
   return (
     <section className={style.downloadTemBox}>
-        {/* <Icon /> */}
-      {/* <p>Download is in {isInProgress ? "in progress" : "stopped"}</p> */}
+      <p className={style.step}>STEP #1</p>
+      <div className={style.stepParaWraper}>
+        <p className={style.stepPara}>Download one of the templates</p>
+      </div>
       <a
-        className={style.btn}
+        className={style.btnDown}
         onClick={() => download(csvFile, filename)}
-              href="#"
+        href="#"
       >
-        Download template
+        Full template
       </a>
       <a
-        className={style.btn}
+        className={style.btnDown}
         onClick={() => download(emptyCsvFile, empty_file)}
-              href="#"
+        href="#"
       >
         Empty template
       </a>
-      {/* <button onClick={() => cancel()}>Cancel the download</button>
-      <p>Download size in bytes {size}</p>
-      <label for="file">Downloading progress:</label>
-      <progress id="file" value={percentage} max="100" />
-      <p>Elapsed time in seconds {elapsed}</p>
-      {error && <p>possible error {JSON.stringify(error)}</p>} */}
     </section>
   );
 }

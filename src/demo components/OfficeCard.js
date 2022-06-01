@@ -2,7 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
-
+import { generateRandomOfficeName } from "../constant/Random";
+import { CgBolt } from "react-icons/cg";
 ////// add button to fill automatic offices and candidates names
 
 export default function OfficeCard(props) {
@@ -57,6 +58,12 @@ export default function OfficeCard(props) {
     }
   };
 
+  const handleRandomOfficesClick = (e) => {
+      e.preventDefault();
+      setOfficeInput(generateRandomOfficeName());
+      handleOfficeInputChange(e);
+    };
+  
   return (
     <figure className={style.office}>
       <div className={style.formCard}>
@@ -80,6 +87,7 @@ export default function OfficeCard(props) {
             inputRef={officeNameRef}
           />
           {getTextboxs()}
+          <CgBolt/>
         </Box>
         {done()}
       </div>

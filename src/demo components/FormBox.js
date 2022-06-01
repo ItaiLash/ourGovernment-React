@@ -5,17 +5,16 @@ import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
-
+import { generateRandomOfficeName } from "../constant/Random";
 
 class FormBox extends React.Component {
   constructor() {
     super();
-    this.officeArrNew = [];
-    this.uniqueOfficeArr = [];
 
     this.state = {
       clickedNext: false,
       clickedDone: false,
+      clickedRandomOffice: false,
       renderResult: false,
 
       renderVoters: false,
@@ -23,29 +22,58 @@ class FormBox extends React.Component {
       officeDiffNamesError: false,
 
       voterNumError: false,
-      
 
       pav: {},
     };
   }
 
+  /*
+  |------------------------------------------------------------|
+  |                        Office Card                         |
+  |------------------------------------------------------------|
+  */
+
   renderOfficeCards = () => {
     const cp = [];
     for (let i = 0; i < this.props.data.offices; i++) {
-        cp.push(
-          <OfficeCard
-            key={`office${i}`}
-            id={`office${i}`}
-            numOfCandidates={this.props.data.candidates}
-            officesArr={this.props.officesArr}
-            candidatesArr={this.props.candidatesArr}
-            index={i}
-            nextClicked={this.state.clickedNext}
-          />
-        );
-      }
-      return cp;
+      cp.push(
+        <OfficeCard
+          key={`office${i}`}
+          id={`office${i}`}
+          numOfCandidates={this.props.data.candidates}
+          officesArr={this.props.officesArr}
+          candidatesArr={this.props.candidatesArr}
+          index={i}
+          nextClicked={this.state.clickedNext}
+          randomClicked={this.state.clickedRandomOffice}
+        />
+      );
+    }
+    return cp;
   };
+
+  renderRandomOffices = () => {
+    return (
+      <a
+        href="#"
+        className={style.btnRandom}
+        onClick={this.handleRandomOfficesClick}
+      >
+        Random
+      </a>
+    );
+  };
+
+  handleRandomOfficesClick = async (e) => {
+    e.preventDefault();
+    this.setState(({ clickedRandomOffice }) => ({ clickedRandomOffice: true }));
+  };
+  
+  /*
+  |------------------------------------------------------------|
+  |                        Voter Card                         |
+  |------------------------------------------------------------|
+  */
 
   renderVotersCards = () => {
     const cp = [];
@@ -58,6 +86,7 @@ class FormBox extends React.Component {
           officesArr={this.props.officesArr}
           candidatesArr={this.props.candidatesArr}
           votersArr={this.props.votersArr}
+          votersNamesArr={this.props.votersNamesArr}
           index={i}
           doneClicked={this.state.clickedDone}
         />
@@ -65,13 +94,176 @@ class FormBox extends React.Component {
     }
     return cp;
   };
-  resultHandler = () =>{
+
+  renderNextClick = () => {
+    return (
+      <a href="#" className={style.btnSubmit} onClick={this.handleNextClick}>
+        Next
+      </a>
+    );
+  };
+
+  handleNextClick = async (e) => {
+    e.preventDefault();
+    // if (
+    //   //check all offices and candidates filled corectly
+    // ) {
+    this.props.officesArr.length = 0;
+    this.props.candidatesArr.length = 0;
+    this.setState(({ clickedNext }) => ({ clickedNext: true }));
+    await this.delay(2000);
+    this.validateErrorOffice();
+    // this.errorsFuncOffice();
+    if (!this.state.officeNumError && !this.state.officeDiffNamesError) {
+      this.setState(({ renderVoters }) => ({ renderVoters: true }));
+    }
+  };
+
+  delay(number) {
+    return new Promise((res) => setTimeout(res, number));
+  }
+
+  renderDoneClick = () => {
+    if (this.state.renderVoters) {
+      return (
+        <a href="#" className={style.btnSubmit} onClick={this.handleDoneClick}>
+          Done
+        </a>
+      );
+    }
+  };
+
+  handleDoneClick = async (e) => {
+    e.preventDefault();
+    this.props.votersArr.length = 0;
+    this.setState(({ clickedDone }) => ({ clickedDone: true }));
+    await this.delay(2000);
+    // this.validateErrorVoter();
+    if (!this.state.voterNumError) {
+      this.setState(({ renderResult }) => ({ renderResult: true }));
+    }
+    this.callToPav();
+  };
+
+  renderTryAgainClick = () => {
+    if (this.state.renderVoters) {
+      return (
+        <div>
+          <a
+            href="#"
+            className={style.btnSubmit}
+            onClick={this.handlClickTryAgain}
+          >
+            Try Again
+          </a>
+          <a
+            href="#"
+            className={style.btnSubmit}
+            onClick={this.handlePDFDownload}
+          >
+            Learn more
+          </a>
+        </div>
+      );
+    }
+  };
+
+  // handlClickTryAgain = async (e) => {
+  //   e.preventDefault();
+  //   window.location.reload();
+  // };
+
+  /*
+  |------------------------------------------------------------|
+  |                     Errors Validations                     |
+  |------------------------------------------------------------|
+  */
+  validateErrorOffice() {
+    //(1)->check if all the office names filled
+    let officeArrNew = this.props.officesArr.filter(function (string) {
+      return string != "";
+    });
+    this.setState(({ officeNumError }) =>
+      officeArrNew.length == this.props.data.offices
+        ? { officeNumError: false }
+        : { officeNumError: true }
+    );
+
+    //(2)->check if there are different office names
+    let uniqueOfficeArr = [...new Set(officeArrNew)];
+    this.setState(({ officeDiffNamesError }) =>
+      uniqueOfficeArr.length == this.props.data.offices
+        ? { officeDiffNamesError: false }
+        : { officeDiffNamesError: true }
+    );
+  }
+
+  validateErrorVoter() {
+    //(1)->check if all the voters vote to all the offices
+    // var counter = 0;
+    // for(var i; i < this.props.data.voters; i++){
+    //   console.log("arr " + "[" + i + "]");
+    //   if(i.length == this.props.data.offices){
+    //     counter++;
+    //     console.log("in1")
+    //   }
+    // }
+    // console.log("counter : " + counter + " offices : " + this.props.data.offices);
+    // this.setState(({ voterNumError }) => counter == this.props.data.voters ? ({ voterNumError: false }) : ({ voterNumError: true }));
+  }
+
+  errorsFuncOffice() {
+    if (this.state.officeNumError) {
+      return (
+        <div className={style.errorMessage}>
+          Fill in all the names of the offices
+        </div>
+      );
+    } else if (this.state.officeDiffNamesError) {
+      return (
+        <div className={style.errorMessage}>
+          Choose different names for each office
+        </div>
+      );
+    }
+  }
+
+  errorsFuncVoter() {
+    if (this.state.voterNumError) {
+      return (
+        <div className={style.errorMessage}>
+          each voter should choose candidate for each office
+        </div>
+      );
+    }
+    // else if(this.state.voterDiffNamesError){
+    //   console.log("in");
+    //   return(
+    //     <section className={style.section}>
+    //     <figure className={style.option} >
+    //       <div className={style.optionBox}>
+    //         <p className={style.cardDescription}>
+    //         Choose different names for each voter
+    //         </p>
+    //       </div>
+    //     </figure>
+    //   </section>
+    //   )
+    // }
+  }
+
+  /*
+  |------------------------------------------------------------|
+  |                      Django Functions                      |
+  |------------------------------------------------------------|
+  */
+  resultHandler = () => {
     const cp = [];
-    let result = '';
-    const temp=String(this.state.pav.result);
+    let result = "";
+    const temp = String(this.state.pav.result);
     // temp=temp.slice(1).slice(0, temp.length - 1)
     for (var i = 0; i < temp.length; i++) {
-      if (temp.charAt(i)!='"') {
+      if (temp.charAt(i) != '"') {
         if (
           (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
           (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
@@ -113,8 +305,8 @@ class FormBox extends React.Component {
       return (
         <section className={style.section}>
           <div className={style.resultGrid}>
-              <div>{this.resultHandler()}</div>
-              {/* <div>{this.renderTryAgainClick()}</div> */}
+            <div>{this.resultHandler()}</div>
+            <div>{this.renderTryAgainClick()}</div>
           </div>
         </section>
       );
@@ -122,144 +314,6 @@ class FormBox extends React.Component {
     return null;
   };
 
-  renderNextClick = () => {
-      return (
-        <a href="#" className={style.btnSubmit} onClick={this.handClickNext}>
-          Next
-        </a>
-      );
-  };
-
-  handClickNext = async (e) => {
-    e.preventDefault();
-    // if (
-    //   //check all offices and candidates filled corectly
-    // ) {     
-      this.props.officesArr.length = 0;
-      this.props.candidatesArr.length = 0;
-      this.setState(({ clickedNext }) => ({ clickedNext: true }));
-      await this.delay(5000);
-      this.validateErrorOffice();
-      // this.errorsFuncOffice();
-      if(!this.state.officeNumError && !this.state.officeDiffNamesError){
-        this.setState(({ renderVoters }) => ({ renderVoters: true }));
-      }
-  };
-
-  delay(number) {
-    return new Promise((res) => setTimeout(res, number));
-  }
-
-  validateErrorOffice(){
-    //(1)->check if all the office names filled
-    this.officeArrNew = this.props.officesArr.filter(function(string) {
-      return string != "";
-    });
-    this.setState(({ officeNumError }) => this.officeArrNew.length == this.props.data.offices ? ({ officeNumError: false }) : ({ officeNumError: true }));
-    
-    //(2)->check if there are different office names 
-    this.uniqueOfficeArr=[...new Set(this.officeArrNew)];
-      this.setState(({ officeDiffNamesError }) => this.uniqueOfficeArr.length == this.props.data.offices ? ({ officeDiffNamesError: false }) : ({ officeDiffNamesError: true }));
-  }
-
-  validateErrorVoter(){
-    //(1)->check if all the voters vote to all the offices
-    // var counter = 0;
-    // for(var i; i < this.props.data.voters; i++){
-    //   console.log("arr " + "[" + i + "]");
-    //   if(i.length == this.props.data.offices){
-    //     counter++;
-    //     console.log("in1")
-    //   }
-    // }
-    // console.log("counter : " + counter + " offices : " + this.props.data.offices);
-   
-    // this.setState(({ voterNumError }) => counter == this.props.data.voters ? ({ voterNumError: false }) : ({ voterNumError: true }));
-  }
-
-  errorsFuncOffice(){
-    if(this.state.officeNumError){
-      return(
-          <div className={style.errorMessage}>
-            Fill in all the names of the offices
-          </div>
-      )
-    }
-    else if(this.state.officeDiffNamesError){
-      return(
-          <div className={style.errorMessage}>
-            Choose different names for each office
-          </div>
-      )
-    }
-  }
-
-  errorsFuncVoter(){
-    if(this.state.voterNumError){
-      return(
-          <div className={style.errorMessage}>
-            each voter should choose candidate for each office
-          </div>
-      )
-    }
-    // else if(this.state.voterDiffNamesError){
-    //   console.log("in");
-    //   return(
-    //     <section className={style.section}>
-    //     <figure className={style.option} >
-    //       <div className={style.optionBox}>
-    //         <p className={style.cardDescription}>
-    //         Choose different names for each voter
-    //         </p> 
-    //       </div>
-    //     </figure>
-    //   </section>
-    //   )
-    // }
-  }
- 
-  renderDoneClick = () => {
-    if (this.state.renderVoters) {
-      return (
-        <a href="#" className={style.btnSubmit} onClick={this.handClickDone}>
-          Done
-        </a>
-      );
-    }
-  };
-  renderTryAgainClick = () => {
-    if (this.state.renderVoters) {
-      return (
-        <div>
-        <a href="#" className={style.btnSubmit} onClick={this.handlClickTryAgain}>
-          Try Again
-        </a>
-        <a href="#" className={style.btnSubmit} onClick={this.handlePDFDownload}>
-          Learn more
-        </a>
-        </div>
-      );
-    }
-  };
-
-  handClickDone = async (e) => {
-    e.preventDefault();
-    this.props.votersArr.length = 0;
-    this.setState(({ clickedDone }) => ({ clickedDone: true }));
-    await this.delay(5000);
-    // this.validateErrorVoter();
-    if(!this.state.voterNumError){
-      this.setState(({ renderResult }) => ({ renderResult: true }));
-    }
-    this.callToPav();
-  };
-
-  // handlClickTryAgain = async (e) => {
-  //   e.preventDefault();
-  //   window.location.reload();
-  // };
-
-  ////////////////////////////////////////////////////////////
   renderResult(result) {
     console.log(result);
     if (result.massage === "one or more fields missing") {
@@ -300,18 +354,21 @@ class FormBox extends React.Component {
   };
 
   handlePDFDownload = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     Axios({
-      url:"http://127.0.0.1:8000/api/pav/0/download_results/",
-      method:"GET",
-      responseType:"blob"
+      url: "http://127.0.0.1:8000/api/pav/0/download_results/",
+      method: "GET",
+      responseType: "blob",
     }).then((res) => {
-      FileDownload(res.data,"explantion.txt")
-    })
- 
+      FileDownload(res.data, "explantion.txt");
+    });
   };
-  ////////////////////////////////////////////////////////////
 
+  /*
+  |------------------------------------------------------------|
+  |                          Render                            |
+  |------------------------------------------------------------|
+  */
   render() {
     return (
       <div>
@@ -319,7 +376,10 @@ class FormBox extends React.Component {
           <div>
             <div className={style.formBox}>{this.renderOfficeCards()}</div>
             <div>{this.errorsFuncOffice()}</div>
-            <div>{this.renderNextClick()}</div>
+            <div className={style.nextRandGrid}>
+              <div>{this.renderNextClick()}</div>
+              <div>{this.renderRandomOffices()}</div>
+            </div>
           </div>
         ) : !this.state.renderResult ? (
           <div>

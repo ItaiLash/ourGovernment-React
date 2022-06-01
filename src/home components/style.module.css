@@ -43,14 +43,12 @@ GREY COLOR: #343a40
 .btn:visited {
   font-size: 14px;
   padding: 16px 32px;
-  background-color: #087f5b;
-  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
 
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 12px;
   justify-content: center;
     --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
