@@ -30,36 +30,37 @@ def voter_agree(voters: list[Voter]) -> list:
 def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices_candidates: dict):
     X = [Candidate(j, i) for i, j in X_result.items()]
     # print(X)
-    s = f'''Global_Justified_Representation:\n
-    V:set of all voters
-    n:number of voters
-    k:number of offices
-    X:office allocation
-    Aj:all the candidates that run to office j
-    A:∪Aj all the candidates
-    X is said to satisfy Global Justified Representation
-    For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:
-    Define c_V': set of all the candidates that all the voters in V' agree on.
-    if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅.
-    
-    All the subgroup that we discuss for this results:\n 
+    s = f'''<h1>Global Justified Representation:</h1>
+<h2>Definition:</h2>
+<p>V:set of all voters. <br />n:number of voters.<br />k:number of offices.<br />
+  X:office allocation.<br />Aj:all the candidates that run to office j.<br />
+  A:∪Aj all the candidates.<br />X is said to satisfy Global Justified Representation if:<br />
+  For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:<br />
+  Define c_V': set of all the candidates that all the voters in V' agree on.<br />
+  if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅.<br /><br />
+  <h2>Prof for this result:</h2>
+  <h3>All the subgroup that we discuss for this results:</h3></p>
     '''
+    s += "<p>"
+    for o,c in X_result.items():
+        s+=f"{o}:{c}<br />"
+    s+="</p>"
     V = list(powerset(voters))
     for v in V:
-        s += "__________________________________________________________________\n"
-        s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}\n"
+        s += "<p>__________________________________________________________________<br />"
+        s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}<br />"
         if len(v) >= (len(voters) / len(offices_candidates.keys())):
             v_agree = voter_agree(v)
             for office, A_j in offices_candidates.items():
                 if len(set(v_agree).intersection(A_j)) > 0:
-                    s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =>\n"
+                    s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =><br />"
                     t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
-                        s += f"{t} were elected which they also agree on.\n"
+                        s += f"{t} were elected which they also agree on.</p>"
                     else:
                         print("bad")
         else:
-            s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.\n"
+            s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.</p>"
     return s
 
 
@@ -174,11 +175,11 @@ def from_xslx(file):
     #     for cell in row:
     #         print(cell.value, end=" ")
     #     print()
-    for column in sheet.iter_cols(min_col=3,max_col=sheet.max_column):
-        for i in range(5,sheet.max_row):
+    for column in sheet.iter_cols(min_col=3, max_col=sheet.max_column):
+        for i in range(5, sheet.max_row):
             if column[i].value:
                 col_names.append(column[i].value)
-                c=Candidate(name=column[i].value,office=column[4].value)
+                c = Candidate(name=column[i].value, office=column[4].value)
                 if c.office not in offices_candidates:
                     offices_candidates[c.office] = []
                 offices_candidates[c.office].append(c)
@@ -190,20 +191,20 @@ def from_xslx(file):
     #         print(cell.value, end=" ")
     #     print()
     # print(sheet)
-    num_to_office=[]
-    for column in sheet.iter_cols(min_row=5,min_col=4,max_col=sheet.max_column):
-            # if column[0].value :
-            num_to_office.append(column[0].value)
-    for row in sheet.iter_rows(min_row=6,min_col=4,max_row=sheet.max_row):
-        count=0
+    num_to_office = []
+    for column in sheet.iter_cols(min_row=5, min_col=4, max_col=sheet.max_column):
+        # if column[0].value :
+        num_to_office.append(column[0].value)
+    for row in sheet.iter_rows(min_row=6, min_col=4, max_row=sheet.max_row):
+        count = 0
         preferences = []
-        flag=False
+        flag = False
         for cell in row:
             if cell.value:
-                flag=True
+                flag = True
                 # print(count,num_to_office)
                 preferences.append(Candidate(cell.value, num_to_office[count]))
-            count+=1
+            count += 1
             # print(cell.value, end=" ")
         if flag:
             v = Voter(preferences)
@@ -213,6 +214,7 @@ def from_xslx(file):
     if os.path.exists(file):
         os.remove(file)
     return offices_candidates, voter_list
+
 
 def start_algo(json_res: str = None):
     print(json_res)
@@ -226,23 +228,27 @@ def start_algo(json_res: str = None):
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
     print(s)
-    with open("files/explanation.txt", 'w', encoding="utf-8") as f:
+    # with open("files/explanation.txt", 'w', encoding="utf-8") as f:
+    #     f.write(s)
+    with open("files/explanation.html", 'w', encoding="utf-8") as f:
         f.write(s)
     return res
-def save_result_to_csv(res:dict={}):
-    head=['Office','Candidate']
-    rows=[[o,c] for o,c in res.items()]
+
+
+def save_result_to_csv(res: dict = {}):
+    head = ['Office', 'Candidate']
+    rows = [[o, c] for o, c in res.items()]
     with open("files/result.csv", 'w') as f:
-        csv_writer=csv.writer(f)
+        csv_writer = csv.writer(f)
         csv_writer.writerow(head)
         csv_writer.writerows(rows)
+
 
 def start_algo_uploud(file):
     offices_candidates, voter_list = from_xslx(file)
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     save_result_to_csv(a)
     return a
-
 
 
 if __name__ == '__main__':
