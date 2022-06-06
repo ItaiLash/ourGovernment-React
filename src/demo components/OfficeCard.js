@@ -48,8 +48,6 @@ export default function OfficeCard(props) {
 
   const done = () => {
     if (props.nextClicked) {
-        console.log(props.officesArr);
-        console.log("limit: " + props.numOfOffices);
       if (props.officesArr.length < props.numOfOffices) {
         props.officesArr.splice(props.index, 0, officeNameRef.current.value);
       }
@@ -57,8 +55,6 @@ export default function OfficeCard(props) {
         props.candidatesArr.splice(props.index, 0, Object.values(inputValues));
       }
     }
-    console.log(props.officesArr);
-    console.log(props.candidatesArr);
   };
 
   const handleRandomOfficesClick = (e) => {

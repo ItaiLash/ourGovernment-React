@@ -411,7 +411,7 @@ class FormBox extends React.Component {
             {console.log(this.props.officesArr)}
             {console.log(this.props.candidatesArr)}
             {console.log(this.props.votersArr)}
-
+            {console.log(this.props.votersNamesArr)}
             <div>{this.renderResultToScreen()}</div>
             {/* <div>{this.renderTryAgainClick()}</div> */}
           </div>

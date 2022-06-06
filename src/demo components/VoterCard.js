@@ -7,7 +7,6 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
 
-
 export default function VoterCard(props) {
 
   /* voter name textbox */
@@ -69,7 +68,6 @@ export default function VoterCard(props) {
               0,
               voterNameRef.current.value
             );
-
     }
   };
 
