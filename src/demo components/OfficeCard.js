@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
 import { generateRandomOfficeName } from "../constant/Random";
 import { CgBolt } from "react-icons/cg";
-////// add button to fill automatic offices and candidates names
 
 export default function OfficeCard(props) {
 
@@ -49,13 +48,17 @@ export default function OfficeCard(props) {
 
   const done = () => {
     if (props.nextClicked) {
-      props.officesArr.splice(props.index, 0, officeNameRef.current.value);
-      props.candidatesArr.splice(
-        props.index,
-        0,
-        Object.values(inputValues)
-      );
+        console.log(props.officesArr);
+        console.log("limit: " + props.numOfOffices);
+      if (props.officesArr.length < props.numOfOffices) {
+        props.officesArr.splice(props.index, 0, officeNameRef.current.value);
+      }
+      if (props.candidatesArr.length < props.numOfCandidates) {
+        props.candidatesArr.splice(props.index, 0, Object.values(inputValues));
+      }
     }
+    console.log(props.officesArr);
+    console.log(props.candidatesArr);
   };
 
   const handleRandomOfficesClick = (e) => {

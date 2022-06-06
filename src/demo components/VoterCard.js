@@ -9,6 +9,7 @@ import style from "./style_demo.module.css";
 
 
 export default function VoterCard(props) {
+
   /* voter name textbox */
   const voterNameRef = React.useRef();
   const [voterNameInput, setVoterNameInput] = React.useState("");
@@ -29,7 +30,6 @@ export default function VoterCard(props) {
   const handleOnInput = (event) => {
     setVoterNameInput(event.target.value);
   };
-
 
   const getTextboxs = () => {
     let content = [];
