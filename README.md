@@ -91,9 +91,16 @@ For development, you will only need Node.js and npm installed on your environeme
      - opempyxl - `pip install openpyxl`
    - Open one of the terminals under algorithm directory and run the command `python3 manage.py runserver`
    - You are supposed to see:
+   
+     ![runserver](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/runserver.jpeg)
      
   
-3. Run the webpage via the other IDE by entering `npm start` command in the terminal.
+4. #### Activating the server:
+- Run the webpage via the other terminal by entering `npm start` command.
+- You are supposed to see:
+  
+  ![npm start](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/npm start.PNG)
+  
 
 ### Running the algorithm
 4. On the website itself, click on the Demo  button that will take you to another page.
