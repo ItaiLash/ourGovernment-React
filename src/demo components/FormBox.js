@@ -360,6 +360,7 @@ class FormBox extends React.Component {
         offices: this.props.officesArr,
         candidates: this.props.candidatesArr,
         voters: this.props.votersArr,
+        votersNames: this.props.votersNamesArr,
       }),
     })
       .then((resp) => resp.json())
