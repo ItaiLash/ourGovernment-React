@@ -95,11 +95,11 @@ For development, you will only need Node.js and npm installed on your environeme
      ![runserver](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/runserver.jpeg)
      
   
-4. #### Activating the server:
-- Run the webpage via the other terminal by entering `npm start` command.
-- You are supposed to see:
+4. #### Activating the webpage:
+   - Run the webpage via the other terminal by entering `npm start` command.
+   - You are supposed to see:
   
-  ![npm start](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/npm start.PNG)
+     ![npmstart](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/npmstart.jpeg)
   
 
 ### Running the algorithm
@@ -110,7 +110,7 @@ For development, you will only need Node.js and npm installed on your environeme
    - Number of voters. Click submit.
 7. A number of cards will open and in each tab the name of the office and the names of the candidates must be entered. Click next (note that there is a delay of 5 seconds until the next component is received).
 8. After a few seconds more cards will open where each voter's name and his choices (preferences) must be entered. Click done (here too there is a delay of 5 seconds).
-9. The results of the algorithm run will be displayed on the screen.
+9. The results of the algorithm run will be displayed on the screen and there will be a link to download explained results.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
