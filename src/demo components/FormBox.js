@@ -20,7 +20,6 @@ class FormBox extends React.Component {
       renderVoters: false,
       officeNumError: false,
       officeDiffNamesError: false,
-
       voterNumError: false,
 
       pav: {},
@@ -41,6 +40,7 @@ class FormBox extends React.Component {
           key={`office${i}`}
           id={`office${i}`}
           numOfCandidates={this.props.data.candidates}
+          numOfOffices={this.props.data.offices}
           officesArr={this.props.officesArr}
           candidatesArr={this.props.candidatesArr}
           index={i}
@@ -71,7 +71,7 @@ class FormBox extends React.Component {
   
   /*
   |------------------------------------------------------------|
-  |                        Voter Card                         |
+  |                        Voter Card                          |
   |------------------------------------------------------------|
   */
 
@@ -408,6 +408,10 @@ class FormBox extends React.Component {
           </div>
         ) : (
           <div>
+            {console.log(this.props.officesArr)}
+            {console.log(this.props.candidatesArr)}
+            {console.log(this.props.votersArr)}
+
             <div>{this.renderResultToScreen()}</div>
             {/* <div>{this.renderTryAgainClick()}</div> */}
           </div>

@@ -263,7 +263,8 @@ tbody tr:nth-child(even) {
   display: inline-block;
   border-radius: 10px;
   justify-content: center;
-  grid-column: 3/7;
+  /* grid-column: 3/7; */
+  grid-column: 5/9;
   margin: auto;
 }
 

@@ -115,13 +115,15 @@ class Input extends React.Component {
             >
               Submit
             </a>
-            <a
+            
+            {/*demo input */
+            /* <a
               href="#"
               className={style.btnRandom}
               onClick={this.handRandomClick}
             >
               Random
-            </a>
+            </a> */}
           </div>
         </section>
         <div>{this.errorsFunc()}</div>
