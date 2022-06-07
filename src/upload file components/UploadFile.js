@@ -3,6 +3,7 @@ import style from "./style_upload.module.css";
 import FileDownloader from "./FileDownloader";
 import FileUploader from "./FileUploader";
 import Footer from "../shared components/Footer";
+import Paragraph from "./Paragraph";
 import Icon from "./Icon";
 
 function UploadFile() {
@@ -11,7 +12,7 @@ function UploadFile() {
       <header>
         <div className={style.headerTextBox}>
           <h1 className={style.title}>Electing the executive branch</h1>
-          <p className={style.headerText}></p>
+          <Paragraph />
         </div>
       </header>
 
