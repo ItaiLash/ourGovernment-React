@@ -62,8 +62,7 @@ ROOT_URLCONF = 'pav.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    # "https://our-government-ariel.herokuapp.com/",
-
+    'https://our-government-ariel.herokuapp.com'
 ]
 # CORS_ALLOW_ALL_ORIGINS: True
 
