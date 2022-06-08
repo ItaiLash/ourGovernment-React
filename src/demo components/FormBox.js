@@ -1,6 +1,7 @@
 import * as React from "react";
 import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
+import CollapsibleTable from "./CollapsTable";
 import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 import Axios from 'axios';
@@ -71,7 +72,7 @@ class FormBox extends React.Component {
     e.preventDefault();
     this.setState(({ clickedRandomOffice }) => ({ clickedRandomOffice: true }));
   };
-  
+
   /*
   |------------------------------------------------------------|
   |                        Voter Card                          |
@@ -157,14 +158,14 @@ class FormBox extends React.Component {
         <div>
           <a
             href="#"
-            className={style.btnSubmit}
+            className={style.btnAgain}
             onClick={this.handlClickTryAgain}
           >
             Try Again
           </a>
           <a
             href="#"
-            className={style.btnSubmit}
+            className={style.btnAgain}
             onClick={this.handlePDFDownload}
           >
             Learn more
@@ -337,9 +338,21 @@ class FormBox extends React.Component {
   |                      Django Functions                      |
   |------------------------------------------------------------|
   */
-  resultHandler = () => {
-    const cp = [];
+  createData(officeName, canName, voters) {
+    let details = [];
+    for (const x of voters) {
+      details.push({ voterName: x });
+    }
+    return {
+      officeName,
+      canName,
+      details,
+    };
+  }
+
+  myData() {
     let result = "";
+    let chosen = []
     const temp = String(this.state.pav.result);
     // temp=temp.slice(1).slice(0, temp.length - 1)
     for (var i = 0; i < temp.length; i++) {
@@ -349,28 +362,8 @@ class FormBox extends React.Component {
           (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
         ) {
           if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
-            cp.push(
-              <Box
-                component="span"
-                sx={{
-                  display: "block",
-                  p: 1,
-                  m: 1,
-                  bgcolor: (theme) =>
-                    theme.palette.mode === "dark" ? "#101010" : "#fff",
-                  color: (theme) =>
-                    theme.palette.mode === "dark" ? "grey.300" : "grey.800",
-                  border: "1px solid",
-                  borderColor: (theme) =>
-                    theme.palette.mode === "dark" ? "grey.800" : "grey.300",
-                  borderRadius: 2,
-                  fontSize: "0.875rem",
-                  fontWeight: "700",
-                }}
-              >
-                {result.slice()}
-              </Box>
-            );
+            let resultArr = result.split(" ");
+            chosen.push(resultArr[resultArr.length - 1].slice(0,-1));
             result = "";
           }
           continue;
@@ -378,33 +371,77 @@ class FormBox extends React.Component {
         result += temp.charAt(i);
       }
     }
-    return cp;
+    /////
+    const chosenCan = ["can1", "can2", "can3"];
+    const chosenVoters = [["vot1", "vot2"], ["vot3"], ["vot1", "vot3"]];
+    /////
+    let rows = [];
+    for (let i = 0; i < this.props.data.offices; i++) {
+      rows.push(
+        this.createData(
+          this.props.officesArr[i],
+          chosen[i],
+          chosenVoters[i]
+        )
+      );
+    }
+    return rows;
+  }
+
+  resultHandler = () => {
+        return <CollapsibleTable rows={this.myData()} />;
+  //   const cp = [];
+  //   let result = "";
+  //   let counter = 0;
+  //   const temp = String(this.state.pav.result);
+  //   // temp=temp.slice(1).slice(0, temp.length - 1)
+  //   for (var i = 0; i < temp.length; i++) {
+  //     if (temp.charAt(i) != '"') {
+  //       if (
+  //         (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
+  //         (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
+  //       ) {
+  //         if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
+  //           let resultArr = result.split(" ");
+  //           console.log(resultArr);
+  //           cp.push(
+  //             <tr>
+  //               <td>{this.props.officesArr[counter++]}</td>
+  //               <td>{resultArr[resultArr.length - 1]}</td>
+  //             </tr>
+  //           );
+  //           result = "";
+  //         }
+  //         continue;
+  //       }
+  //       result += temp.charAt(i);
+  //     }
+  //   }
+  //   return (
+  //     <table className={style.styledTable}>
+  //       <thead>
+  //         <tr>
+  //           <th>Office Name</th>
+  //           <th>Chosen Candidate</th>
+  //         </tr>
+  //       </thead>
+  //       <tbody>{cp}</tbody>
+  //     </table>
+  //   );
   };
+
   renderResultToScreen = () => {
     if (this.state.pav && this.state.clickedDone) {
       return (
-        <section className={style.section}>
-          <div className={style.resultGrid}>
-            <div>{this.resultHandler()}</div>
-            <div>{this.renderTryAgainClick()}</div>
-          </div>
-        </section>
+        <div className={style.resultGrid}>
+          <div>{this.resultHandler()}</div>
+          <div>{this.renderTryAgainClick()}</div>
+        </div>
       );
     }
     return null;
   };
 
-  handClickDone = async (e) => {
-    e.preventDefault();
-    this.props.votersArr.length = 0;
-    this.setState(({ clickedDone }) => ({ clickedDone: true }));
-    await this.delay(5000);
-    // this.validateErrorVoter();
-    if(!this.state.voterNumError && !this.state.voterCandidateError){
-      this.setState(({ renderResult }) => ({ renderResult: true }));
-    }
-    this.callToPav();
-  };
 
   handlClickTryAgain = async (e) => {
     e.preventDefault();
@@ -459,9 +496,8 @@ class FormBox extends React.Component {
       method: "GET",
       responseType: "blob",
     }).then((res) => {
-      FileDownload(res.data,"explantion.html")
-    })
- 
+      FileDownload(res.data, "explantion.html");
+    });
   };
 
   /*
@@ -494,7 +530,7 @@ class FormBox extends React.Component {
             {console.log(this.props.candidatesArr)}
             {console.log(this.props.votersArr)}
             {console.log(this.props.votersNamesArr)}
-            <div>{this.renderResultToScreen()}</div>
+            {this.renderResultToScreen()}
             {/* <div>{this.renderTryAgainClick()}</div> */}
           </div>
         )}
