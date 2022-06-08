@@ -41,26 +41,51 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
   <h2>Prof for this result:</h2>
   <h3>All the subgroup that we discuss for this results:</h3></p>
     '''
-    s += "<p>"
+    s+='''<table width="300" border="1" cellpadding="5" style="text-align: center">
+            <thead>
+            <tr>
+            <td>Office</td>
+            <td>Candidate</td>
+            </tr>
+            </thead>
+            <tbody>'''
+    # s += "<p>"
     for o,c in X_result.items():
-        s+=f"{o}:{c}<br />"
-    s+="</p>"
+        s+=f"""<tr><td>{o}</td><td>{c}</td></tr>"""
+    s+="</tbody></table>"
+    s+=f'''<p>Note:the subgroup that display are only those that big enough
+     only the subgroup that  its size >= n/k={len(voters) / len(offices_candidates.keys())}</p>
+    <table width="300" border="1" cellpadding="5" style="text-align: center">
+            <thead>
+            <tr>
+            <td>Voters subgroup</td>
+            <td>Candidate they agree on</td>
+            <td>Candidate who won</td>
+            </tr>
+            </thead>
+            <tbody>'''
     V = list(powerset(voters))
     for v in V:
-        s += "<p>__________________________________________________________________<br />"
-        s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}<br />"
+        # s += "<p>__________________________________________________________________<br />"
+        # s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}<br />"
         if len(v) >= (len(voters) / len(offices_candidates.keys())):
             v_agree = voter_agree(v)
             for office, A_j in offices_candidates.items():
                 if len(set(v_agree).intersection(A_j)) > 0:
-                    s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =><br />"
+                    # s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =><br />"
                     t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
-                        s += f"{t} were elected which they also agree on.</p>"
+                        lt = [i.name for i in t]
+                        vs=[i.name for i in v]
+                        cs = ' '.join(lt)
+                        s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td></tr>"""
+                        print(f"{t} were elected which they also agree on.")
                     else:
                         print("bad")
         else:
-            s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.</p>"
+            pass
+            # s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.</p>"
+    s+="</tbody></table>"
     return s
 
 
