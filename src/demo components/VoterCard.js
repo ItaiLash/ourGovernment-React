@@ -31,6 +31,7 @@ export default function VoterCard(props) {
   };
 
   const getTextboxs = () => {
+    console.log(props.candidatesArr)
     let content = [];
     for (let i = 0; i < props.data.offices; i++) {
       content.push(
