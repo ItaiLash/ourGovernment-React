@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
 from pathlib import Path
+# from decouple import config
+# from dj_database_url import parse as dburl
 
 # from django-cors-headers import *
 
@@ -21,12 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = 'django-insecure-&h!bj+sf$ry*uz!%($=g*05n#--du80)g7!$1x4rv6v$ovwcm4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = config('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://our-government-ariel.herokuapp.com/','127.0.0.1']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -57,6 +62,7 @@ ROOT_URLCONF = 'pav.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    # "https://our-government-ariel.herokuapp.com/",
 
 ]
 # CORS_ALLOW_ALL_ORIGINS: True
@@ -82,13 +88,18 @@ WSGI_APPLICATION = 'pav.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+#
+# DATABASES = {
+#     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -122,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR,'files')
 MEDIA_URL = '/files/'
 

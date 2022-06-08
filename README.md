@@ -66,7 +66,7 @@ To get a local copy up and running follow these simple steps.
 For development, you will only need Node.js and npm installed on your environement. 
 * To download the latest version of npm (include Node.js), on the command line, run the following command:
   ```sh
-  npm install -g npm
+  npm install
   ```
   or visit https://nodejs.org/en/
 * To see if you already have Node.js and npm installed and check the installed version, run the following commands:
@@ -81,15 +81,26 @@ For development, you will only need Node.js and npm installed on your environeme
    ```sh
    git clone https://github.com/ItaiLash/ourGovernment-React.git
    ```
-2. Open the repo in two different IDEs that support Python and JavaScript (one to open the server and another to run the website).
-2. Activating the server:
-   - Under the algorithm folder, open the 'manage.py' file and run it with "runserver" parameter (edit the configurations and add "runserver").
-   - Note that some packages need to be installed:
+2. Open the repo in two different terminals (one to activate the server and another to activate the website).
+3. #### Activating the server:
+   - First you need to install some packages for the server:
      - Django `pip install django`
      - Django REST framework: `pip install djangorestframework`
      - django-cors-headers: `python -m pip install django-cors-headers`
      - CORScanner: `pip install cors`
-3. Run the webpage via the other IDE by entering `npm start` command in the terminal.
+     - opempyxl - `pip install openpyxl`
+   - Open one of the terminals under algorithm directory and run the command `python3 manage.py runserver`
+   - You are supposed to see:
+   
+     ![runserver](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/runserver.jpeg)
+     
+  
+4. #### Activating the webpage:
+   - Run the webpage via the other terminal by entering `npm start` command.
+   - You are supposed to see:
+  
+     ![npmstart](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/npmstart.jpeg)
+  
 
 ### Running the algorithm
 4. On the website itself, click on the Demo  button that will take you to another page.
@@ -99,7 +110,7 @@ For development, you will only need Node.js and npm installed on your environeme
    - Number of voters. Click submit.
 7. A number of cards will open and in each tab the name of the office and the names of the candidates must be entered. Click next (note that there is a delay of 5 seconds until the next component is received).
 8. After a few seconds more cards will open where each voter's name and his choices (preferences) must be entered. Click done (here too there is a delay of 5 seconds).
-9. The results of the algorithm run will be displayed on the screen.
+9. The results of the algorithm run will be displayed on the screen and there will be a link to download explained results.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

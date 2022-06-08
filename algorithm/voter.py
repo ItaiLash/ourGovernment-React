@@ -27,5 +27,5 @@ class Voter:
 
     def __repr__(self):
         if self.name:
-            return f"Name={self.name}"
+            return f"{self.name}"
         return f"Voter weight:{self.weight} number of good votes:{self.number_of_satisfaction} preferences: {self.preferences} "
