@@ -220,10 +220,14 @@ def start_algo(json_res: str = None):
     print(json_res)
     if json_res:
         # offices_candidates, voter_list = from_json(json_res)
-        offices_candidates, voter_list = convert_request(json_res['offices'], json_res['candidates'],
-                                                         json_res['voters'],json_res['votersNames'])
+        try:
+            offices_candidates, voter_list = convert_request(json_res['offices'], json_res['candidates'],
+                                                     json_res['voters'],json_res['votersNames'])
+        except Exception as e:
+            print(e)
     else:
         offices_candidates, voter_list = demo()
+
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)

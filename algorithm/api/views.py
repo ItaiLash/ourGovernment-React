@@ -26,6 +26,7 @@ class PavViewSet(viewsets.ModelViewSet):
                     print(request)
                     print(request.data,"lllllll")
                     result = start_algo(request.data)
+                    # print("ssss")
                     response = {"massage": 'Success', 'result': json.dumps(result, default=lambda o: o.__dict__)}
                     print(response)
                     return Response(response, status=status.HTTP_200_OK)
