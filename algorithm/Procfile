@@ -1,1 +1,1 @@
-web:gunicorn pav.wsgi
+web: gunicorn pav.wsgi
