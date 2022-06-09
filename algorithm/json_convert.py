@@ -1,3 +1,5 @@
+import math
+
 from greedy_pav import *
 import json
 import csv
@@ -37,7 +39,10 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
   A:∪Aj all the candidates.<br />X is said to satisfy Global Justified Representation if:<br />
   For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:<br />
   Define c_V': set of all the candidates that all the voters in V' agree on.<br />
-  if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅.<br /><br />
+  if (c_V' ∩ Aj) !=∅ then (X ∩ c_V') !=∅.<br /><br />
+  <h2>Global Proportional Justified Representation</h2>
+  if (c_V' ∩ Aj) !=∅  then |(X ∩ c_V')| ≥⌊(|V'|)/(|V|)k⌋ <br /><br />
+  GreedyPAV satisfies GJR but not always GPJR (there exists an algorithm that satisfies GPJR called FPT, but it is running in super-polynomial time )
   <h2>Prof for this result:</h2>
   <h3>All the subgroup that we discuss for this results:</h3></p>
     '''
@@ -61,6 +66,7 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
             <td>Voters subgroup</td>
             <td>Candidate they agree on</td>
             <td>Candidate who won</td>
+            <td>satisfies GPJR</td>
             </tr>
             </thead>
             <tbody>'''
@@ -78,7 +84,10 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
                         lt = [i.name for i in t]
                         vs=[i.name for i in v]
                         cs = ' '.join(lt)
-                        s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td></tr>"""
+                        if len(t)>=math.floor(len(v)/len(voters)*len(offices_candidates.keys())):
+                            s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td><td>&#10004;</td></tr>"""
+                        else:
+                            s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td><td>&#10006;</td></tr>"""
                         print(f"{t} were elected which they also agree on.")
                     else:
                         print("bad")
@@ -283,8 +292,8 @@ def start_algo_uploud(file):
 if __name__ == '__main__':
     # s=demo2()
     # print(start_algo(s))
-    # a=start_algo()
-    # print(a)
-    print(start_algo_uploud('template.xlsx'))
-    print("______0000000000000_____")
+    a=start_algo()
+    print(a)
+    # print(start_algo_uploud('template.xlsx'))
+    # print("______0000000000000_____")
     # from_xslx('empty template.xlsx')
