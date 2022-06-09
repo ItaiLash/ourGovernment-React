@@ -46,7 +46,7 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
   <h2>Prof for this result:</h2>
   <h3>All the subgroup that we discuss for this results:</h3></p>
     '''
-    s+='''<table width="300" border="1" cellpadding="5" style="text-align: center">
+    s += '''<table width="300" border="1" cellpadding="5" style="text-align: center">
             <thead>
             <tr>
             <td>Office</td>
@@ -55,10 +55,10 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
             </thead>
             <tbody>'''
     # s += "<p>"
-    for o,c in X_result.items():
-        s+=f"""<tr><td>{o}</td><td>{c}</td></tr>"""
-    s+="</tbody></table>"
-    s+=f'''<p>Note:the subgroup that display are only those that big enough
+    for o, c in X_result.items():
+        s += f"""<tr><td>{o}</td><td>{c}</td></tr>"""
+    s += "</tbody></table>"
+    s += f'''<p>Note:the subgroup that display are only those that big enough
      only the subgroup that  its size >= n/k={len(voters) / len(offices_candidates.keys())}</p>
     <table width="300" border="1" cellpadding="5" style="text-align: center">
             <thead>
@@ -82,9 +82,9 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
                     t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
                         lt = [i.name for i in t]
-                        vs=[i.name for i in v]
+                        vs = [i.name for i in v]
                         cs = ' '.join(lt)
-                        if len(t)>=math.floor(len(v)/len(voters)*len(offices_candidates.keys())):
+                        if len(t) >= math.floor(len(v) / len(voters) * len(offices_candidates.keys())):
                             s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td><td>&#10004;</td></tr>"""
                         else:
                             s += f"""<tr><td>{' '.join(vs)}</td><td>{list(set(v_agree).intersection(A_j))[0].name}</td><td>{cs}</td><td>&#10006;</td></tr>"""
@@ -94,7 +94,7 @@ def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices
         else:
             pass
             # s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.</p>"
-    s+="</tbody></table>"
+    s += "</tbody></table>"
     return s
 
 
@@ -121,7 +121,7 @@ def from_json(json_res: str):
     return offices_candidates, voter_list
 
 
-def convert_request(offices: list = [], candidates: list = [], voters: list = [],votersNames:list=[]):
+def convert_request(offices: list = [], candidates: list = [], voters: list = [], votersNames: list = []):
     offices_candidates = {}
     voter_list = []
     num_to_office = {i: offices[i] for i in range(len(offices))}
@@ -135,7 +135,7 @@ def convert_request(offices: list = [], candidates: list = [], voters: list = []
         preferences = []
         for i in range(len(voters[voter])):
             preferences.append(Candidate(voters[voter][i], num_to_office[i]))
-        v = Voter(preferences=preferences,name=votersNames[voter])
+        v = Voter(preferences=preferences, name=votersNames[voter])
         voter_list.append(v)
     return offices_candidates, voter_list
 
@@ -194,6 +194,17 @@ def define_result(dic_res: dict = {}) -> str:
     for office, winner in dic_res.items():
         res += f"The candidate who selected for the Ministry of {office} is {winner}.\n"
     return res
+
+
+def voter_to_winner(dic_res: dict = {}, voter_list: list = []) -> list:
+    res = {}
+    for winner in dic_res.values():
+        res[winner] = []
+        for v in voter_list:
+            for c in v.preferences:
+                if c.name == winner:
+                    res[winner].append(v.name)
+    return list(res.values())
 
 
 def from_xslx(file):
@@ -256,13 +267,15 @@ def start_algo(json_res: str = None):
         # offices_candidates, voter_list = from_json(json_res)
         try:
             offices_candidates, voter_list = convert_request(json_res['offices'], json_res['candidates'],
-                                                     json_res['voters'],json_res['votersNames'])
+                                                             json_res['voters'], json_res['votersNames'])
         except Exception as e:
             print(e)
     else:
         offices_candidates, voter_list = demo()
 
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
+    winner_votes=voter_to_winner(a,voter_list)
+    print(winner_votes,"____________")
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
     print(s)
@@ -292,7 +305,7 @@ def start_algo_uploud(file):
 if __name__ == '__main__':
     # s=demo2()
     # print(start_algo(s))
-    a=start_algo()
+    a = start_algo()
     print(a)
     # print(start_algo_uploud('template.xlsx'))
     # print("______0000000000000_____")
