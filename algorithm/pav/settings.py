@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-&h!bj+sf$ry*uz!%($=g*05n#--du80)g7!$1x4rv6v$ovwcm4
 # DEBUG = config('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://our-government-ariel.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','our-government-ariel.herokuapp.com']
 # ALLOWED_HOSTS = []
 
 # Application definition
@@ -62,8 +62,7 @@ ROOT_URLCONF = 'pav.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    # "https://our-government-ariel.herokuapp.com/",
-
+    'https://our-government-ariel.herokuapp.com'
 ]
 # CORS_ALLOW_ALL_ORIGINS: True
 

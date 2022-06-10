@@ -373,7 +373,26 @@ class FormBox extends React.Component {
     }
     /////
     const chosenCan = ["can1", "can2", "can3"];
-    const chosenVoters = [["vot1", "vot2"], ["vot3"], ["vot1", "vot3"]];
+    const chosenVoters = [
+      ["vot1", "vot2"],
+      ["vot3"],
+      ["vot1", "vot3"],
+      ["vot1", "vot2"],
+      ["vot3"],
+      ["vot1", "vot3"],
+      ,
+      ["vot1", "vot2"],
+      ["vot3"],
+      ["vot1", "vot3"],
+      ,
+      ["vot1", "vot2"],
+      ["vot3"],
+      ["vot1", "vot3"],
+      ,
+      ["vot1", "vot2"],
+      ["vot3"],
+      ["vot1", "vot3"],
+    ];
     /////
     let rows = [];
     for (let i = 0; i < this.props.data.offices; i++) {

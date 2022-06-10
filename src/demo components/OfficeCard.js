@@ -51,7 +51,7 @@ export default function OfficeCard(props) {
       if (props.officesArr.length < props.numOfOffices) {
         props.officesArr.splice(props.index, 0, officeNameRef.current.value);
       }
-      if (props.candidatesArr.length < props.numOfCandidates) {
+      if (props.candidatesArr.length < props.numOfOffices) {
         props.candidatesArr.splice(props.index, 0, Object.values(inputValues));
       }
     }

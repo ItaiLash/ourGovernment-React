@@ -13,9 +13,18 @@ export default function  FileUploadPage() {
     setIsFilePicked(true);
     handleSubmission();
   };
-
+  const getExtension =(filename) =>{
+    var parts = filename.split('.');
+    return parts[parts.length - 1];
+  }
+  
   const handleSubmission = () => {
     const uploadData =new FormData();
+    var fileType=getExtension(selectedFile.name)
+    if(fileType!="xlsx"){
+      console.log(fileType + " is unsupported only .xlsx")
+      return;
+    }
     uploadData.append('pav_file',selectedFile,selectedFile.name);
     fetch("http://127.0.0.1:8000/api/pav/0/upload_file/", {
       method : 'POST',
@@ -27,7 +36,8 @@ export default function  FileUploadPage() {
 
   const downloadReuslt = (result) => {
     console.log(result);
-    if (result.massage === "failed") {
+    if (result.massage != "Success") {
+      console.log(result.massage)
       return;
     }
     handleCsvDownload();
