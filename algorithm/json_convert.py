@@ -294,9 +294,16 @@ def save_result_to_csv(res: dict = {}):
         csv_writer.writerow(head)
         csv_writer.writerows(rows)
 
+def validation_file(voters: list[Voter] = None, offices_candidates: dict = None) -> str:
+    return 'Success'
+
 
 def start_algo_uploud(file):
     offices_candidates, voter_list = from_xslx(file)
+    massege=validation_file(offices_candidates, voter_list)
+    if massege != 'Success':
+        pass
+
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     save_result_to_csv(a)
     return a
