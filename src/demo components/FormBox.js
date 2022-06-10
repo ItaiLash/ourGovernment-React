@@ -19,12 +19,12 @@ class FormBox extends React.Component {
       renderResult: false,
 
       renderVoters: false,
+
       officeNumError: false,
       officeDiffNamesError: false,
       candidateDiffNamesError: false,
       candidateEmptyError: false,
       voterNumError: false,
-      voterCandidateError: false,
 
       pav: {},
     };
@@ -206,7 +206,6 @@ class FormBox extends React.Component {
   }
 
   validateErrorCandidates() {
-    // console.log(this.props.candidatesArr);
     let counter1=0; //(1)->check if there are different candidates for each office
     let counter2=0; //(2)->check if there is at least one candidate in each office 
     for(const x of this.props.candidatesArr){
@@ -214,23 +213,23 @@ class FormBox extends React.Component {
         return string != "";
       });
       let uniqueCandidateArr = [...new Set(candidateArrNew)];
-      if(uniqueCandidateArr < 1){
+      if(uniqueCandidateArr.length < 1){
         counter2++;
       }
       if(uniqueCandidateArr.length != candidateArrNew.length){
           counter1++;
       }
     }
-    
-    // let allCandidates = flatten(this.props.candidatesArr);
-    // allCandidates.filter(function (string) {
-    //   return string != "";
-    // });
-    // uniqueAllCandidates =  [...new Set(allCandidates)];
-    // if(uniqueAllCandidates.length == allCandidates.length){
-    //   counter1++;
-    // }
-    // console.log(counter1);
+    let allCandidates = [].concat(...this.props.candidatesArr);
+    console.log("allCandidates : " + allCandidates);
+    allCandidates.filter(function (string) {
+      return string != "";
+    });
+    let uniqueAllCandidates =  [...new Set(allCandidates)];
+    if(uniqueAllCandidates.length != allCandidates.length){
+      counter1++;
+    }
+    console.log(counter1);
     if (counter1 > 0) {
       this.setState(({ candidateDiffNamesError }) => ({ candidateDiffNamesError: true }));
     }
@@ -248,23 +247,13 @@ class FormBox extends React.Component {
   validateErrorVoter() {
     //(1)->check if the voters names array is full
     let counter = 0;
+    let votersNamesArrNew = this.props.votersNamesArr.filter(function (string) {
+      return string != "";
+    });
     this.setState(({ voterNumError }) =>
-    this.props.votersNamesArr.length == this.props.data.voters
+    votersNamesArrNew.length == this.props.data.voters
         ? { voterNumError: false }
         : { voterNumError: true }
-    );
-    //(2)->check if each voter choose candidate for each office
-    console.log("votersArr : " + this.props.votersArr);
-    console.log("votersNames : " + this.props.votersNamesArr)
-    for(const x of this.props.votersArr){
-      if(x.length < 1){
-        counter++;
-      }
-    }
-    this.setState(({ voterCandidateError }) =>
-    counter > 0
-        ? { voterCandidateError: true }
-        : { voterCandidateError: false }
     );
   }
 
@@ -272,30 +261,27 @@ class FormBox extends React.Component {
     if (this.state.officeNumError) {
       return (
         <div className={style.errorMessage}>
-          Fill in all the names of the offices
+          Please fill in all the names of the offices
         </div>
       );
     } else if (this.state.officeDiffNamesError) {
       return (
         <div className={style.errorMessage}>
-          Choose different names for each office
+          Please choose different names for each office
         </div>
       );
     }
-  }
-
-  errorsFuncCandidates() {
-    if (this.state.candidateDiffNamesError) {
+    else if (this.state.candidateDiffNamesError) {
       return (
         <div className={style.errorMessage}>
-          Choose different names for candidates 
+          Please choose different names for candidates 
         </div>
       );
     }
     else if (this.state.candidateEmptyError) {
       return (
         <div className={style.errorMessage}>
-          Fill out at least one candidate in each office 
+          Please fill out at least one candidate in each office 
         </div>
       );
     } 
@@ -305,32 +291,10 @@ class FormBox extends React.Component {
     if (this.state.voterNumError) {
       return (
         <div className={style.errorMessage}>
-          please fill all voters names 
+          Please fill all voters names 
         </div>
       );
     }
-    else if (this.state.voterCandidateError) {
-      return (
-        <div className={style.errorMessage}>
-          each voter need to choose candidate for each office
-        </div>
-      );
-    }
-
-    // else if(this.state.voterDiffNamesError){
-    //   console.log("in");
-    //   return(
-    //     <section className={style.section}>
-    //     <figure className={style.option} >
-    //       <div className={style.optionBox}>
-    //         <p className={style.cardDescription}>
-    //         Choose different names for each voter
-    //         </p>
-    //       </div>
-    //     </figure>
-    //   </section>
-    //   )
-    // }
   }
 
   /*
@@ -373,26 +337,7 @@ class FormBox extends React.Component {
     }
     /////
     const chosenCan = ["can1", "can2", "can3"];
-    const chosenVoters = [
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-    ];
+    const chosenVoters = [["vot1", "vot2"], ["vot3"], ["vot1", "vot3"]];
     /////
     let rows = [];
     for (let i = 0; i < this.props.data.offices; i++) {
@@ -531,7 +476,7 @@ class FormBox extends React.Component {
           <div>
             <div className={style.formBox}>{this.renderOfficeCards()}</div>
             <div>{this.errorsFuncOffice()}</div>
-            <div>{this.errorsFuncCandidates()}</div>
+            {/* <div>{this.errorsFuncCandidates()}</div> */}
             <div className={style.nextRandGrid}>
               <div>{this.renderNextClick()}</div>
               <div>{this.renderRandomOffices()}</div>
