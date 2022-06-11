@@ -22,7 +22,6 @@ GREY COLOR: #343a40
 .container {
   width: 1060px;
   margin: 0 auto;
-  /*original properties: body*/
   font-family: "Inter", sans-serif;
   color: #343a40;
   text-align: center;
@@ -120,19 +119,4 @@ GREY COLOR: #343a40
 
 .cardDescription{
   margin-bottom: 24px;
-}
-/* 
-footer {
-  margin-bottom: 48px;
-  font-size: 14px;
-  color: #495057;
-}
-
-.features-title {
-  margin-bottom: 16px;
-}
-
-.features-text {
-  font-size: 18px;
-  line-height: 1.7;
-} */
+}s

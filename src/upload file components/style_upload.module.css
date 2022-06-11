@@ -114,7 +114,6 @@ GREY COLOR: #343a40
   height: 24px;
   width: 24px;
   vertical-align: middle;
-  /* margin-right: 10px; */
 }
 
 .statIcon {
@@ -137,33 +136,24 @@ GREY COLOR: #343a40
 
 /* OPTION */
 .option {
-  /* border-radius: 12px; */
-  /* box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1); */
   grid-column: 1/2;
 }
 
 .uploadGgrid{
   width: 70%;
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* column-gap: 10px; */
   background-color: #e9ecef;
   border-radius: 20px;
-  /* justify-content: center; */
   margin-top: 10px;
-  /* align-items: center; */
   margin-right: auto;
   margin-left: auto;
   padding: 20px 20px;
-  /* gap: 4px; */
-  /* grid-auto-flow: column;  */
   display: grid;
   justify-content: center;
   align-content: center;
-
   gap: 30px;
   grid-auto-flow: column;
 }
+
 .uploadBtn{
   font-size: 14px;
   padding: 16px 32px;
@@ -188,7 +178,6 @@ GREY COLOR: #343a40
   margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
-  /* padding: 20px 20px; */
   display: grid;
   justify-content: center;
   align-content: center;
@@ -219,17 +208,6 @@ GREY COLOR: #343a40
   align-items: center;     
   justify-items: center;   
 }
-
-/* .stepPara2 {
-  font-size: 28px;
-  grid-row: 1 / 3;
-  grid-column: 2 / 10;
-  padding: auto;
-  text-align: left;
-  display: grid;        
-  align-items: center;     
-  justify-items: center;   
-} */
 
 .stepParaWraper2 {
   font-size: 28px;
