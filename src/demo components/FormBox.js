@@ -6,7 +6,12 @@ import style from "./style_demo.module.css";
 import Box from "@mui/material/Box";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
-import { generateRandomOfficeName } from "../constant/Random";
+import {
+  generateRandomOfficeName,
+  generateRandomCandidatesName,
+  generateRandomVotersName,
+  generateRandomIdx,
+} from "../constant/Random";
 
 class FormBox extends React.Component {
   constructor() {
@@ -16,13 +21,19 @@ class FormBox extends React.Component {
       clickedNext: false,
       clickedDone: false,
       clickedRandomOffice: false,
-      renderResult: false,
+      clickedRandomVotes: false,
 
+      renderResult: false,
       renderVoters: false,
+
       officeNumError: false,
       officeDiffNamesError: false,
       voterNumError: false,
 
+      randOfficeName: "",
+      randCandidatesName: "",
+      randVotersName: "",
+      randIdx: "",
       pav: {},
     };
   }
@@ -47,13 +58,15 @@ class FormBox extends React.Component {
           index={i}
           nextClicked={this.state.clickedNext}
           randomClicked={this.state.clickedRandomOffice}
+          randomOffice={this.state.randOfficeName[i]}
+          randomCandidates={this.state.randCandidatesName[i]}
         />
       );
     }
     return cp;
   };
 
-  renderRandomOffices = () => {
+  renderRandomOfficesBtn = () => {
     return (
       <a
         href="#"
@@ -68,6 +81,25 @@ class FormBox extends React.Component {
   handleRandomOfficesClick = async (e) => {
     e.preventDefault();
     this.setState(({ clickedRandomOffice }) => ({ clickedRandomOffice: true }));
+    this.state.randOfficeName = generateRandomOfficeName(
+      this.props.data.offices
+    );
+    this.state.randCandidatesName = generateRandomCandidatesName(
+      this.props.data.offices,
+      this.props.data.candidates
+    );
+  };
+
+  renderRandomVotesBtn = () => {
+    return (
+      <a
+        href="#"
+        className={style.btnRandom}
+        onClick={this.handleRandomVotesClick}
+      >
+        Random
+      </a>
+    );
   };
 
   /*
@@ -90,6 +122,9 @@ class FormBox extends React.Component {
           votersNamesArr={this.props.votersNamesArr}
           index={i}
           doneClicked={this.state.clickedDone}
+          randomClicked={this.state.clickedRandomVotes}
+          randomVoters={this.state.randVotersName[i]}
+          randIdx={this.state.randIdx[i]}
         />
       );
     }
@@ -144,6 +179,31 @@ class FormBox extends React.Component {
       this.setState(({ renderResult }) => ({ renderResult: true }));
     }
     this.callToPav();
+  };
+
+  renderRandomVotesBtn = () => {
+    return (
+      <a
+        href="#"
+        className={style.btnRandom}
+        onClick={this.handleRandomVotesClick}
+      >
+        Random
+      </a>
+    );
+  };
+
+  handleRandomVotesClick = async (e) => {
+    e.preventDefault();
+    this.setState(({ clickedRandomVotes }) => ({ clickedRandomVotes: true }));
+    this.state.randVotersName = generateRandomVotersName(
+      this.props.data.voters
+    );
+    this.state.randIdx = generateRandomIdx(this.props.candidatesArr);
+    // this.state.randCandidatesName = generateRandomCandidatesName(
+    //   this.props.data.offices,
+    //   this.props.data.candidates
+    // );
   };
 
   renderTryAgainClick = () => {
@@ -272,7 +332,7 @@ class FormBox extends React.Component {
 
   myData() {
     let result = "";
-    let chosen = []
+    let chosen = [];
     const temp = String(this.state.pav.result);
     // temp=temp.slice(1).slice(0, temp.length - 1)
     for (var i = 0; i < temp.length; i++) {
@@ -283,7 +343,7 @@ class FormBox extends React.Component {
         ) {
           if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
             let resultArr = result.split(" ");
-            chosen.push(resultArr[resultArr.length - 1].slice(0,-1));
+            chosen.push(resultArr[resultArr.length - 1].slice(0, -1));
             result = "";
           }
           continue;
@@ -317,56 +377,52 @@ class FormBox extends React.Component {
     let rows = [];
     for (let i = 0; i < this.props.data.offices; i++) {
       rows.push(
-        this.createData(
-          this.props.officesArr[i],
-          chosen[i],
-          chosenVoters[i]
-        )
+        this.createData(this.props.officesArr[i], chosen[i], chosenVoters[i])
       );
     }
     return rows;
   }
 
   resultHandler = () => {
-        return <CollapsibleTable rows={this.myData()} />;
-  //   const cp = [];
-  //   let result = "";
-  //   let counter = 0;
-  //   const temp = String(this.state.pav.result);
-  //   // temp=temp.slice(1).slice(0, temp.length - 1)
-  //   for (var i = 0; i < temp.length; i++) {
-  //     if (temp.charAt(i) != '"') {
-  //       if (
-  //         (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
-  //         (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
-  //       ) {
-  //         if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
-  //           let resultArr = result.split(" ");
-  //           console.log(resultArr);
-  //           cp.push(
-  //             <tr>
-  //               <td>{this.props.officesArr[counter++]}</td>
-  //               <td>{resultArr[resultArr.length - 1]}</td>
-  //             </tr>
-  //           );
-  //           result = "";
-  //         }
-  //         continue;
-  //       }
-  //       result += temp.charAt(i);
-  //     }
-  //   }
-  //   return (
-  //     <table className={style.styledTable}>
-  //       <thead>
-  //         <tr>
-  //           <th>Office Name</th>
-  //           <th>Chosen Candidate</th>
-  //         </tr>
-  //       </thead>
-  //       <tbody>{cp}</tbody>
-  //     </table>
-  //   );
+    return <CollapsibleTable rows={this.myData()} />;
+    //   const cp = [];
+    //   let result = "";
+    //   let counter = 0;
+    //   const temp = String(this.state.pav.result);
+    //   // temp=temp.slice(1).slice(0, temp.length - 1)
+    //   for (var i = 0; i < temp.length; i++) {
+    //     if (temp.charAt(i) != '"') {
+    //       if (
+    //         (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
+    //         (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
+    //       ) {
+    //         if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
+    //           let resultArr = result.split(" ");
+    //           console.log(resultArr);
+    //           cp.push(
+    //             <tr>
+    //               <td>{this.props.officesArr[counter++]}</td>
+    //               <td>{resultArr[resultArr.length - 1]}</td>
+    //             </tr>
+    //           );
+    //           result = "";
+    //         }
+    //         continue;
+    //       }
+    //       result += temp.charAt(i);
+    //     }
+    //   }
+    //   return (
+    //     <table className={style.styledTable}>
+    //       <thead>
+    //         <tr>
+    //           <th>Office Name</th>
+    //           <th>Chosen Candidate</th>
+    //         </tr>
+    //       </thead>
+    //       <tbody>{cp}</tbody>
+    //     </table>
+    //   );
   };
 
   renderResultToScreen = () => {
@@ -380,7 +436,6 @@ class FormBox extends React.Component {
     }
     return null;
   };
-
 
   handlClickTryAgain = async (e) => {
     e.preventDefault();
@@ -453,14 +508,17 @@ class FormBox extends React.Component {
             <div>{this.errorsFuncOffice()}</div>
             <div className={style.nextRandGrid}>
               <div>{this.renderNextClick()}</div>
-              <div>{this.renderRandomOffices()}</div>
+              <div>{this.renderRandomOfficesBtn()}</div>
             </div>
           </div>
         ) : !this.state.renderResult ? (
           <div>
             <div className={style.formBox}>{this.renderVotersCards()}</div>
             <div>{this.errorsFuncVoter()}</div>
-            <div>{this.renderDoneClick()}</div>
+            <div className={style.nextRandGrid}>
+              <div>{this.renderDoneClick()}</div>
+              <div>{this.renderRandomVotesBtn()}</div>
+            </div>
           </div>
         ) : (
           <div>

@@ -16,8 +16,9 @@ export default function VoterCard(props) {
 
   /* voter selection textboxs */
   const [voterSelections, setVoterSelections] = React.useState({});
-  const handleChange = (inputId) => (e) =>
+  const handleChange = (inputId) => (e) => {
     setVoterSelections({ ...voterSelections, [inputId]: e.target.value });
+  }
 
   const handleVoterNameChange = (event) => {
     setVoterNameError(false);
@@ -33,6 +34,9 @@ export default function VoterCard(props) {
   const getTextboxs = () => {
     let content = [];
     for (let i = 0; i < props.data.offices; i++) {
+      if (props.randomClicked) {
+        voterSelections[i] = props.candidatesArr[i][props.randIdx];
+      }
       content.push(
         <Box className={style.inputBox}>
           <FormControl fullWidth>
@@ -43,7 +47,7 @@ export default function VoterCard(props) {
               labelId="demo-simple-select-label"
               id={`office${i}`}
               key={`office${i}`}
-              value={handleChange[i]}
+              value={voterSelections[i] ?? ""}
               label={`office${i}`}
               onChange={handleChange(i)}
             >
@@ -88,7 +92,7 @@ export default function VoterCard(props) {
             variant="outlined"
             required
             error={voterNameError}
-            value={voterNameInput}
+            value={props.randomClicked ? props.randomVoters : voterNameInput}
             onChange={handleVoterNameChange}
             onInput={handleOnInput}
             inputRef={voterNameRef}

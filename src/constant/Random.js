@@ -1,3 +1,5 @@
+import { ContactlessOutlined } from "@material-ui/icons";
+
 export const random = (min, max) => {
     //min & max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -141,8 +143,48 @@ const randomOffices = [
     'Tourism'
 ];
 
-export const generateRandomOfficeName = () => {
-    const idx = random(0, 24);
-    const name = randomOffices[idx];
-    return name;
+export const generateRandomOfficeName = (size) => {
+    let arr = [];
+    for (let i = 0; i < size; i++) {
+        const idx = random(0, 24-i);
+        const name = randomOffices[idx];
+        randomOffices.splice(idx, 1);
+        arr.push(name);
+    }
+    return arr;
 }
+
+export const generateRandomCandidatesName = (size1, size2) => {
+    let arr = [];
+    for (let i = 0; i < size1; i++) {
+        let arr2 = [];
+        for (let j = 0; j < size2; j++) {
+          const idx = random(0, randomNames.length);
+          const name = randomNames[idx];
+          randomNames.splice(idx, 1);
+          arr2.push(name);
+        }
+        arr.push(arr2);
+    }
+  return arr;
+};
+
+export const generateRandomVotersName = (size) => {
+  let arr = [];
+  for (let i = 0; i < size; i++) {
+    const idx = random(0, 24 - i);
+    const name = randomNames[idx];
+    randomNames.splice(idx, 1);
+    arr.push(name);
+  }
+  return arr;
+};
+
+export const generateRandomIdx = (arrs) => {
+  let arr = [];
+  for (let i = 0; i < arrs.length; i++) {
+    const idx = random(0, arrs[i].length - 1);
+    arr.push(idx);
+    }
+  return arr;
+};

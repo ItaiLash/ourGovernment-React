@@ -2,8 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
-import { generateRandomOfficeName } from "../constant/Random";
-import { CgBolt } from "react-icons/cg";
+// import { CgBolt } from "react-icons/cg";
 
 export default function OfficeCard(props) {
 
@@ -11,11 +10,12 @@ export default function OfficeCard(props) {
   const officeNameRef = React.useRef();
   const [officeInput, setOfficeInput] = React.useState("");
   const [officeError, setOfficeError] = React.useState(true);
-  
+
   /* Candidate textboxs */
   const [inputValues, setInputValues] = React.useState({});
-  const handleChange = (inputId) => (e) =>
+  const handleChange = (inputId) => (e) => {
     setInputValues({ ...inputValues, [inputId]: e.target.value });
+  }
 
   const handleOfficeInputChange = (event) => {
     setOfficeError(false);
@@ -25,20 +25,23 @@ export default function OfficeCard(props) {
   };
 
   const handleOnInput = (event) => {
-    setOfficeInput(event.target.value);
+    if (!props.randomClicked) {
+      setOfficeInput(event.target.value);
+    }
   };
 
   const getTextboxs = () => {
     let content = [];
     for (let i = 0; i < props.numOfCandidates; i++) {
+      if (props.randomClicked) inputValues[i] = props.randomCandidates[i];
       content.push(
         <TextField
           id={`candidate${i}`}
           key={`candidate${i}`}
-          label="Candidate Name"
+          label={props.randomClicked ? null : "Candidate Name"}
           variant="standard"
           value={inputValues[i]}
-          onChange={handleChange(i)}
+          onInput={handleChange(i)}
         />
       );
     }
@@ -51,18 +54,12 @@ export default function OfficeCard(props) {
       if (props.officesArr.length < props.numOfOffices) {
         props.officesArr.splice(props.index, 0, officeNameRef.current.value);
       }
-      if (props.candidatesArr.length < props.numOfCandidates) {
+      if (props.candidatesArr.length < props.numOfOffices) {
         props.candidatesArr.splice(props.index, 0, Object.values(inputValues));
       }
     }
   };
 
-  const handleRandomOfficesClick = (e) => {
-      e.preventDefault();
-      setOfficeInput(generateRandomOfficeName());
-      handleOfficeInputChange(e);
-    };
-  
   return (
     <figure className={style.office}>
       <div className={style.formCard}>
@@ -80,13 +77,13 @@ export default function OfficeCard(props) {
             variant="outlined"
             required
             error={officeError}
-            value={officeInput}
+            value={props.randomClicked ? props.randomOffice : officeInput}
             onChange={handleOfficeInputChange}
             onInput={handleOnInput}
             inputRef={officeNameRef}
           />
           {getTextboxs()}
-          <CgBolt/>
+          {/* <CgBolt /> */}
         </Box>
         {done()}
       </div>
