@@ -189,10 +189,10 @@ def from_csv(file):
     #     os.remove(file)
 
 
-def define_result(dic_res: dict = {}) -> str:
-    res = ''
+def define_result(dic_res: dict = {}) -> list:
+    res = []
     for office, winner in dic_res.items():
-        res += f"The candidate who selected for the Ministry of {office} is {winner}.\n"
+        res.append(winner)
     return res
 
 
@@ -275,7 +275,6 @@ def start_algo(json_res: str = None):
 
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     winner_votes=voter_to_winner(a,voter_list)
-    print(winner_votes,"____________")
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
     print(s)
@@ -283,7 +282,7 @@ def start_algo(json_res: str = None):
     #     f.write(s)
     with open("files/explanation.html", 'w', encoding="utf-8") as f:
         f.write(s)
-    return res
+    return res ,winner_votes
 
 
 def save_result_to_csv(res: dict = {}):
