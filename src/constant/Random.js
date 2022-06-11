@@ -180,11 +180,15 @@ export const generateRandomVotersName = (size) => {
   return arr;
 };
 
-export const generateRandomIdx = (arrs) => {
-  let arr = [];
-  for (let i = 0; i < arrs.length; i++) {
-    const idx = random(0, arrs[i].length - 1);
-    arr.push(idx);
+export const generateRandomIdx = (arrs, voters) => {
+  let randomIdxs = []
+  for (let j = 0; j < voters; j++) {
+    let arr = [];
+    for (let i = 0; i < arrs.length; i++) {
+      const idx = random(0, arrs[i].length - 1);
+      arr.push(idx);
     }
-  return arr;
+    randomIdxs.push(arr);
+  }
+  return randomIdxs;
 };

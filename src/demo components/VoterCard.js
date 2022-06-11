@@ -32,11 +32,10 @@ export default function VoterCard(props) {
   };
 
   const getTextboxs = () => {
-    console.log(props.candidatesArr)
     let content = [];
     for (let i = 0; i < props.data.offices; i++) {
       if (props.randomClicked) {
-        voterSelections[i] = props.candidatesArr[i][props.randIdx];
+        voterSelections[i] = props.candidatesArr[i][props.randIdx[i]];
       }
       content.push(
         <Box className={style.inputBox}>
