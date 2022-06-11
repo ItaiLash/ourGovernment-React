@@ -174,11 +174,13 @@ class FormBox extends React.Component {
     this.props.votersArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(2000);
-    // this.validateErrorVoter();
-    if (!this.state.voterNumError) {
-      this.setState(({ renderResult }) => ({ renderResult: true }));
+    console.log("votersArr : " + this.props.votersArr);
+    console.log("votersNames : " + this.props.votersNamesArr)
+    this.validateErrorVoter();
+    if (!this.state.voterNumError && !this.state.voterCandidateError) {
+      this.callToPav();
     }
-    this.callToPav();
+    // this.callToPav();
   };
 
   renderRandomVotesBtn = () => {
@@ -333,54 +335,18 @@ class FormBox extends React.Component {
     };
   }
 
+ 
   myData() {
-    let result = "";
-    let chosen = [];
-    const temp = String(this.state.pav.result);
-    // temp=temp.slice(1).slice(0, temp.length - 1)
-    for (var i = 0; i < temp.length; i++) {
-      if (temp.charAt(i) != '"') {
-        if (
-          (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
-          (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
-        ) {
-          if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
-            let resultArr = result.split(" ");
-            chosen.push(resultArr[resultArr.length - 1].slice(0, -1));
-            result = "";
-          }
-          continue;
-        }
-        result += temp.charAt(i);
-      }
-    }
-    /////
-    const chosenCan = ["can1", "can2", "can3"];
-    const chosenVoters = [
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-      ,
-      ["vot1", "vot2"],
-      ["vot3"],
-      ["vot1", "vot3"],
-    ];
-    /////
+    console.log("PAV RESULTS:")
+    console.log(this.state.pav.result);
     let rows = [];
     for (let i = 0; i < this.props.data.offices; i++) {
       rows.push(
-        this.createData(this.props.officesArr[i], chosen[i], chosenVoters[i])
+        this.createData(
+          this.props.officesArr[i],
+          this.state.pav.result[0][i],
+          this.state.pav.result[1][i]
+        )
       );
     }
     return rows;
@@ -388,44 +354,6 @@ class FormBox extends React.Component {
 
   resultHandler = () => {
     return <CollapsibleTable rows={this.myData()} />;
-    //   const cp = [];
-    //   let result = "";
-    //   let counter = 0;
-    //   const temp = String(this.state.pav.result);
-    //   // temp=temp.slice(1).slice(0, temp.length - 1)
-    //   for (var i = 0; i < temp.length; i++) {
-    //     if (temp.charAt(i) != '"') {
-    //       if (
-    //         (temp.charAt(i) == "\\" && temp.charAt(i + 1) == "n") ||
-    //         (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n")
-    //       ) {
-    //         if (temp.charAt(i - 1) == "\\" && temp.charAt(i) == "n") {
-    //           let resultArr = result.split(" ");
-    //           console.log(resultArr);
-    //           cp.push(
-    //             <tr>
-    //               <td>{this.props.officesArr[counter++]}</td>
-    //               <td>{resultArr[resultArr.length - 1]}</td>
-    //             </tr>
-    //           );
-    //           result = "";
-    //         }
-    //         continue;
-    //       }
-    //       result += temp.charAt(i);
-    //     }
-    //   }
-    //   return (
-    //     <table className={style.styledTable}>
-    //       <thead>
-    //         <tr>
-    //           <th>Office Name</th>
-    //           <th>Chosen Candidate</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>{cp}</tbody>
-    //     </table>
-    //   );
   };
 
   renderResultToScreen = () => {
@@ -446,7 +374,8 @@ class FormBox extends React.Component {
   };
 
   ////////////////////////////////////////////////////////////
-  renderResult(result) {
+  validateResult(result) {
+    console.log(result);
     if (result.massage === "one or more fields missing") {
       return;
     }
@@ -456,6 +385,7 @@ class FormBox extends React.Component {
       pav.massage = result.massage;
       return { pav };
     });
+    this.setState(({ renderResult }) => ({ renderResult: true }));
   }
 
   /**
@@ -476,7 +406,7 @@ class FormBox extends React.Component {
       }),
     })
       .then((resp) => resp.json())
-      .then((resp) => this.renderResult(resp));
+      .then((resp) => this.validateResult(resp));
     // .then(resp => this.setState(prevState => {
     //   let pav = Object.assign({}, prevState.pav);
     //   pav.result = resp;
