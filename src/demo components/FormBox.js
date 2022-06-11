@@ -3,7 +3,6 @@ import OfficeCard from "./OfficeCard";
 import VoterCard from "./VoterCard";
 import CollapsibleTable from "./CollapsTable";
 import style from "./style_demo.module.css";
-import Box from "@mui/material/Box";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
 import {

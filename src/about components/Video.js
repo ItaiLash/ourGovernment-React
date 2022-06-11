@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./style_about.module.css";
-import { Player } from "video-react";
 import logo from "../img/logo.jpeg";
 
 function Video(){
