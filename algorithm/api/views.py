@@ -59,7 +59,7 @@ class PavFileViewSet(viewsets.ModelViewSet):
             print(e)
             if os.path.exists(f"files/{str(t.file)}"):
                 os.remove(f"files/{str(t.file)}")
-            response = {"massage": 'failed', 'result': "Valhalla"}
+            response = {"massage": str(e), 'result': "Valhalla"}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True, methods=['GET'])
