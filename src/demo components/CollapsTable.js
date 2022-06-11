@@ -41,12 +41,12 @@ function Row(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
-                Details
+                Who voted for the chosen candidate?
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Voter Name</TableCell>
+                    {/* <TableCell>Voter Name</TableCell> */}
                     {/* <TableCell>Customer</TableCell>
                     <TableCell align="right">Amount</TableCell> */}
                   </TableRow>
@@ -83,25 +83,29 @@ Row.propTypes = {
 
 export default function CollapsibleTable(props) {
     return (
-        <TableContainer
-            className={style.tableCon}
-            style={{ borderRadius: '10px'} }
-      component={Paper}
-    >
-      <Table aria-label="collapsible table">
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell>Office Name</TableCell>
-            <TableCell>Chosen candidate</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.rows.map((row) => (
-            <Row key={row.officeName} row={row} />
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+      <TableContainer
+        className={style.tableCon}
+        style={{ borderRadius: "10px" }}
+        component={Paper}
+      >
+        <Table aria-label="collapsible table">
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell style={{ fontSize: "16px", fontWeight: "bold" }}>
+                Office Name
+              </TableCell>
+              <TableCell style={{ fontSize: "16px", fontWeight: "bold" }}>
+                Chosen candidate
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.rows.map((row) => (
+              <Row key={row.officeName} row={row} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    );
 }

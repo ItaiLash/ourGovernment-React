@@ -209,6 +209,11 @@ tbody tr:nth-child(even) {
   border-radius: 10px;
 }
 
+.tableHeader{
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .inputBox {
   /* display: grid;
   grid-template-columns: 2fr 1fr;
