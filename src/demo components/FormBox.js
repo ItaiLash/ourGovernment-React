@@ -34,6 +34,7 @@ class FormBox extends React.Component {
       randCandidatesName: "",
       randVotersName: "",
       randIdx: "",
+
       pav: {},
     };
   }
@@ -141,15 +142,11 @@ class FormBox extends React.Component {
 
   handleNextClick = async (e) => {
     e.preventDefault();
-    // if (
-    //   //check all offices and candidates filled corectly
-    // ) {
     this.props.officesArr.length = 0;
     this.props.candidatesArr.length = 0;
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
     await this.delay(2000);
     this.validateErrorOffice();
-    // this.errorsFuncOffice();
     if (!this.state.officeNumError && !this.state.officeDiffNamesError) {
       this.setState(({ renderVoters }) => ({ renderVoters: true }));
     }
@@ -178,7 +175,6 @@ class FormBox extends React.Component {
     if (!this.state.voterNumError && !this.state.voterCandidateError) {
       this.callToPav();
     }
-    // this.callToPav();
   };
 
   renderRandomVotesBtn = () => {
@@ -224,11 +220,6 @@ class FormBox extends React.Component {
       );
     }
   };
-
-  // handlClickTryAgain = async (e) => {
-  //   e.preventDefault();
-  //   window.location.reload();
-  // };
 
   /*
   |------------------------------------------------------------|
@@ -396,11 +387,6 @@ class FormBox extends React.Component {
     })
       .then((resp) => resp.json())
       .then((resp) => this.validateResult(resp));
-    // .then(resp => this.setState(prevState => {
-    //   let pav = Object.assign({}, prevState.pav);
-    //   pav.result = resp;
-    //   return { pav };
-    // }))
   };
 
   handlePDFDownload = (e) => {
@@ -447,7 +433,6 @@ class FormBox extends React.Component {
             {console.log(this.props.votersArr)}
             {console.log(this.props.votersNamesArr)}
             {this.renderResultToScreen()}
-            {/* <div>{this.renderTryAgainClick()}</div> */}
           </div>
         )}
       </div>

@@ -21,9 +21,6 @@ function Demo() {
       </div>
       <Footer />
     </div>
-    /* <div>
-       {pav.result}
-     </div>  */
   );
 }
 

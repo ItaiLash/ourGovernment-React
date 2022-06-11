@@ -2,7 +2,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import style from "./style_demo.module.css";
-// import { CgBolt } from "react-icons/cg";
 
 export default function OfficeCard(props) {
 
@@ -83,7 +82,6 @@ export default function OfficeCard(props) {
             inputRef={officeNameRef}
           />
           {getTextboxs()}
-          {/* <CgBolt /> */}
         </Box>
         {done()}
       </div>
