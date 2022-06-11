@@ -174,8 +174,6 @@ class FormBox extends React.Component {
     this.props.votersArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(2000);
-    console.log("votersArr : " + this.props.votersArr);
-    console.log("votersNames : " + this.props.votersNamesArr)
     this.validateErrorVoter();
     if (!this.state.voterNumError && !this.state.voterCandidateError) {
       this.callToPav();
@@ -202,13 +200,6 @@ class FormBox extends React.Component {
       this.props.data.voters
     );
     this.state.randIdx = generateRandomIdx(this.props.candidatesArr, this.props.data.voters);
-    console.log("randIdx");
-    console.log(this.state.randIdx);
-
-    // this.state.randCandidatesName = generateRandomCandidatesName(
-    //   this.props.data.offices,
-    //   this.props.data.candidates
-    // );
   };
 
   renderTryAgainClick = () => {
@@ -337,8 +328,6 @@ class FormBox extends React.Component {
 
  
   myData() {
-    console.log("PAV RESULTS:")
-    console.log(this.state.pav.result);
     let rows = [];
     for (let i = 0; i < this.props.data.offices; i++) {
       rows.push(
