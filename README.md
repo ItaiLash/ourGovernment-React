@@ -86,7 +86,7 @@ For development, you will only need Node.js and npm installed on your environeme
    - First you need to install some packages for the server:
      - Django `pip install django`
      - Django REST framework: `pip install djangorestframework`
-     - django-cors-headers: `python -m pip install django-cors-headers`
+     - django-cors-headers: `pip install django-cors-headers`
      - CORScanner: `pip install cors`
      - opempyxl - `pip install openpyxl`
    - Open one of the terminals under algorithm directory and run the command `python3 manage.py runserver`
