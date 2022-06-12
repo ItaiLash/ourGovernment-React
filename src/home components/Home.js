@@ -11,7 +11,6 @@ function Home() {
     <div className={style.container}>
       <header className={style.header}>
         <div className={style.headerTextBox}>
-          {/* <h1 className={style.title}>OurGovernment</h1> */}
           <img src={mainLogo} className="logo" alt="fireSpot" />
           <Paragraph />
         </div>
