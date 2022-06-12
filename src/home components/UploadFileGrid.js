@@ -26,7 +26,7 @@ function UploadFileGrid() {
           candidates for office.
         </p>
 
-        <a href="javascript:void(0)" className={style.btn}>
+        <a href="/upload-file" className={style.btn}>
           Upload File
         </a>
       </div>
