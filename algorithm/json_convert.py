@@ -274,7 +274,7 @@ def start_algo(json_res: str = None):
         offices_candidates, voter_list = demo()
 
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
-    winner_votes=voter_to_winner(a,voter_list)
+    winner_votes = voter_to_winner(a, voter_list)
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
     print(s)
@@ -282,7 +282,7 @@ def start_algo(json_res: str = None):
     #     f.write(s)
     with open("files/explanation.html", 'w', encoding="utf-8") as f:
         f.write(s)
-    return res ,winner_votes
+    return res, winner_votes
 
 
 def save_result_to_csv(res: dict = {}):
@@ -293,15 +293,54 @@ def save_result_to_csv(res: dict = {}):
         csv_writer.writerow(head)
         csv_writer.writerows(rows)
 
-def validation_file(voters: list[Voter] = None, offices_candidates: dict = None) -> str:
-    return 'Success'
+
+# def validation_file(voters: list[Voter] = None, offices_candidates: dict = None) -> str:
+#     return 'Success'
+""""
+(1) Check if all offices have a name
+(2) Check if there are different names for all the offices
+(3) Check if there is at least one candidate for each office
+(4) Check if all candidates have different names
+"""
+
+
+def validation_file(offices_candidates: dict = None, voters: list[Voter] = None) -> str:
+    """" (1) Check if all offices have a name """
+    for office_name in offices_candidates.keys():
+        if not office_name:
+            return "Please fill in all the names of the offices"
+
+    """" (2) Check if there are different names for all the offices """
+    office_name = set()
+    for office_key in offices_candidates.keys():
+        office_name.add(office_key)
+    if len(offices_candidates) != len(office_name):
+        return "Please enter different names for each office"
+
+    """" (3) Check if there is at least one candidate for each office """
+    for office_value in offices_candidates.values():
+        if len(office_value) == 0:
+            return "Please insert at least one candidate for each office"
+
+    """" (4) Check if all candidates have different names """
+    all_candidates = list()
+    all_candidates_set = set()
+    for office_value in offices_candidates.values():
+        for candidate in office_value:
+            all_candidates.append(candidate.name)
+            all_candidates_set.add(candidate.name)
+    if len(all_candidates) != len(all_candidates_set):
+        return "Please enter different names for each candidate"
+
+    return "success"
 
 
 def start_algo_uploud(file):
     offices_candidates, voter_list = from_xslx(file)
-    massege=validation_file(offices_candidates, voter_list)
-    if massege != 'Success':
-        pass
+    print(offices_candidates)
+    massege = validation_file(offices_candidates, voter_list)
+    if massege != 'success':
+        raise Exception(massege)
 
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     save_result_to_csv(a)

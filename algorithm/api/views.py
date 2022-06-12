@@ -50,8 +50,9 @@ class PavFileViewSet(viewsets.ModelViewSet):
         file=request.data['pav_file']
         t=PavFile.objects.create(file=file)
         try:
-            print(start_algo_uploud(f"files/{str(t.file)}"))
-            response = {"massage": 'Success', 'result': "Valhalla"}
+            res = start_algo_uploud(f"files/{str(t.file)}")
+            print(res)
+            response = {"massage": 'Success', 'result': res}
             if os.path.exists(f"files/{str(t.file)}"):
                 os.remove(f"files/{str(t.file)}")
             return Response(response, status=status.HTTP_200_OK)
@@ -59,7 +60,7 @@ class PavFileViewSet(viewsets.ModelViewSet):
             print(e)
             if os.path.exists(f"files/{str(t.file)}"):
                 os.remove(f"files/{str(t.file)}")
-            response = {"massage": str(e), 'result': "Valhalla"}
+            response = {"massage": str(e), 'result': ""}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True, methods=['GET'])
