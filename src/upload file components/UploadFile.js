@@ -4,7 +4,6 @@ import FileDownloader from "./FileDownloader";
 import FileUploader from "./FileUploader";
 import Footer from "../shared components/Footer";
 import Paragraph from "./Paragraph";
-import Icon from "./Icon";
 
 function UploadFile() {
   return (

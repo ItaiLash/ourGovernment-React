@@ -2,13 +2,10 @@ import React from "react";
 import useDownloader from "react-use-downloader";
 import csvFile from '../csv/template.xlsx';
 import emptyCsvFile from '../csv/empty template.xlsx';
-import Icon from "./Icon";
 import style from "./style_upload.module.css";
 
 export default function FileDownloader() {
-  const { size, elapsed, percentage, download, cancel, error, isInProgress } =
-      useDownloader();
-    
+  const { download } =useDownloader();
   const filename = "template.xlsx";
   const empty_file ="empty template.xlsx"
 

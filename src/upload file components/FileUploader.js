@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Icon from "./Icon";
 import style from "./style_upload.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
@@ -19,9 +18,9 @@ export default function  FileUploadPage() {
   }
   
   const handleSubmission = () => {
-    const uploadData =new FormData();
-    var fileType=getExtension(selectedFile.name)
-    if(fileType!="xlsx"){
+    const uploadData = new FormData();
+    var fileType = getExtension(selectedFile.name)
+    if(fileType !== "xlsx"){
       console.log(fileType + " is unsupported only .xlsx")
       return;
     }
@@ -36,7 +35,7 @@ export default function  FileUploadPage() {
 
   const downloadReuslt = (result) => {
     console.log(result);
-    if (result.massage != "Success") {
+    if (result.massage !== "Success") {
       console.log(result.massage)
       return;
     }

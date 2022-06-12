@@ -5,7 +5,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import style from './style_demo.module.css'
-import { random } from '../constant/Random'
 
 function NumOfOfficesSelect(props) {
   return (

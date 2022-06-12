@@ -8,7 +8,7 @@ function ResearchPaper() {
         Research paper on the algorithm written by Itai Lashover, Liav Weiss,
         Amichai Kafka and Shoshana Levin
       </p>
-      <a href="#" className={style.btn}>
+      <a href="/about" className={style.btn}>
         Reasearch Paper
       </a>
     </div>

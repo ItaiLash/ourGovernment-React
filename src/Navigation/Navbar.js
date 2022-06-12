@@ -1,7 +1,4 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import mainLogo from "../img/logo-new.png";
+import { Disclosure } from '@headlessui/react'
 
 const navigation = [
   { name: 'Home', href: '/', current: false },

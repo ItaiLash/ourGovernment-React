@@ -1,5 +1,3 @@
-import { ContactlessOutlined } from "@material-ui/icons";
-
 export const random = (min, max) => {
     //min & max included
     return Math.floor(Math.random() * (max - min + 1) + min);

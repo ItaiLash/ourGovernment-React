@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './home components/Home'
 import Demo from "./demo components/Demo";
 import UploadFile from "./upload file components/UploadFile";
 import About from "./about components/About";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navigation/Navbar";
 
 function App() {

@@ -228,10 +228,10 @@ class FormBox extends React.Component {
   validateErrorOffice() {
     //(1)->check if all the office names filled
     let officeArrNew = this.props.officesArr.filter(function (string) {
-      return string != "";
+      return string !== "";
     });
     this.setState(({ officeNumError }) =>
-      officeArrNew.length == this.props.data.offices
+      officeArrNew.length === this.props.data.offices
         ? { officeNumError: false }
         : { officeNumError: true }
     );
@@ -239,7 +239,7 @@ class FormBox extends React.Component {
     //(2)->check if there are different office names
     let uniqueOfficeArr = [...new Set(officeArrNew)];
     this.setState(({ officeDiffNamesError }) =>
-      uniqueOfficeArr.length == this.props.data.offices
+      uniqueOfficeArr.length === this.props.data.offices
         ? { officeDiffNamesError: false }
         : { officeDiffNamesError: true }
     );
