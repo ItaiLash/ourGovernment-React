@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style_about.module.css";
-import logo from "../img/logo.jpeg";
+import logo from "../img/logo-new4.png";
 
 function Video(){
     return (
