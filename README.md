@@ -81,7 +81,7 @@ For development, you will only need Node.js and npm installed on your environeme
    ```sh
    git clone https://github.com/ItaiLash/ourGovernment-React.git
    ```
-2. Open the repo in two different terminals (one to activate the server and another to activate the website).
+2. Open the repo in two different terminals (one to activate the server and another one to activate the web app).
 3. #### Activating the server:
    - First you need to install some packages for the server:
      - Django `pip install django`
