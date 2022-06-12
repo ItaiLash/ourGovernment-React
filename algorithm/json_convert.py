@@ -8,14 +8,14 @@ import os
 
 import openpyxl
 from pathlib import Path
-
+from typing import List
 
 def powerset(iterable):
     s = list(iterable)
     return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
 
-def voter_agree(voters: list[Voter]) -> list:
+def voter_agree(voters: List[Voter]) -> list:
     res = []
     count = 0
     v = voters[0]
@@ -29,7 +29,7 @@ def voter_agree(voters: list[Voter]) -> list:
     return res
 
 
-def Global_Justified_Representation(X_result: dict, voters: list[Voter], offices_candidates: dict):
+def Global_Justified_Representation(X_result: dict, voters: List[Voter], offices_candidates: dict):
     X = [Candidate(j, i) for i, j in X_result.items()]
     # print(X)
     s = f'''<h1>Global Justified Representation:</h1>
@@ -304,7 +304,7 @@ def save_result_to_csv(res: dict = {}):
 """
 
 
-def validation_file(offices_candidates: dict = None, voters: list[Voter] = None) -> str:
+def validation_file(offices_candidates: dict = None, voters: List[Voter] = None) -> str:
     """" (1) Check if all offices have a name """
     for office_name in offices_candidates.keys():
         if not office_name:

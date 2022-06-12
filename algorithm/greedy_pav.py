@@ -2,12 +2,14 @@ from voter import *
 from candidate import *
 import doctest
 import logging
+from typing import List
+
 
 logging.basicConfig(filename="PAV_algorithm.log", format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
                     level=logging.DEBUG)
 
 
-def highest_candidate(candidates_list: list[Candidate], voters: list[Voter]):
+def highest_candidate(candidates_list: List[Candidate], voters: List[Voter]):
     """
     Compute the candidate who got the highest score according to Greedy PAV algorithm,
     for each candidate sum the weights of each voter who voted to him
@@ -28,7 +30,7 @@ def highest_candidate(candidates_list: list[Candidate], voters: list[Voter]):
     return chosen_candidate
 
 
-def greedy_PAV(voters: list[Voter] = None, offices_candidates: dict = None) -> dict:
+def greedy_PAV(voters: List[Voter] = None, offices_candidates: dict = None) -> dict:
     """
     Compute the Greedy PAV algorithm
 

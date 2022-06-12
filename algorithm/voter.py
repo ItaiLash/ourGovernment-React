@@ -1,10 +1,11 @@
 from candidate import *
+from typing import List
 class Voter:
     """
     This class represent voter who participant in the offices election
     """
 
-    def __init__(self, preferences: list[Candidate],name:str=None):
+    def __init__(self, preferences: List[Candidate],name:str=None):
         """
         Initiate the weight of this voter to 1, which is the weight of the candidate according to Greedy PAV
         Initiate the number_of_satisfaction of this voter to 0, which is the number of times that the candidate
