@@ -95,7 +95,7 @@ For development, you will only need Node.js and npm installed on your environeme
      ![runserver](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/runserver.jpeg)
      
   
-4. #### Activating the webpage:
+4. #### Activating the web app:
    - Run the webpage via the other terminal by entering `npm start` command.
    - You are supposed to see:
   
