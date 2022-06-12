@@ -69,6 +69,7 @@ export default function VoterCard(props) {
       if (props.votersArr.length < props.data.voters) {
         props.votersArr.splice(props.index, 0, Object.values(voterSelections));
       }
+
       if (props.votersNamesArr.length < props.data.voters) {
         props.votersNamesArr.splice(props.index, 0, voterNameRef.current.value);
       }

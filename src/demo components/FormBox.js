@@ -27,6 +27,8 @@ class FormBox extends React.Component {
 
       officeNumError: false,
       officeDiffNamesError: false,
+      candidateDiffNamesError: false,
+      candidateEmptyError: false,
       voterNumError: false,
 
       randOfficeName: "",
@@ -146,7 +148,13 @@ class FormBox extends React.Component {
     this.setState(({ clickedNext }) => ({ clickedNext: true }));
     await this.delay(2000);
     this.validateErrorOffice();
-    if (!this.state.officeNumError && !this.state.officeDiffNamesError) {
+    this.validateErrorCandidates();
+    if (
+      !this.state.officeNumError &&
+      !this.state.officeDiffNamesError &&
+      !this.state.candidateDiffNamesError &&
+      !this.state.candidateEmptyError
+    ) {
       this.setState(({ renderVoters }) => ({ renderVoters: true }));
     }
   };
@@ -168,10 +176,11 @@ class FormBox extends React.Component {
   handleDoneClick = async (e) => {
     e.preventDefault();
     this.props.votersArr.length = 0;
+    this.props.votersNamesArr.length = 0;
     this.setState(({ clickedDone }) => ({ clickedDone: true }));
     await this.delay(2000);
     this.validateErrorVoter();
-    if (!this.state.voterNumError && !this.state.voterCandidateError) {
+    if (!this.state.voterNumError) {
       this.callToPav();
     }
   };
@@ -245,58 +254,82 @@ class FormBox extends React.Component {
     );
   }
 
+  validateErrorCandidates() {
+    let counter1 = 0; //(1)->check if there are different candidates for each office
+    let counter2 = 0; //(2)->check if there is at least one candidate in each office 
+    for (const x of this.props.candidatesArr) {
+      let candidateArrNew = x.filter(function (string) {
+        return string != "";
+      });
+      let uniqueCandidateArr = [...new Set(candidateArrNew)];
+      if (uniqueCandidateArr.length < 1) {
+        counter2++;
+      }
+      if (uniqueCandidateArr.length != candidateArrNew.length) {
+        counter1++;
+      }
+    }
+    let allCandidates = [].concat(...this.props.candidatesArr);
+    allCandidates.filter(function (string) {
+      return string != "";
+    });
+    let uniqueAllCandidates = [...new Set(allCandidates)];
+    if (uniqueAllCandidates.length != allCandidates.length) {
+      counter1++;
+    }
+    this.setState(({ candidateDiffNamesError }) => ({candidateDiffNamesError: counter1 > 0 ? true : false}));
+    this.setState(({ candidateEmptyError }) => ({candidateEmptyError: counter2 > 0 ? true : false}));
+  }
+
   validateErrorVoter() {
-    //(1)->check if all the voters vote to all the offices
-    // var counter = 0;
-    // for(var i; i < this.props.data.voters; i++){
-    //   console.log("arr " + "[" + i + "]");
-    //   if(i.length == this.props.data.offices){
-    //     counter++;
-    //     console.log("in1")
-    //   }
-    // }
-    // console.log("counter : " + counter + " offices : " + this.props.data.offices);
-    // this.setState(({ voterNumError }) => counter == this.props.data.voters ? ({ voterNumError: false }) : ({ voterNumError: true }));
+    //check if the voters names array is full
+    let counter = 0;
+    let votersNamesArrNew = this.props.votersNamesArr.filter(function (string) {
+      return string != "";
+    });
+    this.setState(({ voterNumError }) =>
+      votersNamesArrNew.length === this.props.data.voters
+        ? { voterNumError: false }
+        : { voterNumError: true }
+    );
   }
 
   errorsFuncOffice() {
     if (this.state.officeNumError) {
       return (
         <div className={style.errorMessage}>
-          Fill in all the names of the offices
+          Please fill in all the names of the offices
         </div>
       );
     } else if (this.state.officeDiffNamesError) {
       return (
         <div className={style.errorMessage}>
-          Choose different names for each office
+          Please choose different names for each office
         </div>
       );
     }
+    else if (this.state.candidateDiffNamesError) {
+      return (
+        <div className={style.errorMessage}>
+        Please choose different names for candidates 
+        </div>
+      );
+    }
+    else if (this.state.candidateEmptyError) {
+      return (
+        <div className={style.errorMessage}>
+        Please fill out at least one candidate in each office 
+        </div>
+      );
+    } 
   }
 
   errorsFuncVoter() {
     if (this.state.voterNumError) {
       return (
-        <div className={style.errorMessage}>
-          each voter should choose candidate for each office
-        </div>
+        <div className={style.errorMessage}>Please fill all voters names</div>
       );
     }
-    // else if(this.state.voterDiffNamesError){
-    //   console.log("in");
-    //   return(
-    //     <section className={style.section}>
-    //     <figure className={style.option} >
-    //       <div className={style.optionBox}>
-    //         <p className={style.cardDescription}>
-    //         Choose different names for each voter
-    //         </p>
-    //       </div>
-    //     </figure>
-    //   </section>
-    //   )
-    // }
   }
 
   /*
