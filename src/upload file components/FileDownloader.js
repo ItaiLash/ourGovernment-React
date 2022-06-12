@@ -18,14 +18,14 @@ export default function FileDownloader() {
       <a
         className={style.btnDown}
         onClick={() => download(csvFile, filename)}
-        href="#"
+        href="javascript:void(0)"
       >
         Full template
       </a>
       <a
         className={style.btnDown}
         onClick={() => download(emptyCsvFile, empty_file)}
-        href="#"
+        href="javascript:void(0)"
       >
         Empty template
       </a>

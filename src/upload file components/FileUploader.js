@@ -44,7 +44,6 @@ export default function  FileUploadPage() {
   }
 
   const handleCsvDownload = () => {
-    // e.preventDefault()
     Axios({
       url:"http://127.0.0.1:8000/api/pav/0/download_results_csv/",
       method:"GET",
@@ -81,7 +80,11 @@ export default function  FileUploadPage() {
             Run the algorithm and get your results
           </p>
         </div>
-        <a href="#" className={style.btnGetRes} onClick={handleSubmission}>
+        <a
+          href="javascript:void(0)"
+          className={style.btnGetRes}
+          onClick={handleSubmission}
+        >
           Get Result
         </a>
       </section>

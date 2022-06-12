@@ -1,9 +1,10 @@
 import React from "react";
 import style from "./style.module.css";
 
+
 function UploadFileGrid() {
   return (
-    <figure className={style.option} >
+    <figure className={style.option}>
       <div className={style.optionBox}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,7 @@ function UploadFileGrid() {
           candidates for office.
         </p>
 
-        <a href="/upload-file" className={style.btn}>
+        <a href="javascript:void(0)" className={style.btn}>
           Upload File
         </a>
       </div>
