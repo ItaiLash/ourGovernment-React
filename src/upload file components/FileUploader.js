@@ -3,15 +3,30 @@ import style from "./style_upload.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
 
-export default function  FileUploadPage() {
+export default function FileUploadPage() {
+  const [fillTemplate, setFillTemplate] = React.useState(false);
+  const [uploadClicked, setUploadClicked] = React.useState(false);
+  const [resultsClicked, setResultsClicked] = React.useState(false);
+  const completeFillTemplate = fillTemplate ? style.taskCompleted : "";
+  const completeTemplateUpload = uploadClicked ? style.taskCompleted : "";
+  const completeResults = resultsClicked ? style.taskCompleted : "";
+  const uncompleteResults = resultsClicked==="error" ? style.taskError : "";
+
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
+
+  const hiddenFileInput = React.useRef(null);
+
+  const handleUploadFileClick = (event) => {
+    hiddenFileInput.current.click();
+    setUploadClicked(true);
+  };
 
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
     setIsFilePicked(true);
-    handleSubmission();
   };
+
   const getExtension =(filename) =>{
     var parts = filename.split('.');
     return parts[parts.length - 1];
@@ -19,9 +34,15 @@ export default function  FileUploadPage() {
   
   const handleSubmission = () => {
     const uploadData = new FormData();
+    if (selectedFile == undefined) {
+      alert("Please upload the aproprate file before running the algorithm");
+      setResultsClicked("error");
+      return;
+    }
     var fileType = getExtension(selectedFile.name)
     if(fileType !== "xlsx"){
-      console.log(fileType + " is unsupported only .xlsx")
+      alert(fileType.toUpperCase() + " files are unsupported, use only .xlsx")
+      setResultsClicked("error");
       return;
     }
     uploadData.append('pav_file',selectedFile,selectedFile.name);
@@ -30,17 +51,17 @@ export default function  FileUploadPage() {
       body: uploadData
     })
     .then((resp) => resp.json())
-    .then(res => downloadReuslt(res))
+      .then(res => downloadReuslt(res))
   };
 
   const downloadReuslt = (result) => {
     console.log(result);
     if (result.massage !== "Success") {
-      console.log(result.massage)
+      alert(result.massage);
+      setResultsClicked("error");
       return;
     }
     handleCsvDownload();
-  
   }
 
   const handleCsvDownload = () => {
@@ -51,29 +72,51 @@ export default function  FileUploadPage() {
     }).then((res) => {
       FileDownload(res.data,"result.csv")
     })
- 
+    if (uploadClicked) setResultsClicked(true);
   };
 
   return (
     <div>
-      <section className={style.downloadTemBox}>
+      <section className={`${style.downloadTemBox} ${completeFillTemplate}`}>
         <p className={style.step}>STEP #2</p>
-        <div className={style.stepParaWraper2}>
+        <div className={style.stepParaWraper}>
           <p className={style.stepPara}>
             Fill the template with offices, candidates and voters as your wish
           </p>
         </div>
+        <a
+          href="javascript:void(0)"
+          className={style.btnGetRes}
+          onClick={() => setFillTemplate(true)}
+        >
+          Done
+        </a>
       </section>
-      <section className={style.downloadTemBox}>
+      <section className={`${style.downloadTemBox} ${completeTemplateUpload}`}>
         <p className={style.step}>STEP #3</p>
         <div className={style.stepParaWraper}>
           <p className={style.stepPara}>
             Upload the updated template file to our server
           </p>
         </div>
-        <input className={style.fileUp} type="file" onChange={changeHandler} />
+        <a
+          href="javascript:void(0)"
+          className={style.btnGetRes}
+          onClick={handleUploadFileClick}
+        >
+          Upload File
+        </a>
+        <input
+          className={style.fileUp}
+          type="file"
+          onChange={changeHandler}
+          style={{ display: "none" }}
+          ref={hiddenFileInput}
+        />
       </section>
-      <section className={style.downloadTemBox}>
+      <section
+        className={`${style.downloadTemBox} ${completeResults} ${uncompleteResults}`}
+      >
         <p className={style.step}>STEP #4</p>
         <div className={style.stepParaWraper}>
           <p className={style.stepPara}>

@@ -187,6 +187,15 @@ GREY COLOR: #343a40
   margin-bottom: 30px;
 }
 
+.taskCompleted {
+    background-color: #8FBC8F;
+}
+
+.taskError{
+    background-color: #CD5C5C;
+}
+
+
 .stepPara {
   font-size: 28px;
   grid-row: 1 / 3;
