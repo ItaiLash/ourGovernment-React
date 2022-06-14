@@ -5,6 +5,8 @@ import CollapsibleTable from "./CollapsTable";
 import style from "./style_demo.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
+import Spinner from "../shared components/Spinner";
+
 import {
   generateRandomOfficeName,
   generateRandomCandidatesName,
@@ -330,6 +332,11 @@ class FormBox extends React.Component {
         <div className={style.errorMessage}>Please fill all voters names</div>
       );
     }
+    else if(this.state.clickedDone){
+      return (
+        <Spinner/>
+      );
+    }
   }
 
   /*
@@ -377,7 +384,6 @@ class FormBox extends React.Component {
         </div>
       );
     }
-    return null;
   };
 
   handlClickTryAgain = async (e) => {
