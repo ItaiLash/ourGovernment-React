@@ -1,11 +1,19 @@
 import { Disclosure } from '@headlessui/react'
 
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'Demo', href: '/Demo', current: false },
-  { name: 'Uploud File', href: '/upload-file', current: false },
-  { name: 'About Our Algorithm', href: '/about', current: false },
-]
+  { name: "Home", href: process.env.PUBLIC_URL + "/", current: false },
+  { name: "Demo", href: process.env.PUBLIC_URL + "/Demo", current: false },
+  {
+    name: "Uploud File",
+    href: process.env.PUBLIC_URL + "/upload-file",
+    current: false,
+  },
+  {
+    name: "About Our Algorithm",
+    href: process.env.PUBLIC_URL + "/about",
+    current: false,
+  },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

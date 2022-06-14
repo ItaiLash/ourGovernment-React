@@ -11,10 +11,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/demo" element={<Demo />} />
-        <Route exact path="/upload-file" element={<UploadFile />} />
-        <Route exact path="/about" element={<About />} />
+        <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+        <Route exact path={process.env.PUBLIC_URL + '/demo'} element={<Demo />} />
+        <Route exact path={process.env.PUBLIC_URL + '/upload-file'} element={<UploadFile />} />
+        <Route exact path={process.env.PUBLIC_URL + '/about'} element={<About />} />
       </Routes>
     </div>
   );
