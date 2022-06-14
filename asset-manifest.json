@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/ourGovernment-React/static/css/main.18aef603.css",
-    "main.js": "/ourGovernment-React/static/js/main.26244429.js",
+    "main.js": "/ourGovernment-React/static/js/main.69659ef7.js",
     "static/js/787.d103cce2.chunk.js": "/ourGovernment-React/static/js/787.d103cce2.chunk.js",
     "static/media/empty template.xlsx": "/ourGovernment-React/static/media/empty template.ff8bf0915f10f4243a05.xlsx",
     "static/media/template.xlsx": "/ourGovernment-React/static/media/template.a66073946469f55c29ca.xlsx",
     "static/media/logo-new4.png": "/ourGovernment-React/static/media/logo-new4.2704ffb983408246b225.png",
     "index.html": "/ourGovernment-React/index.html",
     "main.18aef603.css.map": "/ourGovernment-React/static/css/main.18aef603.css.map",
-    "main.26244429.js.map": "/ourGovernment-React/static/js/main.26244429.js.map",
+    "main.69659ef7.js.map": "/ourGovernment-React/static/js/main.69659ef7.js.map",
     "787.d103cce2.chunk.js.map": "/ourGovernment-React/static/js/787.d103cce2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.18aef603.css",
-    "static/js/main.26244429.js"
+    "static/js/main.69659ef7.js"
   ]
 }
