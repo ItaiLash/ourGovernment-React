@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 
+//Nav bar
 const navigation = [
   { name: "Home", href: process.env.PUBLIC_URL + "/", current: false },
   { name: "Demo", href: process.env.PUBLIC_URL + "/Demo", current: false },
