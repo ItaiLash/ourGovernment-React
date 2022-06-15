@@ -390,7 +390,7 @@ class FormBox extends React.Component {
     window.location.reload();
   };
 
-  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
   validateResult(result) {
     console.log(result);
     if (result.massage === "one or more fields missing") {
