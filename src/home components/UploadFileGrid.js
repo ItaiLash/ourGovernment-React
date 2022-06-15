@@ -26,7 +26,7 @@ function UploadFileGrid() {
           candidates for office.
         </p>
 
-        <a href={process.env.PUBLIC_URL + "/upload-file"} className={style.btn}>
+        <a href="/upload-file" className={style.btn}>
           Upload File
         </a>
       </div>
