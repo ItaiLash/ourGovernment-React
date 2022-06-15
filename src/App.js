@@ -4,12 +4,10 @@ import Demo from "./demo components/Demo";
 import UploadFile from "./upload file components/UploadFile";
 import About from "./about components/About";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./Navigation/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route exact path={process.env.PUBLIC_URL + "/"} element={<Home />} />
         <Route exact path={process.env.PUBLIC_URL + '/demo'} element={<Demo />} />
