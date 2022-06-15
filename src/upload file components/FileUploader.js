@@ -46,7 +46,7 @@ export default function FileUploadPage() {
       return;
     }
     uploadData.append('pav_file',selectedFile,selectedFile.name);
-    fetch("http://127.0.0.1:8000/api/pav/0/upload_file/", {
+    fetch("https://our-government-server2.herokuapp.com/api/pav/0/upload_file/", {
       method : 'POST',
       body: uploadData
     })
@@ -66,7 +66,7 @@ export default function FileUploadPage() {
 
   const handleCsvDownload = () => {
     Axios({
-      url:"http://127.0.0.1:8000/api/pav/0/download_results_csv/",
+      url:"https://our-government-server2.herokuapp.com/api/pav/0/download_results_csv/",
       method:"GET",
       responseType:"blob"
     }).then((res) => {
