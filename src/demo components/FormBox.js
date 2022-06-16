@@ -410,7 +410,7 @@ class FormBox extends React.Component {
    * this finction is sending http post requst to the Django server api
    */
   callToPav = async () => {
-    await fetch("http://127.0.0.1:8000/api/pav/0/compute_pav/", {
+    await fetch("https://our-government-server2.herokuapp.com/api/pav/0/compute_pav/", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -430,13 +430,13 @@ class FormBox extends React.Component {
   handlePDFDownload = (e) => {
     e.preventDefault();
     Axios({
-      url: "http://127.0.0.1:8000/api/pav/0/download_results/",
+      url: "https://our-government-server2.herokuapp.com/api/pav/0/download_results/",
       method: "GET",
       responseType: "blob",
     }).then((res) => {
       FileDownload(res.data, "explantion.html");
     });
-  };
+  };s
 
   /*
   |------------------------------------------------------------|

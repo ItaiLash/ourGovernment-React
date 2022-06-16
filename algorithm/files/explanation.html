@@ -5,7 +5,28 @@
   A:∪Aj all the candidates.<br />X is said to satisfy Global Justified Representation if:<br />
   For each subgroup of voters V'⊆ V that its size >= n/k and for all Aj:<br />
   Define c_V': set of all the candidates that all the voters in V' agree on.<br />
-  if (c_V' ∩ Aj) !=∅ then (c_V' ∩ X) !=∅.<br /><br />
+  if (c_V' ∩ Aj) !=∅ then (X ∩ c_V') !=∅.<br /><br />
+  <h2>Global Proportional Justified Representation</h2>
+  if (c_V' ∩ Aj) !=∅  then |(X ∩ c_V')| ≥⌊(|V'|)/(|V|)k⌋ <br /><br />
+  GreedyPAV satisfies GJR but not always GPJR (there exists an algorithm that satisfies GPJR called FPT, but it is running in super-polynomial time )
   <h2>Prof for this result:</h2>
   <h3>All the subgroup that we discuss for this results:</h3></p>
-    <p>1:a<br />2:b<br />3:c<br /></p><p>__________________________________________________________________<br />() |V'|=0, n/k=1.0<br />|V'|=0 < n/k=1.0, so V' is to small.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) |V'|=1, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) |V'|=1, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) |V'|=1, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ,) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) |V'|=2, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) |V'|=2, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) |V'|=2, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p><p>__________________________________________________________________<br />(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) |V'|=3, n/k=1.0<br />subgroup of voters(Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] , Voter weight:0.5 number of good votes:1 preferences: [Candidate name:a office:1] ) agree on a for office 1 then =><br />[Candidate name:a office:1] were elected which they also agree on.</p>
+    <table width="300" border="1" cellpadding="5" style="text-align: center">
+            <thead>
+            <tr>
+            <td>Office</td>
+            <td>Candidate</td>
+            </tr>
+            </thead>
+            <tbody><tr><td>Justice</td><td>Mikaela Hawkins</td></tr><tr><td>Environmental Protection</td><td>Micah Caldwell</td></tr></tbody></table><p>Note:the subgroup that display are only those that big enough
+     only the subgroup that  its size >= n/k=1.0</p>
+    <table width="300" border="1" cellpadding="5" style="text-align: center">
+            <thead>
+            <tr>
+            <td>Voters subgroup</td>
+            <td>Candidate they agree on</td>
+            <td>Candidate who won</td>
+            <td>satisfies GPJR</td>
+            </tr>
+            </thead>
+            <tbody><tr><td>Josephine Zavala</td><td>Dane Delgado</td><td>Micah Caldwell</td><td>&#10004;</td></tr><tr><td>Josephine Zavala</td><td>Micah Caldwell</td><td>Micah Caldwell</td><td>&#10004;</td></tr><tr><td>Rex Ho</td><td>Mikaela Hawkins</td><td>Micah Caldwell Mikaela Hawkins</td><td>&#10004;</td></tr><tr><td>Rex Ho</td><td>Micah Caldwell</td><td>Micah Caldwell Mikaela Hawkins</td><td>&#10004;</td></tr><tr><td>Josephine Zavala Rex Ho</td><td>Micah Caldwell</td><td>Micah Caldwell</td><td>&#10006;</td></tr></tbody></table>
