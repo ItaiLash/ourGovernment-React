@@ -6,6 +6,7 @@ import style from "./style_demo.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
 import Spinner from "../shared components/Spinner";
+
 import {
   generateRandomOfficeName,
   generateRandomCandidatesName,
@@ -390,7 +391,7 @@ class FormBox extends React.Component {
     window.location.reload();
   };
 
-  //////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////
   validateResult(result) {
     console.log(result);
     if (result.massage === "one or more fields missing") {
@@ -408,20 +409,23 @@ class FormBox extends React.Component {
   /**
    * this finction is sending http post requst to the Django server api
    */
-  callToPav = async () => {
-    await fetch("https://our-government-server2.herokuapp.com/api/pav/0/compute_pav/", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        offices: this.props.officesArr,
-        candidates: this.props.candidatesArr,
-        voters: this.props.votersArr,
-        votersNames: this.props.votersNamesArr,
-      }),
-    })
+  callToPav = () => {
+    fetch(
+      "https://our-government-server2.herokuapp.com/api/pav/0/compute_pav/",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          offices: this.props.officesArr,
+          candidates: this.props.candidatesArr,
+          voters: this.props.votersArr,
+          votersNames: this.props.votersNamesArr,
+        }),
+      }
+    )
       .then((resp) => resp.json())
       .then((resp) => this.validateResult(resp));
   };
