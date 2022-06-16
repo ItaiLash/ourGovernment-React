@@ -1,11 +1,12 @@
 import { Disclosure } from '@headlessui/react'
 
+//Nav bar
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'Demo', href: '/Demo', current: false },
-  { name: 'Uploud File', href: '/upload-file', current: false },
-  { name: 'About Our Algorithm', href: '/about', current: false },
-]
+  { name: "Home", href: "/", current: false },
+  { name: "Demo", href: "/Demo", current: false },
+  { name: "Uploud File", href: "/upload-file", current: false },
+  { name: "About Our Algorithm", href: "/about", current: false }, 
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

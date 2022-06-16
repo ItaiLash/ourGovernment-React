@@ -53,6 +53,7 @@ export default function FileUploadPage() {
     )
       .then((resp) => resp.json())
       .then((res) => downloadReuslt(res));
+
   };
 
   const downloadReuslt = (result) => {

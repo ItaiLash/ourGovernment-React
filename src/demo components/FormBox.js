@@ -6,7 +6,6 @@ import style from "./style_demo.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
 import Spinner from "../shared components/Spinner";
-
 import {
   generateRandomOfficeName,
   generateRandomCandidatesName,
@@ -391,7 +390,7 @@ class FormBox extends React.Component {
     window.location.reload();
   };
 
-  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
   validateResult(result) {
     console.log(result);
     if (result.massage === "one or more fields missing") {
