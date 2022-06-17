@@ -123,27 +123,16 @@ BACKGROUND-COLOR: #63e6be
   justify-items: center;
   align-items: center;
   margin: 24px auto;
-}
-
-.aboutResearchPaper{
-  
+  border-radius: 10px;
+  height: 100px;
 }
 
 .inputBox{
-  /* display: grid;
-  grid-template-columns: 2fr 1fr;
-  background-color: #e9ecef;
-  padding: 12px 24px;
-  column-gap: 36px;
-  justify-items: center;
-  align-items: center;
-  margin: 24px auto; */
   width: 10px;
 }
 
-/* footer {
-  margin-top: 48px;
-  margin-bottom: 4px;
-  font-size: 14px;
-  color: #495057;
-} */
+.link {
+  color: #191970;
+}
+
+

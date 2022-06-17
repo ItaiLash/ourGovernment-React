@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react'
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Demo', href: '/Demo', current: false },
-  { name: 'Uploud File', href: '/upload-file', current: false },
+  { name: 'Upload File', href: '/upload-file', current: false },
   { name: 'About Our Algorithm', href: '/about', current: false },
 ]
 

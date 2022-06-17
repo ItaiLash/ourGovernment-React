@@ -437,7 +437,10 @@ class FormBox extends React.Component {
       method: "GET",
       responseType: "blob",
     }).then((res) => {
-      FileDownload(res.data, "explantion.html");
+      const file = new Blob([res.data], { type:"text/html" });
+      const fileURL = URL.createObjectURL(file);
+      const pdfWindow = window.open();
+      pdfWindow.location.href = fileURL;
     });
   };
 
