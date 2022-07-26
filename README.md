@@ -96,6 +96,11 @@ For development, you will only need Node.js and npm installed on your environeme
      
   
 4. #### Activating the web app:
+   - First you need to install some packages for the web app:
+     - headlessui/react: `npm install @headlessui/react`
+     - mui/icons-material: `npm install @mui/icons-material`
+     - axios: `npm install axios`
+     - js-file-downlaod: `npm install js-file-download --save`
    - Run the webpage via the other terminal by entering `npm start` command.
    - You are supposed to see:
   

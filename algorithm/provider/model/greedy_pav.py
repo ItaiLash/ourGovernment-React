@@ -1,11 +1,10 @@
-from voter import *
-from candidate import *
+from provider.model.voter import *
+from provider.model.candidate import *
 import doctest
 import logging
 from typing import List
 
-
-logging.basicConfig(filename="PAV_algorithm.log", format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
+logging.basicConfig(filename="../../PAV_algorithm.log", format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
                     level=logging.DEBUG)
 
 
@@ -142,10 +141,10 @@ def greedy_PAV(voters: List[Voter] = None, offices_candidates: dict = None) -> d
     for i in range(number_of_offices):
         chosen_candidate = highest_candidate(candidates_list, voters)
         results[chosen_candidate.office] = chosen_candidate.name
-        logging.info("Removes all candidates of the office {} that {} was elected to".format(chosen_candidate.office, chosen_candidate.name))
+        logging.info("Removes all candidates of the office {} that {} was elected to".format(chosen_candidate.office,
+                                                                                             chosen_candidate.name))
         candidates_list = list(filter(lambda candidate: candidate.office != chosen_candidate.office, candidates_list))
         logging.info("The candidates list after the the filter: {}".format(candidates_list.__repr__()))
-        # map(lambda voter: voter.reweight(), list(filter(lambda voter: chosen_candidate in voter.preferences, voters)))
         for voter in voters:
             if chosen_candidate in voter.preferences:
                 logging

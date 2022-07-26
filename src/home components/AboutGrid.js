@@ -24,7 +24,7 @@ function AboutGrid() {
           the GreedyPAV algorithm. <br></br><br></br>
         </p>
 
-        <a href="/about" className={style.btn}>
+        <a href={process.env.PUBLIC_URL + "/about"} className={style.btn}>
           About our algorithm
         </a>
       </div>

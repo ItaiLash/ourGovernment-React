@@ -1,14 +1,13 @@
 import math
-
-from greedy_pav import *
+from provider.model.greedy_pav import *
 import json
 import csv
 from itertools import combinations, chain
 import os
-
 import openpyxl
 from pathlib import Path
 from typing import List
+
 
 def powerset(iterable):
     s = list(iterable)
@@ -31,7 +30,6 @@ def voter_agree(voters: List[Voter]) -> list:
 
 def Global_Justified_Representation(X_result: dict, voters: List[Voter], offices_candidates: dict):
     X = [Candidate(j, i) for i, j in X_result.items()]
-    # print(X)
     s = f'''<h1>Global Justified Representation:</h1>
 <h2>Definition:</h2>
 <p>V:set of all voters. <br />n:number of voters.<br />k:number of offices.<br />
@@ -54,7 +52,6 @@ def Global_Justified_Representation(X_result: dict, voters: List[Voter], offices
             </tr>
             </thead>
             <tbody>'''
-    # s += "<p>"
     for o, c in X_result.items():
         s += f"""<tr><td>{o}</td><td>{c}</td></tr>"""
     s += "</tbody></table>"
@@ -72,13 +69,10 @@ def Global_Justified_Representation(X_result: dict, voters: List[Voter], offices
             <tbody>'''
     V = list(powerset(voters))
     for v in V:
-        # s += "<p>__________________________________________________________________<br />"
-        # s += f"{v} |V'|={len(v)}, n/k={len(voters) / len(offices_candidates.keys())}<br />"
         if len(v) >= (len(voters) / len(offices_candidates.keys())):
             v_agree = voter_agree(v)
             for office, A_j in offices_candidates.items():
                 if len(set(v_agree).intersection(A_j)) > 0:
-                    # s += f"subgroup of voters{v} agree on {list(set(v_agree).intersection(A_j))[0].name} for office {office} then =><br />"
                     t = list(set(v_agree).intersection(X))
                     if len(t) > 0:
                         lt = [i.name for i in t]
@@ -93,7 +87,6 @@ def Global_Justified_Representation(X_result: dict, voters: List[Voter], offices
                         print("bad")
         else:
             pass
-            # s += F"|V'|={len(v)} < n/k={len(voters) / len(offices_candidates.keys())}, so V' is to small.</p>"
     s += "</tbody></table>"
     return s
 
@@ -140,53 +133,12 @@ def convert_request(offices: list = [], candidates: list = [], voters: list = []
     return offices_candidates, voter_list
 
 
-def demo():
-    a = Candidate('a', '1')
-    b = Candidate('b', '1')
-    c = Candidate('c', '2')
-    d = Candidate('d', '2')
-    e = Candidate('e', '3')
-    f = Candidate('f', '3')
-    g = Candidate('g', '3')
-    dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
-    v_1 = Voter([a, c, e], "Moshe")
-    v_2 = Voter([a, c, f], "Dani")
-    v_3 = Voter([a, d, f], "Roee")
-    voters = [v_1, v_2, v_3]
-    candidates = dict
-    with open("j.json", "w") as f:
-        json.dump({'candidates': candidates, 'voters': voters}, fp=f, default=lambda o: o.__dict__, indent=4)
-    return dict, voters
-
-
-def demo2():
-    a = Candidate('a', '1')
-    b = Candidate('b', '1')
-    c = Candidate('c', '2')
-    d = Candidate('d', '2')
-    e = Candidate('e', '3')
-    f = Candidate('f', '3')
-    g = Candidate('g', '3')
-    dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
-    v_1 = Voter([a, c, e])
-    v_2 = Voter([a, c, f])
-    v_3 = Voter([a, d, f])
-    voters = [v_1, v_2, v_3]
-    candidates = dict
-
-    s = json.dumps({'candidates': candidates, 'voters': voters}, default=lambda o: o.__dict__, indent=4)
-    return s
-
-
 def from_csv(file):
     row = []
-
     with open(file) as f:
         csv_reader = csv.reader(f)
         h = next(csv_reader)
     print(h)
-    # if os.path.exists(file):
-    #     os.remove(file)
 
 
 def define_result(dic_res: dict = {}) -> list:
@@ -216,10 +168,6 @@ def from_xslx(file):
     sheet = wb_obj.get_sheet_by_name('Offices & Candidates')
     print(sheet)
     col_names = []
-    # for row in sheet.iter_rows(max_row=sheet.max_row):
-    #     for cell in row:
-    #         print(cell.value, end=" ")
-    #     print()
     for column in sheet.iter_cols(min_col=3, max_col=sheet.max_column):
         for i in range(5, sheet.max_row):
             if column[i].value:
@@ -228,17 +176,9 @@ def from_xslx(file):
                 if c.office not in offices_candidates:
                     offices_candidates[c.office] = []
                 offices_candidates[c.office].append(c)
-    # print(col_names)
-    # print(offices_candidates)
     sheet = wb_obj.get_sheet_by_name('Votes')
-    # for row in sheet.iter_rows(max_row=sheet.max_row):
-    #     for cell in row:
-    #         print(cell.value, end=" ")
-    #     print()
-    # print(sheet)
     num_to_office = []
     for column in sheet.iter_cols(min_row=5, min_col=4, max_col=sheet.max_column):
-        # if column[0].value :
         num_to_office.append(column[0].value)
     for row in sheet.iter_rows(min_row=6, min_col=4, max_row=sheet.max_row):
         count = 0
@@ -247,15 +187,14 @@ def from_xslx(file):
         for cell in row:
             if cell.value:
                 flag = True
-                # print(count,num_to_office)
+
                 preferences.append(Candidate(cell.value, num_to_office[count]))
             count += 1
-            # print(cell.value, end=" ")
+
         if flag:
             v = Voter(preferences)
             voter_list.append(v)
-        # print()
-    # print(voter_list)
+
     if os.path.exists(file):
         os.remove(file)
     return offices_candidates, voter_list
@@ -264,7 +203,6 @@ def from_xslx(file):
 def start_algo(json_res: str = None):
     print(json_res)
     if json_res:
-        # offices_candidates, voter_list = from_json(json_res)
         try:
             offices_candidates, voter_list = convert_request(json_res['offices'], json_res['candidates'],
                                                              json_res['voters'], json_res['votersNames'])
@@ -272,15 +210,11 @@ def start_algo(json_res: str = None):
             print(e)
     else:
         offices_candidates, voter_list = demo()
-
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     winner_votes = voter_to_winner(a, voter_list)
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
-    print(s)
-    # with open("files/explanation.txt", 'w', encoding="utf-8") as f:
-    #     f.write(s)
-    with open("files/explanation.html", 'w', encoding="utf-8") as f:
+    with open("../files/explanation.html", 'w', encoding="utf-8") as f:
         f.write(s)
     return res, winner_votes
 
@@ -288,14 +222,12 @@ def start_algo(json_res: str = None):
 def save_result_to_csv(res: dict = {}):
     head = ['Office', 'Candidate']
     rows = [[o, c] for o, c in res.items()]
-    with open("files/result.csv", 'w') as f:
+    with open("../files/result.csv", 'w') as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(head)
         csv_writer.writerows(rows)
 
 
-# def validation_file(voters: list[Voter] = None, offices_candidates: dict = None) -> str:
-#     return 'Success'
 """"
 (1) Check if all offices have a name
 (2) Check if there are different names for all the offices
@@ -341,17 +273,50 @@ def start_algo_uploud(file):
     massege = validation_file(offices_candidates, voter_list)
     if massege != 'success':
         raise Exception(massege)
-
     a = greedy_PAV(voters=voter_list, offices_candidates=offices_candidates)
     save_result_to_csv(a)
     return a
 
 
+def demo():
+    a = Candidate('a', '1')
+    b = Candidate('b', '1')
+    c = Candidate('c', '2')
+    d = Candidate('d', '2')
+    e = Candidate('e', '3')
+    f = Candidate('f', '3')
+    g = Candidate('g', '3')
+    dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
+    v_1 = Voter([a, c, e], "Moshe")
+    v_2 = Voter([a, c, f], "Dani")
+    v_3 = Voter([a, d, f], "Roee")
+    voters = [v_1, v_2, v_3]
+    candidates = dict
+    with open("../j.json", "w") as f:
+        json.dump({'candidates': candidates, 'voters': voters}, fp=f, default=lambda o: o.__dict__, indent=4)
+    return dict, voters
+
+
+def demo2():
+    a = Candidate('a', '1')
+    b = Candidate('b', '1')
+    c = Candidate('c', '2')
+    d = Candidate('d', '2')
+    e = Candidate('e', '3')
+    f = Candidate('f', '3')
+    g = Candidate('g', '3')
+    dict = {'1': [a, b], '2': [c, d], '3': [e, f, g]}
+    v_1 = Voter([a, c, e])
+    v_2 = Voter([a, c, f])
+    v_3 = Voter([a, d, f])
+    voters = [v_1, v_2, v_3]
+    candidates = dict
+
+    s = json.dumps({'candidates': candidates, 'voters': voters}, default=lambda o: o.__dict__, indent=4)
+    return s
+
+
 if __name__ == '__main__':
-    # s=demo2()
-    # print(start_algo(s))
     a = start_algo()
     print(a)
-    # print(start_algo_uploud('template.xlsx'))
-    # print("______0000000000000_____")
-    # from_xslx('empty template.xlsx')
+

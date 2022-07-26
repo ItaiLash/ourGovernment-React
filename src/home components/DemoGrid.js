@@ -32,7 +32,7 @@ function DemoGrid() {
           <br></br>
         </p>
 
-        <a href="/demo" className={style.btn}>
+        <a href={process.env.PUBLIC_URL + "/demo"} className={style.btn}>
           Demo
         </a>
       </div>
