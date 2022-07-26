@@ -4,8 +4,8 @@ import VoterCard from "./VoterCard";
 import CollapsibleTable from "./CollapsTable";
 import style from "./style_demo.module.css";
 import Axios from 'axios';
-import FileDownload from "js-file-download";
 import Spinner from "../shared components/Spinner";
+import { HOST } from "../constant/Host";
 
 import {
   generateRandomOfficeName,
@@ -410,7 +410,7 @@ class FormBox extends React.Component {
    */
   callToPav = () => {
     fetch(
-      "https://our-government-server2.herokuapp.com/api/pav/0/compute_pav/",
+      `${HOST}/api/pav/0/compute_pav/`,
       {
         method: "POST",
         headers: {
@@ -432,7 +432,7 @@ class FormBox extends React.Component {
   handlePDFDownload = (e) => {
     e.preventDefault();
     Axios({
-      url: "https://our-government-server2.herokuapp.com/api/pav/0/download_results/",
+      url: `${HOST}/api/pav/0/download_results/`,
       method: "GET",
       responseType: "blob",
     }).then((res) => {

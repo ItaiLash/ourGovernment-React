@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./style_upload.module.css";
 import Axios from 'axios';
 import FileDownload from "js-file-download";
+import { HOST } from "../constant/Host";
 
 export default function FileUploadPage() {
   const [fillTemplate, setFillTemplate] = React.useState(false);
@@ -47,7 +48,7 @@ export default function FileUploadPage() {
     }
     uploadData.append('pav_file',selectedFile,selectedFile.name);
     fetch(
-      "https://our-government-server2.herokuapp.com/api/pav/0/upload_file/",
+      `${HOST}/api/pav/0/upload_file/`,
       {
         method: "POST",
         body: uploadData,
@@ -69,7 +70,7 @@ export default function FileUploadPage() {
 
   const handleCsvDownload = () => {
     Axios({
-      url: "https://our-government-server2.herokuapp.com/api/pav/0/download_results_csv/",
+      url: `${HOST}/api/pav/0/download_results_csv/`,
       method: "GET",
       responseType: "blob",
     }).then((res) => {
