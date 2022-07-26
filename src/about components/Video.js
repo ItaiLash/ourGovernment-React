@@ -10,7 +10,7 @@ function Video(){
           controls
           poster={logo}
         >
-          <source
+          {/* <source
             src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
             type="video/ogg"
           />
@@ -21,7 +21,7 @@ function Video(){
           <source
             src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
             type="video/mp4"
-          />
+          /> */}
           Your browser doesn't support HTML5 video tag.
         </video>
       </div>
