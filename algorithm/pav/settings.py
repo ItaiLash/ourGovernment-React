@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
 from pathlib import Path
+
 # from decouple import config
 # from dj_database_url import parse as dburl
-
 # from django-cors-headers import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,8 +30,8 @@ SECRET_KEY = 'django-insecure-&h!bj+sf$ry*uz!%($=g*05n#--du80)g7!$1x4rv6v$ovwcm4
 # DEBUG = config('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','our-government-ariel.herokuapp.com']
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'our-government-ariel.herokuapp.com']
+
 
 # Application definition
 
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'pav.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    'https://our-government-ariel.herokuapp.com'
+    'https://our-government-front.herokuapp.com'
 ]
 # CORS_ALLOW_ALL_ORIGINS: True
 
@@ -132,8 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR,'files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
 MEDIA_URL = '/files/'
 
 # Default primary key field type
