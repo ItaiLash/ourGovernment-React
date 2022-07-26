@@ -214,7 +214,7 @@ def start_algo(json_res: str = None):
     winner_votes = voter_to_winner(a, voter_list)
     res = define_result(a)
     s = Global_Justified_Representation(a, voter_list, offices_candidates)
-    with open("../files/explanation.html", 'w', encoding="utf-8") as f:
+    with open("./files/explanation.html", 'w', encoding="utf-8") as f:
         f.write(s)
     return res, winner_votes
 
@@ -222,7 +222,7 @@ def start_algo(json_res: str = None):
 def save_result_to_csv(res: dict = {}):
     head = ['Office', 'Candidate']
     rows = [[o, c] for o, c in res.items()]
-    with open("../files/result.csv", 'w') as f:
+    with open("./files/result.csv", 'w') as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow(head)
         csv_writer.writerows(rows)
