@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import style from './style_demo.module.css'
 
-function NumOfOfficesSelect(props) {
+export default function NumOfOfficesSelect(props) {
   return (
     <Box className={style.inputBox}>
       <FormControl fullWidth>
@@ -33,6 +33,3 @@ function NumOfOfficesSelect(props) {
     </Box>
   );
 }
-
-
-export default NumOfOfficesSelect;

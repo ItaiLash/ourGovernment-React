@@ -391,7 +391,6 @@ class FormBox extends React.Component {
     window.location.reload();
   };
 
-  ////////////////////////////////////////////////////////////
   validateResult(result) {
     console.log(result);
     if (result.massage === "one or more fields missing") {
@@ -407,7 +406,7 @@ class FormBox extends React.Component {
   }
 
   /**
-   * this finction is sending http post requst to the Django server api
+   * This function is sending http post requst to the Django server api
    */
   callToPav = () => {
     fetch(
@@ -437,7 +436,7 @@ class FormBox extends React.Component {
       method: "GET",
       responseType: "blob",
     }).then((res) => {
-      const file = new Blob([res.data], { type:"text/html" });
+      const file = new Blob([res.data], { type: "text/html;charset=utf-8" });
       const fileURL = URL.createObjectURL(file);
       const pdfWindow = window.open();
       pdfWindow.location.href = fileURL;
