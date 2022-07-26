@@ -41,7 +41,6 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
      <li><a href="#external-docs">External docs</a></li>
-
   </ol>
 </details>
 
@@ -81,7 +80,6 @@ For development, you will only need Node.js, npm and python installed on your en
       ```
     * If pip is not installed on your computer, download it via the following link: https://pip.pypa.io/en/stable/installation/
 
-  ``` סxx
 ### Installation
 
 1. Clone the repo
