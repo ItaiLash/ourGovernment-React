@@ -3,10 +3,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/ItaiLash/ourGovernment-React.git">
-    <img src="https://github.com/ItaiLash/ourGovernment-React/blob/main/src/img/logo.png" alt="Logo" width="150" height="150">
+    <img src="https://github.com/ItaiLash/ourGovernment-React/blob/main/Client/src/img/ourGovernment-main-logo.png" alt="Logo" width="60%" height="60%"
   </a>
 
-  <h3 align="center">OurGovernment</h3>
+<!--   <h3 align="center">OurGovernment</h3> -->
   <p align="center">
     <br />
     <a href="#">View Demo</a>
@@ -62,19 +62,26 @@ The project includes a system for electing ministers in the government, a resear
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
+For development, you will only need Node.js, npm and python installed on your environement. 
+- For the Client side:
+  * To download the latest version of npm (include Node.js), on the command line, run the following command:
+    ```sh
+    npm install
+    ```
+    or visit https://nodejs.org/en/
+  * To see if you already have Node.js and npm installed and check the installed version, run the following commands:
+    ```sh
+    node -v
+    npm -v
+    ```
+- For the Server side:
+    * To see if you already have python installed and check the installed version, run the following commands:
+      ```sh
+      python --version
+      ```
+    * If pip is not installed on your computer, download it via the following link: https://pip.pypa.io/en/stable/installation/
 
-For development, you will only need Node.js and npm installed on your environement. 
-* To download the latest version of npm (include Node.js), on the command line, run the following command:
-  ```sh
-  npm install
-  ```
-  or visit https://nodejs.org/en/
-* To see if you already have Node.js and npm installed and check the installed version, run the following commands:
-  ```sh
-  node -v
-  npm -v
-  ```
-  
+  ``` סxx
 ### Installation
 
 1. Clone the repo
@@ -83,29 +90,26 @@ For development, you will only need Node.js and npm installed on your environeme
    ```
 2. Open the repo in two different terminals (one to activate the server and another one to activate the web app).
 3. #### Activating the server:
-   - First you need to install some packages for the server:
+   - First, go into the Server folder: `cd Server`
+   - Then, you need to install some packages for the server:
      - Django `pip install django`
      - Django REST framework: `pip install djangorestframework`
      - django-cors-headers: `pip install django-cors-headers`
      - CORScanner: `pip install cors`
      - opempyxl - `pip install openpyxl`
-   - Open one of the terminals under algorithm directory and run the command `python3 manage.py runserver`
+   - Inside the Server directory run the command `python3 manage.py runserver`
    - You are supposed to see:
    
-     ![runserver](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/runserver.jpeg)
-     
-  
+      <img src="https://github.com/ItaiLash/ourGovernment-React/blob/main/Client/src/img/runserver%20screensshot.png" alt="Logo" width="60%" height="60%">
+
 4. #### Activating the web app:
-   - First you need to install some packages for the web app:
-     - headlessui/react: `npm install @headlessui/react`
-     - mui/icons-material: `npm install @mui/icons-material`
-     - axios: `npm install axios`
-     - js-file-downlaod: `npm install js-file-download --save`
+   - First, in the second terminal go into the Client folder: `cd Client`
+   - Then you need to install all our packages for the web app:
+     `npm install`
    - Run the webpage via the other terminal by entering `npm start` command.
    - You are supposed to see:
   
-     ![npmstart](https://github.com/ItaiLash/ourGovernment-React/blob/main/public/npmstart.jpeg)
-  
+      <img src="https://github.com/ItaiLash/ourGovernment-React/blob/main/Client/src/img/npm%20start%20screenshot.png" alt="Logo" width="60%" height="60%">  
 
 ### Running the algorithm
 4. On the website itself, click on the Demo  button that will take you to another page.
@@ -140,5 +144,6 @@ Project Link: [https://github.com/ItaiLash/ourGovernment-React](https://github.c
 * [Electing the Executive Branch](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Electing%20the%20Executive%20Branch.pdf)  wrote by Rutvik Page, Ehud Shapiro & Nimrod Talmon.
 * [Vision Statement](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Vision%20Statement%20OurGovernment.pdf)
 * [Software Design Document](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Software%20Design%20Document%20OurGovernment.pdf)
+* [Usability Testing](https://github.com/ItaiLash/ourGovernment-React/blob/main/Docs/Usabillity%20Testing.pdf)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
