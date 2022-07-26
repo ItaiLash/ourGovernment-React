@@ -142,7 +142,7 @@ Project Link: [https://github.com/ItaiLash/ourGovernment-React](https://github.c
 <!-- EXTERNAL DOCSS -->
 ## External docs
 * [Electing the Executive Branch](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Electing%20the%20Executive%20Branch.pdf) wrote by Rutvik Page, Ehud Shapiro & Nimrod Talmon.
-* [Election Of Government Ministers](https://github.com/ItaiLash/ourGovernment-React/blob/main/Docs/paper.pdf) wrote by Itai Lashover, Liav Weiss, Amichai Kafka & Shoshana Levin.
+* [Election Of Government Ministers](https://github.com/ItaiLash/ourGovernment-React/blob/main/Docs/article.pdf) wrote by Itai Lashover, Liav Weiss, Amichai Kafka & Shoshana Levin.
 * [Vision Statement](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Vision%20Statement%20OurGovernment.pdf)
 * [Software Design Document](https://github.com/ItaiLash/ourGovernment-React/blob/main/docs/Software%20Design%20Document%20OurGovernment.pdf)
 * [Usability Testing](https://github.com/ItaiLash/ourGovernment-React/blob/main/Docs/Usabillity%20Testing.pdf)
